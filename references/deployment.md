@@ -30,6 +30,8 @@ uv pip install --python .venv/Scripts/python.exe -r requirements.txt
 
 没有 uv 时，用已验证的 Python 绝对路径执行 `-m venv .venv`，再用环境内 Python 执行 `-m pip install -r requirements.txt`。requirements 是已测版本基线，不是跨操作系统完整锁文件；正式交付可在目标系统生成依赖锁与 wheelhouse。虚拟环境通常不可跨机器直接搬运。
 
+仓库根目录 `requirements-lock.txt` 记录 Windows/Python 3.12 的已测环境快照（含检查工具），供该环境复现；它不是所有平台的通用依赖解。其他平台从 requirements.txt 解析并单独验证。
+
 复制 assets/job.example.json 为自己的 job.json；相对路径基于 job.json 所在目录，需自行放好 document.pdf 或改成实际路径。仅当希望采用相应示例术语和提示时才复制并引用它们。密钥通过本机环境配置提供，不写进 job.json 或聊天。
 
 ```sh
