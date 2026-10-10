@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+import secrets
 from unittest.mock import patch
 from types import SimpleNamespace
 
@@ -72,7 +73,7 @@ class AdapterTests(unittest.TestCase):
         self.save()
         _, _, _, args = m.prepare(self.path)
         flags = {x for x in args if x.startswith('--')} | {'--config'}
-        secret = 'test-secret-unique'
+        secret = secrets.token_hex(16)
         configs = []
         def child(argv, **kwargs):
             self.assertNotIn(secret, argv)
