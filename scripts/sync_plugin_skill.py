@@ -4,7 +4,8 @@ import argparse
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ['SKILL.md', 'requirements.txt', 'scripts/pdf_translate.py', 'scripts/repair_runtime.py']
+FILES = ['SKILL.md', 'requirements.txt', 'scripts/pdf_translate.py', 'scripts/repair_runtime.py',
+         'scripts/chat_bridge.py', 'scripts/dsh_chat.mjs']
 DIRS = ['references', 'assets', 'agents', 'patches']
 
 def main():

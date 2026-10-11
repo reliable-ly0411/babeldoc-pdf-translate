@@ -25,6 +25,8 @@
 | max_pages_per_part | 正整数，长文分块；未指定由引擎决定 | --max-pages-per-part |
 | ignore_cache | true/false；术语/提示修改后可开启，增加调用成本 | --ignore-cache |
 | watermark | watermarked、no_watermark、both | --watermark-output-mode |
+| timeout_seconds | 整个引擎执行上限 5–86400 秒，默认 7200 | 适配器控制 |
+| provider.type | 可选 `codex` / `dsh`；使用独立原生字段，见 [无人值守说明](unattended.md) | 自动管理原生桥接 |
 | provider.base_url | 实际 OpenAI-compatible（兼容接口）地址 | --openai-base-url |
 | provider.model | 实际服务提供的模型标识 | --openai-model |
 | provider.api_key_env | 存放密钥的环境变量名 | 临时 TOML 注入，不放命令参数 |

@@ -44,3 +44,27 @@ Use `--case table-numbers` (repeatable) for a targeted rerun. Independently run
 Poppler `pdftotext` and render PDFs with `pdftoppm` for visual review. The test
 suite does not prove translation accuracy for arbitrary documents, full OCR,
 or compatibility with every desktop platform or PDF producer.
+
+## Native client experiments (explicit opt-in)
+
+The unit suite uses stub clients for bridge protocol, private caching, bounded
+retries, batch completeness, code/placeholder preservation and process cleanup.
+It does not consume native model usage. DSH's bridge syntax is checked with
+`node --check scripts/dsh_chat.mjs` (the live installation uses Node 24).
+
+For a real model experiment, configure a job from the native examples and follow
+[unattended translation](../references/unattended.md). Use only an authorized
+account and a synthetic/non-sensitive fixture. A run spends that route's quota
+or API balance; the DSH API route requires an explicit user choice.
+
+```sh
+python scripts/pdf_translate.py chat-doctor /path/to/native-job.json
+python scripts/pdf_translate.py run /path/to/native-job.json --engine /path/to/babeldoc --execute
+python tests/run_native_recovery.py /path/to/native-job.json /tmp/native-recovery --engine /path/to/babeldoc --execute
+```
+
+The recovery experiment creates a fresh private cache, interrupts the adapter
+after two successful requests, then resumes into a new output directory. It
+checks exit code 130, the interruption manifest, reused checkpoints and new live
+calls. Run separately for each backend. Keep JSON reports/PDFs outside Git and
+distinguish live calls, cache hits and deterministic replay in every report.

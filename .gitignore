@@ -11,3 +11,5 @@ outputs/
 .cache/
 job.json
 credential.toml
+
+.translation-cache/

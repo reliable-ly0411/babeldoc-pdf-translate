@@ -9,10 +9,16 @@ import os
 from pathlib import Path
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+from contextlib import nullcontext
 from urllib.parse import urlparse
+
+# Also support importlib-based callers and the installed standalone skill.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from chat_bridge import ChatBridge, BridgeError, NativeClient, run_bounded, validate_provider
 
 VALUE_FLAGS = {
     "source_language": "--lang-in", "target_language": "--lang-out",
@@ -30,7 +36,7 @@ BOOL_FLAGS = {
 }
 ALLOWED = set(VALUE_FLAGS) | set(BOOL_FLAGS) | {
     "input", "output", "outputs", "dual_layout", "auto_terms", "scan_mode",
-    "glossaries", "prompt_file", "provider"
+    "glossaries", "prompt_file", "provider", "timeout_seconds"
 }
 
 def read_json(path):
@@ -149,6 +155,8 @@ def prepare(job_path):
     for key in ("qps", "workers", "term_workers", "max_pages_per_part", "min_text_length"):
         if key in job and (type(job[key]) is not int or job[key] < 1):
             raise ValueError(f"{key} must be a positive integer")
+    if "timeout_seconds" in job and (type(job["timeout_seconds"]) is not int or not 5 <= job["timeout_seconds"] <= 86400):
+        raise ValueError("timeout_seconds must be an integer from 5 to 86400")
     choices = {"outputs": ("mono", "dual", "both"),
                "dual_layout": ("side-by-side", "alternating"),
                "font": ("serif", "sans-serif", "script"),
@@ -171,17 +179,29 @@ def prepare(job_path):
     if job.get("selected_pages_only") and "pages" not in job:
         raise ValueError("selected_pages_only requires pages")
     provider = job["provider"]
-    if not isinstance(provider, dict) or set(provider) != {"base_url", "model", "api_key_env"}:
-        raise ValueError("provider requires exactly base_url,model,api_key_env (no literal keys)")
-    if any(not isinstance(v, str) or not v.strip() for v in provider.values()):
-        raise ValueError("Provider fields must be nonempty strings")
-    url = urlparse(provider["base_url"])
-    if url.scheme not in ("http", "https") or not url.hostname or url.username or url.password or url.query or url.fragment:
-        raise ValueError("Endpoint must be http(s), without embedded credentials/query/fragment")
-    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", provider["api_key_env"]):
-        raise ValueError("Invalid API key environment variable name")
+    if isinstance(provider, dict) and "type" in provider:
+        provider = job["provider"] = validate_provider(provider, base)
+        for key in ("workers", "term_workers", "qps"):
+            if job.get(key, 1) != 1:
+                raise ValueError(f"Native chat jobs require {key}=1; requests are serialized")
+            job[key] = 1
+        # Native bridges own their cache and error accounting. A BabelDOC cache hit
+        # would bypass authentication checks and confuse evidence of a live call.
+        job["ignore_cache"] = True
+        base_url, model = "http://127.0.0.1:0/v1", "native-" + provider["type"]
+    else:
+        if not isinstance(provider, dict) or set(provider) != {"base_url", "model", "api_key_env"}:
+            raise ValueError("provider requires exactly base_url,model,api_key_env (no literal keys), or a native type")
+        if any(not isinstance(v, str) or not v.strip() for v in provider.values()):
+            raise ValueError("Provider fields must be nonempty strings")
+        url = urlparse(provider["base_url"])
+        if url.scheme not in ("http", "https") or not url.hostname or url.username or url.password or url.query or url.fragment:
+            raise ValueError("Endpoint must be http(s), without embedded credentials/query/fragment")
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", provider["api_key_env"]):
+            raise ValueError("Invalid API key environment variable name")
+        base_url, model = provider["base_url"], provider["model"]
     args = ["--files", str(source), "--output", str(output), "--openai",
-            "--openai-base-url", provider["base_url"], "--openai-model", provider["model"]]
+            "--openai-base-url", base_url, "--openai-model", model]
     for key, flag in VALUE_FLAGS.items():
         if key in job:
             args.extend([flag, str(job[key])])
@@ -300,45 +320,72 @@ def run_job(job_path, engine, execute=False):
         raise ValueError("Page range exceeds PDF page count")
     plan = {"status": "planned", "engine": engine, "engine_version": version,
             "input_sha256": digest(source), "arguments": args,
-            "credential_env": job["provider"]["api_key_env"], "visual_qa": "not performed",
+            "provider": job["provider"], "credential_env": job["provider"].get("api_key_env"), "visual_qa": "not performed",
             "normalized_proxy_variables": engine_environment()[1]}
     if not execute:
         return plan
-    if "YOUR-" in job["provider"]["model"] or ".example" in job["provider"]["base_url"]:
+    native = "type" in job["provider"]
+    if not native and ("YOUR-" in job["provider"]["model"] or ".example" in job["provider"]["base_url"]):
         raise ValueError("Replace example model/endpoint before execution")
-    key = os.environ.get(job["provider"]["api_key_env"])
-    if not key:
+    key = None if native else os.environ.get(job["provider"]["api_key_env"])
+    if not native and not key:
         raise ValueError("Required credential environment variable is unset")
     if output.exists():
         raise ValueError("Execution requires a new output directory; choose a new run name")
-    output.mkdir(parents=True)
+    output.mkdir(parents=True, mode=0o700)
     manifest = output / "run-manifest.json"
     plan["status"] = "running"
     manifest.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     # Never put the credential in process arguments or distributable job files.
     # Temp directory permissions inherit the host's private user temp policy.
+    bridge = ChatBridge(job["provider"]) if native else None
     try:
-        with tempfile.TemporaryDirectory(prefix="pdf-translate-") as tmp:
-            config = Path(tmp) / "credential.toml"
-            config.write_text("[babeldoc]\nopenai-api-key = " + json.dumps(key) + "\n", encoding="utf-8")
-            config.chmod(0o600)
-            result = subprocess.run([engine, "--config", str(config), *args], capture_output=True,
-                                    text=True, encoding="utf-8", errors="replace", env=engine_environment()[0])
-            log = (result.stdout + "\n" + result.stderr).replace(key, "[REDACTED]")
-            (output / "engine.log").write_text(log, encoding="utf-8")
+        with bridge if bridge else nullcontext():
+            if bridge:
+                key = bridge.key
+                args[args.index("--openai-base-url") + 1] = bridge.url
+            with tempfile.TemporaryDirectory(prefix="pdf-translate-") as tmp:
+                config = Path(tmp) / "credential.toml"
+                config.write_text("[babeldoc]\nopenai-api-key = " + json.dumps(key) + "\n", encoding="utf-8")
+                config.chmod(0o600)
+                env = engine_environment()[0]
+                if bridge:
+                    for name in ("no_proxy", "NO_PROXY"):
+                        env[name] = ",".join(filter(None, [env.get(name, ""), "127.0.0.1", "localhost"]))
+                    result = run_bounded([engine, "--config", str(config), *args], "", job.get("timeout_seconds", 7200),
+                                         env=env, cancel=bridge.failed, limit=32 * 1024 * 1024)
+                else:
+                    result = subprocess.run([engine, "--config", str(config), *args], capture_output=True,
+                                            text=True, encoding="utf-8", errors="replace", env=env,
+                                            timeout=job.get("timeout_seconds", 7200))
+                log = (result.stdout + "\n" + result.stderr).replace(key, "[REDACTED]")
+                (output / "engine.log").write_text(log, encoding="utf-8")
         plan["returncode"] = result.returncode
         plan["outputs"] = [str(p) for p in output.glob("*.pdf")]
         plan["output_validation"] = validate_outputs(job, source, output, inspection)
         plan["source_unchanged"] = digest(source) == plan["input_sha256"]
-        plan["status"] = "needs-review" if result.returncode == 0 and plan["output_validation"]["valid"] and plan["source_unchanged"] else "failed"
+        bridge_ok = not bridge or (not bridge.failed.is_set() and bridge.stats["completed_requests"] > 0)
+        plan["status"] = "needs-review" if result.returncode == 0 and plan["output_validation"]["valid"] and plan["source_unchanged"] and bridge_ok else "failed"
+    except (BridgeError, subprocess.TimeoutExpired) as exc:
+        plan["status"] = "failed"
+        plan["error"] = bridge.stats["errors"][0] if bridge and bridge.stats["errors"] else (exc.code if isinstance(exc, BridgeError) else "TIMEOUT")
     except BaseException:
         plan["status"] = "interrupted-or-failed"
         raise
     finally:
+        if bridge:
+            plan["bridge"] = dict(bridge.stats)
+            plan["bridge"]["native_item_types"] = getattr(bridge.client, "event_types", [])
+        plan["source_unchanged"] = digest(source) == plan["input_sha256"]
         manifest.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     return plan
 
 def main():
+    # SIGTERM should follow the same cleanup path as Ctrl-C, including owned
+    # native model and engine process groups. SIGKILL cannot run cleanup.
+    def terminate(signum, frame):
+        raise KeyboardInterrupt
+    signal.signal(signal.SIGTERM, terminate)
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("inspect", help="Read PDF statistics without rendering or external requests")
@@ -347,6 +394,8 @@ def main():
     p.add_argument("csv")
     p = sub.add_parser("doctor", help="Probe installed BabelDOC capabilities")
     p.add_argument("--engine", default="babeldoc")
+    p = sub.add_parser("chat-doctor", help="Check native chat login without translating or reading PDF content")
+    p.add_argument("job")
     p = sub.add_parser("run", help="Plan a job; translation only with --execute")
     p.add_argument("job")
     p.add_argument("--engine", default="babeldoc")
@@ -362,10 +411,18 @@ def main():
             result = {"version": version, "flags": sorted(flags),
                       "normalized_proxy_variables": engine_environment()[1],
                       "scope": "CLI capability probe; no translation/provider or output-quality test"}
+        elif a.command == "chat-doctor":
+            provider = read_json(a.job).get("provider", {})
+            provider = validate_provider(provider, Path(a.job).resolve().parent)
+            import threading
+            result = NativeClient(provider, threading.Event()).doctor()
         else:
             result = run_job(a.job, a.engine, a.execute)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 1 if result.get("status") == "failed" else 0
+    except KeyboardInterrupt:
+        print("Translation interrupted; successful private checkpoints are retained.", file=sys.stderr)
+        return 130
     except Exception as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 2

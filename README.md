@@ -42,6 +42,10 @@ See [DSH's filesystem skill discovery](https://github.com/deepseek-ai/deepseek-h
 
 > 翻译整份 PDF，输出中文单语及左右对照两个版本。航空专有名词采用英文（中文），使用我提供的 CSV；先试译有公式和表格的两页。
 
+## 本机聊天额度自动翻译
+
+1.3.0 提供 Codex / DSH 原生客户端桥接：复制 `assets/job.codex.example.json` 或 `assets/job.dsh.example.json`，运行 `chat-doctor` 检查登录，再执行 `run --execute`。支持私有译文缓存、有限重试、中断清理和代码标识符保护；无需手动复制模型回复。Codex 使用 ChatGPT 登录额度；DSH 默认账户路由，也可在用户明确选择后复用已配置的官方 API 及余额。配置及边界见 [无人值守说明](references/unattended.md)，真实验收状态记录在 [Issue #8](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/8)。
+
 ## 包结构
 
 ```text
