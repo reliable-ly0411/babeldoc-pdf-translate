@@ -1,0 +1,70 @@
+[
+  {
+    "host": "codex",
+    "version": "1.3.0",
+    "deployment": "local development payload from dev/paper-benchmark-20261011",
+    "changed": [
+      {
+        "path": "references/unattended.md",
+        "old_sha256": "68fb9774d7f42af33173b2a9508607af80f49f6875cc2004361530025b0ed669",
+        "new_sha256": "dd496bc7a652c9eef7c434fe58fe87d12f53dd521078f30f2a8bfb50094a07b3",
+        "native_experiment_payload_sha256": "41d7e49ed868963b9970dea7227a9a6446b53e5ca017b9bab2b7b3bd80139657"
+      },
+      {
+        "path": "scripts/pdf_translate.py",
+        "old_sha256": "981ee3768623f1b8ba873f6a6c1bc1403799371b26d059b2e8d2003f2d9c76ab",
+        "new_sha256": "2242d14b90c1e4760cedbcfe03c98b0488c6e182457a92b9674654d0cf3ee422",
+        "native_experiment_payload_sha256": "2242d14b90c1e4760cedbcfe03c98b0488c6e182457a92b9674654d0cf3ee422"
+      },
+      {
+        "path": "scripts/chat_bridge.py",
+        "old_sha256": "c4cd42070a081aaccfecf1e3ec2bb6997243b5ae492fc23bb1e80da2234adf40",
+        "new_sha256": "92a2f88dc323a831bc6c36090d320ba51e4db0ac6121703ff367248884bec492",
+        "native_experiment_payload_sha256": "d991ba5afd48e11b4dc8785705cd135639af362ebe03091a95fab9812e8c9065"
+      },
+      {
+        "path": "scripts/dsh_chat.mjs",
+        "old_sha256": "62dc99ee35ec6a64e8fcf41735d897be8f5888dd25ce4c908cc3a5e7b32a828c",
+        "new_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0",
+        "native_experiment_payload_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0"
+      }
+    ],
+    "backup": "local private experiment directory; not committed",
+    "final_sync_note": "After native PDF runs, only documentation and explicit last_error initialization changed; latest source passed 64 unit tests. Installed files match current development payload.",
+    "post_sync_doctor_ready": true
+  },
+  {
+    "host": "dsh",
+    "version": "1.3.0",
+    "deployment": "local development payload from dev/paper-benchmark-20261011",
+    "changed": [
+      {
+        "path": "references/unattended.md",
+        "old_sha256": "68fb9774d7f42af33173b2a9508607af80f49f6875cc2004361530025b0ed669",
+        "new_sha256": "dd496bc7a652c9eef7c434fe58fe87d12f53dd521078f30f2a8bfb50094a07b3",
+        "native_experiment_payload_sha256": "41d7e49ed868963b9970dea7227a9a6446b53e5ca017b9bab2b7b3bd80139657"
+      },
+      {
+        "path": "scripts/pdf_translate.py",
+        "old_sha256": "981ee3768623f1b8ba873f6a6c1bc1403799371b26d059b2e8d2003f2d9c76ab",
+        "new_sha256": "2242d14b90c1e4760cedbcfe03c98b0488c6e182457a92b9674654d0cf3ee422",
+        "native_experiment_payload_sha256": "2242d14b90c1e4760cedbcfe03c98b0488c6e182457a92b9674654d0cf3ee422"
+      },
+      {
+        "path": "scripts/chat_bridge.py",
+        "old_sha256": "c4cd42070a081aaccfecf1e3ec2bb6997243b5ae492fc23bb1e80da2234adf40",
+        "new_sha256": "92a2f88dc323a831bc6c36090d320ba51e4db0ac6121703ff367248884bec492",
+        "native_experiment_payload_sha256": "d991ba5afd48e11b4dc8785705cd135639af362ebe03091a95fab9812e8c9065"
+      },
+      {
+        "path": "scripts/dsh_chat.mjs",
+        "old_sha256": "62dc99ee35ec6a64e8fcf41735d897be8f5888dd25ce4c908cc3a5e7b32a828c",
+        "new_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0",
+        "native_experiment_payload_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0"
+      }
+    ],
+    "backup": "local private experiment directory; not committed",
+    "final_sync_note": "After native PDF runs, only documentation and explicit last_error initialization changed; latest source passed 64 unit tests. Installed files match current development payload.",
+    "post_sync_doctor_ready": true
+  }
+]

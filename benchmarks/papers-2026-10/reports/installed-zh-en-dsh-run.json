@@ -1,0 +1,108 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "7d9ab1a72d103866b5869d2a25b067e9b7b79908254268d9b7fbf29ae7299014",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 23.92,
+  "bridge": {
+    "backend": "dsh",
+    "completed_requests": 4,
+    "live_requests": 4,
+    "cache_hits": 0,
+    "attempts": 4,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 1,
+    "route": "deepseek-official",
+    "token_usage": {
+      "reported_calls": 4,
+      "unreported_calls": 0,
+      "native_counters": {
+        "inputTokens": 1068,
+        "outputTokens": 293,
+        "cacheReadTokens": 1152,
+        "cacheWriteTokens": 0,
+        "totalTokens": 2513
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "1b07fe4a1d4f8921b83af872a4ec502ac6f684580a9e68f3dd2127d07c31244b",
+        "attempt": 1,
+        "seconds": 1.456,
+        "native_usage": {
+          "inputTokens": 342,
+          "outputTokens": 174,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 900
+        }
+      },
+      {
+        "request_sha256": "340924304fe9f9f8a497f0f842a28086ee434d4a86c61eeb8106f182a02ce997",
+        "attempt": 1,
+        "seconds": 1.324,
+        "native_usage": {
+          "inputTokens": 251,
+          "outputTokens": 88,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 851
+        }
+      },
+      {
+        "request_sha256": "dfa321a44ba655140c937a260d7d21654b26c1723dc0bbd0a2d0d36158091e8f",
+        "attempt": 1,
+        "seconds": 0.703,
+        "native_usage": {
+          "inputTokens": 239,
+          "outputTokens": 17,
+          "cacheReadTokens": 128,
+          "cacheWriteTokens": 0,
+          "totalTokens": 384
+        }
+      },
+      {
+        "request_sha256": "62dd148e9f2288d82df3132be55139ebad21ff5db5293190556c28527616fc4c",
+        "attempt": 1,
+        "seconds": 0.804,
+        "native_usage": {
+          "inputTokens": 236,
+          "outputTokens": 14,
+          "cacheReadTokens": 128,
+          "cacheWriteTokens": 0,
+          "totalTokens": 378
+        }
+      }
+    ],
+    "native_version": "0.2.1-alpha.1",
+    "ready": true,
+    "native_item_types": []
+  },
+  "run": "installed-zh-en-dsh",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "fragment-zh.no_watermark.en.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      },
+      {
+        "file": "fragment-zh.no_watermark.en.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}

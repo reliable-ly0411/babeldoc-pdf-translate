@@ -1,0 +1,160 @@
+{
+  "source": "swift2023.pdf",
+  "source_sha256": "c9bcbd98ddbf2b0a18b4cbdbc4e62e429c6a659e1b1054b5d1c2e0219b8da40f",
+  "output": "swift2023.no_watermark.zh-CN.mono.pdf",
+  "output_sha256": "e50fe0d62c1ed13f49bcd5a073c72152aa653643f39df27bd76bd416826dec90",
+  "pages": [
+    {
+      "source_page": 2,
+      "output_page": 1,
+      "source": {
+        "characters": 4574,
+        "cjk_characters": 0,
+        "replacement_characters": 0,
+        "image_instances": 9,
+        "image_digests": {
+          "43bc950766b9ac00e98eff65f1b9a506": 1,
+          "6eeb6da8620ab6d8e4fa2d30dedfa4ac": 1,
+          "5989feec84c70ae9301d5e7a2bdc3199": 1,
+          "30976a4f6f8ae9d45d90f0d12e942b48": 1,
+          "efc16b6bbe2291c75288adb777e94640": 1,
+          "7940cc6eb9d6d8c09b4e67f4aaf9ae6d": 1,
+          "b3cbb9299d8a1068b7a33c80b126a2d0": 1,
+          "0ecc81b4d5783b93cbae4a7bc34f3742": 1,
+          "3d6112e64859f435f7c47e6bf8836025": 1
+        },
+        "vector_paths": 2,
+        "numeric_tokens": {
+          "620": 1,
+          "31": 1,
+          "2023": 1,
+          "983": 1,
+          "1": 4,
+          "2": 4,
+          "33": 1,
+          "6": 2,
+          "4": 1,
+          "5": 1,
+          "2019": 1
+        }
+      },
+      "output": {
+        "characters": 1446,
+        "cjk_characters": 1108,
+        "replacement_characters": 0,
+        "image_instances": 9,
+        "image_digests": {
+          "43bc950766b9ac00e98eff65f1b9a506": 1,
+          "6eeb6da8620ab6d8e4fa2d30dedfa4ac": 1,
+          "5989feec84c70ae9301d5e7a2bdc3199": 1,
+          "30976a4f6f8ae9d45d90f0d12e942b48": 1,
+          "efc16b6bbe2291c75288adb777e94640": 1,
+          "7940cc6eb9d6d8c09b4e67f4aaf9ae6d": 1,
+          "b3cbb9299d8a1068b7a33c80b126a2d0": 1,
+          "0ecc81b4d5783b93cbae4a7bc34f3742": 1,
+          "3d6112e64859f435f7c47e6bf8836025": 1
+        },
+        "vector_paths": 2,
+        "numeric_tokens": {
+          "620": 1,
+          "31": 2,
+          "2023": 1,
+          "983": 1,
+          "1": 3,
+          "2": 3,
+          "32": 1,
+          "33": 1,
+          "26": 1,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "2019": 1
+        }
+      },
+      "missing_decoded_image_instances": 0,
+      "dimensions_match": true
+    },
+    {
+      "source_page": 7,
+      "output_page": 2,
+      "source": {
+        "characters": 6355,
+        "cjk_characters": 0,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 28,
+        "numeric_tokens": {
+          "0": 5,
+          "2": 20,
+          "1": 6,
+          "−1": 1,
+          "3": 3,
+          "4": 2,
+          "5": 2,
+          "6": 3
+        }
+      },
+      "output": {
+        "characters": 2476,
+        "cjk_characters": 1228,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 28,
+        "numeric_tokens": {
+          "0": 5,
+          "2": 20,
+          "1": 6,
+          "−1": 1,
+          "3": 2,
+          "4": 1,
+          "43": 1,
+          "44": 1,
+          "45": 1,
+          "46": 2,
+          "5": 1,
+          "6": 1
+        }
+      },
+      "missing_decoded_image_instances": 0,
+      "dimensions_match": true
+    },
+    {
+      "source_page": 14,
+      "output_page": 3,
+      "source": {
+        "characters": 963,
+        "cjk_characters": 0,
+        "replacement_characters": 0,
+        "image_instances": 1,
+        "image_digests": {
+          "823448e8bd2d44ef34ddb3796f84fb77": 1
+        },
+        "vector_paths": 2,
+        "numeric_tokens": {
+          "1": 1,
+          "8": 1
+        }
+      },
+      "output": {
+        "characters": 278,
+        "cjk_characters": 227,
+        "replacement_characters": 0,
+        "image_instances": 1,
+        "image_digests": {
+          "823448e8bd2d44ef34ddb3796f84fb77": 1
+        },
+        "vector_paths": 2,
+        "numeric_tokens": {
+          "1": 1,
+          "28": 1
+        }
+      },
+      "missing_decoded_image_instances": 0,
+      "dimensions_match": true
+    }
+  ],
+  "repaired": false,
+  "note": "Screening only. Image digests describe decoded raster resources, not vectors or text in images. Numeric extraction is not a formula correctness test. Visual and semantic review remain separate."
+}

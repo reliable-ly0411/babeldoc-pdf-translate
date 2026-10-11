@@ -1,0 +1,172 @@
+[
+  {
+    "path": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 21425317,
+    "after_bytes": 10392359,
+    "before_sha256": "80d169fd68d969df6c1d18b583b76ff39c13b874e34a10a220c836cba8265b07",
+    "after_sha256": "f5fd7bb1381701443b291f6e4e15b3aeefae9851a4c826e4fc265f2a5c96ed88",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/pilot-swift-dsh/swift2023.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 6841396,
+    "after_bytes": 3624176,
+    "before_sha256": "5f95b64cf24a99ab804ae66652ee197f0d7e3ddb82c66abcda5b54f49081780c",
+    "after_sha256": "c1152c18948e68746b10cf170219f9149ff5bd0bbe6eee8647b5229dd9f29f54",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.zh-CN.dual.pdf",
+    "before_bytes": 2003923,
+    "after_bytes": 1168671,
+    "before_sha256": "3352a5794ff0afb000a928b25a9ccfd4b532ed948585d398f1300ea4605099f4",
+    "after_sha256": "25db0e19ce0779ecf08f04aa1fb0f6ce84c66332e1e61924626540a1053db217",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 1720669,
+    "after_bytes": 1057281,
+    "before_sha256": "3a236cd767cfab95b9146b962d29c18c3e37eb4370a5ef83f1c4035c1b6f99d4",
+    "after_sha256": "23304dbff8a684bf8a313cd10c080b6552ec78b9ce8242ac7060f0a7ece9baee",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/fragment-en-fr-dsh/fragment-en.no_watermark.fr.dual.pdf",
+    "before_bytes": 32250,
+    "after_bytes": 23086,
+    "before_sha256": "7db537da4c1d67d7f13a8c5730f14bc097ed492cfa6661ebf07cd6eee433d8ce",
+    "after_sha256": "c5477a38f0dc8db422b56808361d851aa2e4be2c3c3b35f7083b68bb3bb14d88",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/full-r1-dsh/deepseekr1.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 5384094,
+    "after_bytes": 3230457,
+    "before_sha256": "081fbbdc71a2fb2ea602b15d5d93017751e94c9b2f0e14c94ef8d82d4c7b5d6f",
+    "after_sha256": "c3d32aeb5936bccb69c1aed0530f8f333f7ca3946835f78010869b78d0d1a1d6",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/pilot-r1-codex/deepseekr1.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 1330916,
+    "after_bytes": 902990,
+    "before_sha256": "46039ec855de43952b866f221fdfd27dcb47045e901e1ae919f9480da368a44a",
+    "after_sha256": "8e88998d3e704ffc959149d7287981e91399c2828f647ac1cea238cd43d5c064",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/fragment-zh-ja-codex/fragment-zh.no_watermark.ja.dual.pdf",
+    "before_bytes": 76185,
+    "after_bytes": 72234,
+    "before_sha256": "d6a4b79fab6089661ad1cc73314b360fdbfe7cf07aced67c9426b0309535408a",
+    "after_sha256": "f51a26f9b66bfae8e0b99f69639d8c65bc21f694731a6fcb7f15c741cfeb5d57",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/fragment-fr-en-dsh/roundtrip-fr.no_watermark.en.dual.pdf",
+    "before_bytes": 60537,
+    "after_bytes": 32580,
+    "before_sha256": "dd12c19580cafe7aaf34773f5f0bbfb51e8c9a28e5100a8edc754c8458f36085",
+    "after_sha256": "14b0e3ca085d423fe59ca5be0d83ccf67791f6244d13dcb7b6c1cb562dae68e9",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/roundtrip-swift-dsh/roundtrip-swift-zh.no_watermark.en.dual.pdf",
+    "before_bytes": 21687227,
+    "after_bytes": 10695456,
+    "before_sha256": "01aba0619bc300ad935333ac9c4a6861aa98c095edc0d090c96ee4f992b01279",
+    "after_sha256": "b0e982c9bf4f72b13eae8b5b08ab3064bbb926b7bb629d1031cac9d3f80a7d53",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/fragment-ja-zh-codex/roundtrip-ja.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 114600,
+    "after_bytes": 107444,
+    "before_sha256": "5c709103ae725a5159890ec950d098762b96ad3bfe2899b9babadb6283dc0769",
+    "after_sha256": "5ccc07ec4da8b283c8bce4667fea771677dadb3c9b3c6967ccf4c42fe34c0a1a",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/installed-zh-en-dsh/fragment-zh.no_watermark.en.dual.pdf",
+    "before_bytes": 33270,
+    "after_bytes": 22859,
+    "before_sha256": "71606c943aa27bdb86a693a5cf13816a86e2db5f851b4297765bc96f370ebf06",
+    "after_sha256": "6a843987e7c9ef8769d8a07193dd7ef28ab1aaac92d5259d0046304c6c2bc1e5",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/roundtrip-r1-codex/roundtrip-r1-zh.no_watermark.en.dual.pdf",
+    "before_bytes": 884412,
+    "after_bytes": 599250,
+    "before_sha256": "9495790eb98927747b98dd1754ad5c7a2153865bece367f7cc2f1e357b3c8cc3",
+    "after_sha256": "f3808c95db13416c9c9c3fa55718f3e82aa045cf35ed58c677c7b1ea6abdc30b",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/full-stein-codex/stein2003.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 14556564,
+    "after_bytes": 7743523,
+    "before_sha256": "2301f8fda023d04d4e5bf0e42ec07987b242bd5569b2db5912b66e06fbae6049",
+    "after_sha256": "6788b9e49a2e8ca953c6d29b16f9ac410550a9e195be90d1f31034277c771d6b",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/fragment-en-fr-dsh-text/fragment-en.no_watermark.fr.dual.pdf",
+    "before_bytes": 35143,
+    "after_bytes": 24774,
+    "before_sha256": "dee12560ef7429a10d3ef0d0304c6b1d6f7fba2a2a4e584b84cc6c2792baf140",
+    "after_sha256": "a7a27438043384b124108a8e0a0bfe8a9e4f3733c704e5dc87a01b9a5fe7c133",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/full-dueling-codex/dueling2016.no_watermark.zh-CN.dual.pdf",
+    "before_bytes": 1861098,
+    "after_bytes": 1187660,
+    "before_sha256": "490d48e85316e9274666534a016629cb06dbd369700dcf1d13fb8b477487f377",
+    "after_sha256": "270ee26bbd7001e0e33fbd9d002a1d3f065a3a36fdf137b193d5e0073661846b",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  },
+  {
+    "path": "references/installed-zh-en-dsh-text/fragment-zh.no_watermark.en.dual.pdf",
+    "before_bytes": 35357,
+    "after_bytes": 24477,
+    "before_sha256": "5351f9442cab013622d3c5cbf3a124f8bca937603c9c8c6b6bb5c25930af19d2",
+    "after_sha256": "a5d8ec3fbebc147b483f77f36ed57330044d3e210b11675803e6e1df668ac124",
+    "all_pages_identical_render_at_72dpi": true,
+    "text_identical": true,
+    "operation": "lossless PDF object deduplication and deflate"
+  }
+]

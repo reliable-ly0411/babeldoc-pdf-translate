@@ -1,0 +1,23 @@
+{
+  "input": "../sources/roundtrip-fr.pdf",
+  "output": "../../../output/paper-benchmark/fragment-fr-en-dsh",
+  "source_language": "fr",
+  "target_language": "en",
+  "outputs": "both",
+  "watermark": "no_watermark",
+  "auto_terms": false,
+  "translate_tables": true,
+  "scan_mode": "off",
+  "prompt_file": "../prompts/technical.txt",
+  "timeout_seconds": 14400,
+  "provider": {
+    "type": "dsh",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "../../../.translation-cache/papers/dsh/roundtrip-fr",
+    "dsh_package": "/path/to/deepseek-harness/apps/cli/package.json",
+    "node_bin": "node",
+    "model": "deepseek-flash",
+    "route": "deepseek-official"
+  }
+}

@@ -5,6 +5,8 @@ __pycache__/
 .env.*
 !.env.example
 *.pdf
+!benchmarks/papers-2026-10/sources/*.pdf
+!benchmarks/papers-2026-10/references/**/*.pdf
 *.log
 output/
 outputs/

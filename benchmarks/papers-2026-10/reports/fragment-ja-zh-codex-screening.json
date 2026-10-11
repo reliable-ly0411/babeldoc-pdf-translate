@@ -1,0 +1,47 @@
+{
+  "source": "roundtrip-ja.pdf",
+  "source_sha256": "83648fc4ae4eb472cb8bdc37fcd2279743708681decf75618d05d062559aca71",
+  "output": "roundtrip-ja.no_watermark.zh-CN.mono.pdf",
+  "output_sha256": "5cc93d058fc8b713409edc35c39fe0453c47e1caed4b8368cf4ccdfdb722b31f",
+  "pages": [
+    {
+      "source_page": 1,
+      "output_page": 1,
+      "source": {
+        "characters": 252,
+        "cjk_characters": 73,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 0,
+        "numeric_tokens": {
+          "100": 1,
+          "0.02": 2,
+          "2026": 1,
+          "-0.25": 1,
+          "0.25": 1,
+          "2": 2
+        }
+      },
+      "output": {
+        "characters": 182,
+        "cjk_characters": 99,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 0,
+        "numeric_tokens": {
+          "100": 1,
+          "0.02": 2,
+          "2026": 1,
+          "0.25": 2,
+          "2": 2
+        }
+      },
+      "missing_decoded_image_instances": 0,
+      "dimensions_match": true
+    }
+  ],
+  "repaired": false,
+  "note": "Screening only. Image digests describe decoded raster resources, not vectors or text in images. Numeric extraction is not a formula correctness test. Visual and semantic review remain separate."
+}

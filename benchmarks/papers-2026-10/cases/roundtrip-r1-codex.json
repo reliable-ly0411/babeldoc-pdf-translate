@@ -1,0 +1,22 @@
+{
+  "input": "../sources/roundtrip-r1-zh.pdf",
+  "output": "../../../output/paper-benchmark/roundtrip-r1-codex",
+  "source_language": "zh-CN",
+  "target_language": "en",
+  "outputs": "both",
+  "watermark": "no_watermark",
+  "auto_terms": false,
+  "translate_tables": true,
+  "scan_mode": "off",
+  "prompt_file": "../prompts/technical.txt",
+  "timeout_seconds": 14400,
+  "provider": {
+    "type": "codex",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "../../../.translation-cache/papers/codex/roundtrip-r1-zh",
+    "codex_bin": "codex"
+  },
+  "pages": "2",
+  "selected_pages_only": true
+}
