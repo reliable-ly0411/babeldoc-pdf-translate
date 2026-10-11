@@ -18,6 +18,7 @@
 | prompt_file | UTF-8 提示文本路径 | --custom-system-prompt |
 | font | serif、sans-serif、script；不填自动选择 | --primary-font-family |
 | translate_tables | true/false；表格文字翻译为实验功能 | --translate-table-text |
+| min_text_length | 正整数；开启表格翻译时默认 4，否则保持引擎默认。显式值优先 | --min-text-length |
 | scan_mode | off 默认、auto、force | 不加 / --auto-enable-ocr-workaround / --ocr-workaround |
 | qps | 正整数，每秒请求上限；模板为 2 | --qps |
 | workers / term_workers | 正整数，普通/术语并行任务数 | --pool-max-workers / --term-pool-max-workers |
@@ -29,6 +30,8 @@
 | provider.api_key_env | 存放密钥的环境变量名 | 临时 TOML 注入，不放命令参数 |
 
 未指定选项保持引擎默认；模板显式提供常用值。不要把模板默认误称为所有引擎版本的默认。语言代号的语法验证不能证明引擎支持该语言，必须查上游支持列表。源语言由 agent 根据样本判断并写入，无 `auto` 魔法值。
+
+表格模式默认将最短文本阈值从 5 降为 4，覆盖 `Unit`、`Gain`，同时保留 `Hz/s/V` 等短单位的原字体。需要翻译更短标签时可显式降低阈值，但会增加短文本请求与重排风险，必须检查单位字号、变量和标识符。显式设置较高阈值会重新跳过短文本。
 
 ## 由 agent 处理的偏好（不能直接作为 JSON 字段）
 

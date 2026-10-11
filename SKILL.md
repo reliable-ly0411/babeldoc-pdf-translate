@@ -29,4 +29,5 @@ Common user choices: target language, pages, mono/bilingual/both, side-by-side/a
 - [Quality](references/quality.md): acceptance and bounded repair workflow.
 - [Deployment](references/deployment.md): portable packaging, platform integration, runtime and PDFMathTranslate route.
 - [Sources](references/sources.md): checked upstream documentation and compatibility baseline.
-- `scripts/pdf_translate.py`: inspect, glossary validation, capability probing, dry-run and execution. Run `--help` for commands. It uses the public CLI, not patched internal APIs.
+- `scripts/pdf_translate.py`: inspect, glossary validation, capability probing, dry-run and execution through the BabelDOC CLI. Run `--help` for commands.
+- `scripts/repair_runtime.py`: explicit hash-guarded compatibility patch for BabelDOC 0.6.4, with check/apply/rollback. Follow deployment instructions. It changes pinned upstream source files; it does not run automatically during translation. The patched CLI identifies itself as `0.6.4+pdftranslate.1`.

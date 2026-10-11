@@ -70,6 +70,11 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(result['status'], 'planned')
         self.assertFalse((self.base / 'out').exists())
     def test_execution_manifest_and_secret_cleanup(self):
+        import pymupdf
+        with pymupdf.open() as doc:
+            doc.new_page(width=200, height=300)
+            doc.save(self.base / 'valid.pdf')
+        self.job['input'] = 'valid.pdf'
         self.save()
         _, _, _, args = m.prepare(self.path)
         flags = {x for x in args if x.startswith('--')} | {'--config'}
@@ -80,15 +85,74 @@ class AdapterTests(unittest.TestCase):
             config = Path(argv[argv.index('--config') + 1])
             configs.append(config)
             self.assertIn(secret, config.read_text())
-            (self.base / 'out/result.pdf').write_bytes(b'test-output')
+            for mode, width in [('mono', 200), ('dual', 400)]:
+                with pymupdf.open() as doc:
+                    doc.new_page(width=width, height=300)
+                    doc.save(self.base / f'out/valid.zh-CN.{mode}.pdf')
             return SimpleNamespace(returncode=0, stdout=secret, stderr='')
-        with patch.object(m, 'executable', return_value='fake'), patch.object(m, 'probe', return_value=(flags, 'test')), patch.object(m, 'inspect_pdf', return_value={'page_count': 5}), patch.dict(os.environ, TEST_PDF_KEY=secret), patch.object(m.subprocess, 'run', side_effect=child):
+        with patch.object(m, 'executable', return_value='fake'), patch.object(m, 'probe', return_value=(flags, 'test')), patch.dict(os.environ, TEST_PDF_KEY=secret), patch.object(m.subprocess, 'run', side_effect=child):
             result = m.run_job(self.path, 'fake', True)
         self.assertEqual(result['status'], 'needs-review')
+        self.assertTrue(result['output_validation']['valid'])
         self.assertTrue(result['source_unchanged'])
         self.assertFalse(configs[0].exists())
         self.assertNotIn(secret, (self.base / 'out/engine.log').read_text())
         self.assertNotIn(secret, (self.base / 'out/run-manifest.json').read_text())
+
+    def test_short_table_cells_and_explicit_threshold(self):
+        self.job['translate_tables'] = True
+        self.save()
+        args = m.prepare(self.path)[3]
+        self.assertEqual(args[args.index('--min-text-length') + 1], '4')
+        self.job['min_text_length'] = 7
+        self.save()
+        args = m.prepare(self.path)[3]
+        self.assertEqual(args.count('--min-text-length'), 1)
+        self.assertEqual(args[args.index('--min-text-length') + 1], '7')
+
+    def test_successful_process_with_corrupt_pdf_is_failed(self):
+        import pymupdf
+        source = self.base / 'valid.pdf'
+        with pymupdf.open() as doc:
+            doc.new_page()
+            doc.save(source)
+        self.job.update(input=str(source), outputs='mono')
+        self.save()
+        flags = {x for x in m.prepare(self.path)[3] if x.startswith('--')} | {'--config'}
+        def child(*args, **kwargs):
+            (self.base / 'out/valid.zh-CN.mono.pdf').write_bytes(b'NOT A PDF')
+            return SimpleNamespace(returncode=0, stdout='', stderr='')
+        with patch.object(m, 'executable', return_value='fake'), patch.object(m, 'probe', return_value=(flags, 'test')), patch.dict(os.environ, TEST_PDF_KEY='fixture-only'), patch.object(m.subprocess, 'run', side_effect=child):
+            result = m.run_job(self.path, 'fake', True)
+        self.assertEqual(result['status'], 'failed')
+        self.assertFalse(result['output_validation']['valid'])
+        self.assertEqual(json.loads((self.base / 'out/run-manifest.json').read_text())['status'], 'failed')
+        with patch.object(m, 'run_job', return_value=result), patch.object(m.sys, 'argv', ['pdf_translate.py', 'run', str(self.path), '--execute']), patch('builtins.print'):
+            self.assertEqual(m.main(), 1)
+
+    def test_proxy_normalization_preserves_precedence_and_parent(self):
+        values = {'no_proxy': 'localhost,[::1],.internal', 'NO_PROXY': '[2001:db8::1]',
+                  'HTTPS_PROXY': 'http://proxy.invalid:8080'}
+        with patch.dict(os.environ, values, clear=True):
+            env, changed = m.engine_environment()
+            self.assertEqual(env['no_proxy'], 'localhost,::1,.internal')
+            self.assertEqual(env['NO_PROXY'], '2001:db8::1')
+            self.assertEqual(env['HTTPS_PROXY'], values['HTTPS_PROXY'])
+            self.assertEqual(dict(os.environ), values)
+            self.assertEqual(changed, ['no_proxy', 'NO_PROXY'])
+
+    def test_proxy_format_does_not_reinterpret_port_or_url(self):
+        value = '*,[::1]:443,http://[::1],invalid[host]'
+        with patch.dict(os.environ, {'no_proxy': value}, clear=True):
+            self.assertEqual(m.engine_environment()[0]['no_proxy'], value)
+
+    def test_normalized_proxy_initializes_actual_httpx(self):
+        import httpx
+        with patch.dict(os.environ, {'no_proxy': 'localhost,127.0.0.1,::1,[::1]'}, clear=True):
+            env, _ = m.engine_environment()
+            with patch.dict(os.environ, env, clear=True):
+                with httpx.Client(proxy=None):
+                    pass  # Client construction only; no outbound request.
     def test_real_babeldoc_config_parser(self):
         from babeldoc.main import create_parser
         args = create_parser().parse_args(['--openai'], config_file_contents='[babeldoc]\nopenai-api-key = "dummy"\n')
