@@ -3,6 +3,7 @@
 import argparse
 import csv
 import hashlib
+import ipaddress
 import json
 import os
 from pathlib import Path
@@ -18,6 +19,7 @@ VALUE_FLAGS = {
     "pages": "--pages", "qps": "--qps", "workers": "--pool-max-workers",
     "term_workers": "--term-pool-max-workers", "font": "--primary-font-family",
     "watermark": "--watermark-output-mode", "max_pages_per_part": "--max-pages-per-part",
+    "min_text_length": "--min-text-length",
 }
 BOOL_FLAGS = {
     "translated_first": "--dual-translate-first",
@@ -73,11 +75,38 @@ def executable(value):
         return str(Path(value).resolve())
     raise ValueError("BabelDOC executable not found; install runtime or pass --engine ABS_PATH")
 
+def engine_environment():
+    """Normalize bracketed IPv6 bypass hosts only in the child environment.
+
+    urllib/httpx prefer lowercase no_proxy. Preserve that precedence and all
+    proxy endpoints; never copy a less restrictive uppercase value over it.
+    """
+    env = os.environ.copy()
+    changes = []
+    for name in ("no_proxy", "NO_PROXY"):
+        if name not in env:
+            continue
+        hosts = []
+        for item in env[name].split(","):
+            host = item.strip()
+            if host.startswith("[") and host.endswith("]"):
+                try:
+                    host = str(ipaddress.IPv6Address(host[1:-1]))
+                except ValueError:
+                    pass
+            hosts.append(host)
+        value = ",".join(hosts)
+        if value != env[name]:
+            env[name] = value
+            changes.append(name)
+    return env, changes
+
 def probe(engine):
+    env, _ = engine_environment()
     help_result = subprocess.run([engine, "--help"], capture_output=True, text=True,
-                                 encoding="utf-8", errors="replace", timeout=60)
+                                 encoding="utf-8", errors="replace", timeout=60, env=env)
     version_result = subprocess.run([engine, "--version"], capture_output=True, text=True,
-                                    encoding="utf-8", errors="replace", timeout=60)
+                                    encoding="utf-8", errors="replace", timeout=60, env=env)
     if help_result.returncode or version_result.returncode:
         raise ValueError("Engine --help/--version failed")
     flags = set(re.findall(r"--[a-z][a-z0-9-]+", help_result.stdout))
@@ -117,7 +146,7 @@ def prepare(job_path):
     for key in set(BOOL_FLAGS) | {"auto_terms"}:
         if key in job and type(job[key]) is not bool:
             raise ValueError(f"{key} must be a boolean")
-    for key in ("qps", "workers", "term_workers", "max_pages_per_part"):
+    for key in ("qps", "workers", "term_workers", "max_pages_per_part", "min_text_length"):
         if key in job and (type(job[key]) is not int or job[key] < 1):
             raise ValueError(f"{key} must be a positive integer")
     choices = {"outputs": ("mono", "dual", "both"),
@@ -156,6 +185,10 @@ def prepare(job_path):
     for key, flag in VALUE_FLAGS.items():
         if key in job:
             args.extend([flag, str(job[key])])
+    if job.get("translate_tables") and "min_text_length" not in job:
+        # BabelDOC's default of 5 silently excludes ordinary cells like Unit/Gain.
+        # Four includes those cells without retypesetting short SI units (Hz/s/V).
+        args.extend(["--min-text-length", "4"])
     for key, flag in BOOL_FLAGS.items():
         if job.get(key):
             args.append(flag)
@@ -195,6 +228,61 @@ def prepare(job_path):
         args.extend(["--custom-system-prompt", prompt])
     return job, source, output, args
 
+def selected_pages(job, page_count):
+    if not job.get("pages"):
+        return list(range(1, page_count + 1))
+    selected = set()
+    for part in job["pages"].split(","):
+        ends = [int(v) for v in part.split("-")]
+        selected.update(range(ends[0], ends[-1] + 1))
+    return sorted(selected)
+
+def validate_outputs(job, source, output, inspection):
+    """Validate actual requested artifacts, independently of the engine exit code."""
+    import pymupdf
+    modes = ("mono", "dual") if job.get("outputs", "both") == "both" else (job["outputs"],)
+    watermarks = ("watermarked", "no_watermark") if job.get("watermark") == "both" else (job.get("watermark", "watermarked"),)
+    pages = selected_pages(job, inspection["page_count"])
+    if not job.get("selected_pages_only"):
+        pages = list(range(1, inspection["page_count"] + 1))
+    expected, checks, errors = [], [], []
+    for watermark in watermarks:
+        suffix = ".no_watermark" if watermark == "no_watermark" else ""
+        for mode in modes:
+            path = output / f"{source.stem}{suffix}.{job['target_language']}.{mode}.pdf"
+            expected.append(path)
+            check = {"file": str(path), "kind": mode, "watermark": watermark, "valid": False}
+            try:
+                if path.is_symlink() or not path.is_file():
+                    raise ValueError("Missing expected regular PDF")
+                with pymupdf.open(path) as doc:
+                    if not doc.is_pdf or doc.needs_pass or doc.page_count == 0:
+                        raise ValueError("Not an accessible, nonempty PDF")
+                    if doc.is_repaired:
+                        raise ValueError("Damaged PDF required parser repair")
+                    alternating = mode == "dual" and job.get("dual_layout") == "alternating"
+                    count = len(pages) * (2 if alternating else 1)
+                    check.update(page_count=len(doc), expected_page_count=count)
+                    if len(doc) != count:
+                        raise ValueError(f"Expected {count} pages, got {len(doc)}")
+                    for i, page in enumerate(doc):
+                        original = inspection["pages"][pages[i // 2 if alternating else i] - 1]
+                        width = original["width"] * (2 if mode == "dual" and not alternating else 1)
+                        if abs(page.rect.width - width) > 2 or abs(page.rect.height - original["height"]) > 2:
+                            raise ValueError(f"Unexpected page dimensions at output page {i + 1}")
+                        # Force content parsing, rather than only reading the file header.
+                        page.get_text()
+                check["valid"] = True
+            except Exception as exc:
+                check["error"] = str(exc)
+                errors.append(f"{path.name}: {exc}")
+            checks.append(check)
+    unexpected = sorted(p.name for p in output.glob("*.pdf") if p not in expected)
+    if unexpected:
+        errors.append(f"Unexpected PDF artifacts: {unexpected}")
+    return {"valid": not errors, "files": checks, "errors": errors,
+            "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."}
+
 def run_job(job_path, engine, execute=False):
     job, source, output, args = prepare(job_path)
     engine = executable(engine)
@@ -212,7 +300,8 @@ def run_job(job_path, engine, execute=False):
         raise ValueError("Page range exceeds PDF page count")
     plan = {"status": "planned", "engine": engine, "engine_version": version,
             "input_sha256": digest(source), "arguments": args,
-            "credential_env": job["provider"]["api_key_env"], "visual_qa": "not performed"}
+            "credential_env": job["provider"]["api_key_env"], "visual_qa": "not performed",
+            "normalized_proxy_variables": engine_environment()[1]}
     if not execute:
         return plan
     if "YOUR-" in job["provider"]["model"] or ".example" in job["provider"]["base_url"]:
@@ -234,13 +323,14 @@ def run_job(job_path, engine, execute=False):
             config.write_text("[babeldoc]\nopenai-api-key = " + json.dumps(key) + "\n", encoding="utf-8")
             config.chmod(0o600)
             result = subprocess.run([engine, "--config", str(config), *args], capture_output=True,
-                                    text=True, encoding="utf-8", errors="replace")
+                                    text=True, encoding="utf-8", errors="replace", env=engine_environment()[0])
             log = (result.stdout + "\n" + result.stderr).replace(key, "[REDACTED]")
             (output / "engine.log").write_text(log, encoding="utf-8")
         plan["returncode"] = result.returncode
         plan["outputs"] = [str(p) for p in output.glob("*.pdf")]
+        plan["output_validation"] = validate_outputs(job, source, output, inspection)
         plan["source_unchanged"] = digest(source) == plan["input_sha256"]
-        plan["status"] = "needs-review" if result.returncode == 0 and plan["outputs"] and plan["source_unchanged"] else "failed"
+        plan["status"] = "needs-review" if result.returncode == 0 and plan["output_validation"]["valid"] and plan["source_unchanged"] else "failed"
     except BaseException:
         plan["status"] = "interrupted-or-failed"
         raise
@@ -269,7 +359,9 @@ def main():
             result = {"valid": True, "rows": len(glossary(a.csv))}
         elif a.command == "doctor":
             flags, version = probe(executable(a.engine))
-            result = {"version": version, "flags": sorted(flags)}
+            result = {"version": version, "flags": sorted(flags),
+                      "normalized_proxy_variables": engine_environment()[1],
+                      "scope": "CLI capability probe; no translation/provider or output-quality test"}
         else:
             result = run_job(a.job, a.engine, a.execute)
         print(json.dumps(result, ensure_ascii=False, indent=2))

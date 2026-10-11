@@ -4,8 +4,8 @@ import argparse
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ['SKILL.md', 'requirements.txt', 'scripts/pdf_translate.py']
-DIRS = ['references', 'assets', 'agents']
+FILES = ['SKILL.md', 'requirements.txt', 'scripts/pdf_translate.py', 'scripts/repair_runtime.py']
+DIRS = ['references', 'assets', 'agents', 'patches']
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
