@@ -20,5 +20,6 @@
   "cpu": "AMD Ryzen 7 6800H",
   "memory_kib": 15529084,
   "poppler": "26.05.0",
-  "renderer": "Poppler pdftoppm; high-risk pages at 1100-1500 pixels, plus all-page contact sheets"
+  "renderer": "Poppler pdftoppm; high-risk pages at 1100-1500 pixels, plus all-page contact sheets",
+  "bitstring": "4.4.0"
 }

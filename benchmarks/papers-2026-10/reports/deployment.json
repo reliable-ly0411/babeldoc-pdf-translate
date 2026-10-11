@@ -27,10 +27,16 @@
         "old_sha256": "62dc99ee35ec6a64e8fcf41735d897be8f5888dd25ce4c908cc3a5e7b32a828c",
         "new_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0",
         "native_experiment_payload_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0"
+      },
+      {
+        "path": "requirements.txt",
+        "old_sha256": "0cde7ccf56a68876122233e3c7320bd19bc6ec164228ee84afc9167ca9fd3711",
+        "new_sha256": "d3ef6dcd3a64d697a850a30de15efe6e41c8e4cce510815cb9f425ff310356b1",
+        "native_experiment_payload_sha256": "0cde7ccf56a68876122233e3c7320bd19bc6ec164228ee84afc9167ca9fd3711"
       }
     ],
     "backup": "local private experiment directory; not committed",
-    "final_sync_note": "After native PDF runs, only documentation and explicit last_error initialization changed; latest source passed 64 unit tests. Installed files match current development payload.",
+    "final_sync_note": "After native PDF runs: documentation, explicit last_error initialization, and bitstring==4.4.0 dependency pin. The local runtime already used bitstring 4.4.0 during all experiments; source passed 64 tests. Installed payload files match the development branch.",
     "post_sync_doctor_ready": true
   },
   {
@@ -61,10 +67,16 @@
         "old_sha256": "62dc99ee35ec6a64e8fcf41735d897be8f5888dd25ce4c908cc3a5e7b32a828c",
         "new_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0",
         "native_experiment_payload_sha256": "c32238d30ea6bf8dabd96e3822ecf8bbd16a244f76a4139d86584cf6a16f6da0"
+      },
+      {
+        "path": "requirements.txt",
+        "old_sha256": "0cde7ccf56a68876122233e3c7320bd19bc6ec164228ee84afc9167ca9fd3711",
+        "new_sha256": "d3ef6dcd3a64d697a850a30de15efe6e41c8e4cce510815cb9f425ff310356b1",
+        "native_experiment_payload_sha256": "0cde7ccf56a68876122233e3c7320bd19bc6ec164228ee84afc9167ca9fd3711"
       }
     ],
     "backup": "local private experiment directory; not committed",
-    "final_sync_note": "After native PDF runs, only documentation and explicit last_error initialization changed; latest source passed 64 unit tests. Installed files match current development payload.",
+    "final_sync_note": "After native PDF runs: documentation, explicit last_error initialization, and bitstring==4.4.0 dependency pin. The local runtime already used bitstring 4.4.0 during all experiments; source passed 64 tests. Installed payload files match the development branch.",
     "post_sync_doctor_ready": true
   }
 ]

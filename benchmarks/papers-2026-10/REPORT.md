@@ -6,7 +6,7 @@
 
 ## 环境与来源
 
-Linux 7.0.0-34-generic，AMD Ryzen 7 6800H，约 14.81 GiB 可见内存；Python 3.12.3、BabelDOC 0.6.4+pdftranslate.1、PyMuPDF 1.28.2、Poppler 26.05.0、Node 24.20.0。CPU 版式推理；模型/字体缓存已预热；每个翻译作业单 worker，部分独立作业重叠运行。逐项环境在 [environment.json](reports/environment.json)。耗时不能作为不同模型的公平速度排名。
+Linux 7.0.0-34-generic，AMD Ryzen 7 6800H，约 14.81 GiB 可见内存；Python 3.12.3、BabelDOC 0.6.4+pdftranslate.1、bitstring 4.4.0、PyMuPDF 1.28.2、Poppler 26.05.0、Node 24.20.0。CPU 版式推理；模型/字体缓存已预热；每个翻译作业单 worker，部分独立作业重叠运行。逐项环境在 [environment.json](reports/environment.json)。耗时不能作为不同模型的公平速度排名。
 
 - Codex CLI 0.162.0-alpha.17.2，使用本机 ChatGPT 登录额度；CLI 默认模型没有固定到不可变版本。
 - DSH 0.2.1-alpha.1，模型别名 `deepseek-flash`；按用户明确选择复用当前 `deepseek-official` 接口及余额。这不是 DeepSeek 订阅账户额度。
@@ -90,5 +90,7 @@ Swift 批次不完整已通过保留检查点后重试恢复；原始失败消�
 Codex 各细分项可能与总项重叠，不求和制造“总消耗”；DSH 本版本的 inputTokens 是未缓存输入，totalTokens 包含缓存与输出。各作业墙钟耗时包含启动、解析、模型与排版，可能互相重叠。桥接 HTTP 兼容层没有强行归一不同原生计量；BabelDOC 日志显示的 0 token 不能当成账户无消耗。完整累积方式在 [usage-summary.json](reports/usage-summary.json)。
 
 本分支在 1.3.0 内补充原生 usage、每次尝试耗时/请求哈希、总作业耗时、逐段占位符数量约束及有界纠正重试；不记录 native 私有提示、推理或凭据。原始模型缓存、配置及完整运行日志留在本机，不纳入仓库。64 项测试覆盖重复缓存不重复计数、未知 usage、格式修复上限、禁止新增/丢失公式标记等关键行为；本次没有发布新 tag 或膨胀版本号。
+
+远端首次干净安装额外发现依赖漂移：BabelDOC 的无上界依赖选中了 bitstring 5.0.0，导致 `BitStream` 导入失败（60 项发现、3 项错误）。已把依赖固定为本轮本机实测使用的 **4.4.0**，保留原有运行时测试；[修复记录](reports/ci-dependency-repair.json) 与 [上游 API 变更](https://github.com/scott-griffiths/bitstring/blob/main/release_notes.md) 可核查。最终远端执行结果见 PR #11 的 checks 与 Issue #10；该依赖修复不改变上述论文质量结论。
 
 复现操作与失败对照见 [REPRODUCING.md](REPRODUCING.md)，参考请求见 [prompts/user-requests.zh.md](prompts/user-requests.zh.md)。
