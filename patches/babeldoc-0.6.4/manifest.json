@@ -1,5 +1,5 @@
 {
-  "id": "0.6.4-pdftranslate.1",
+  "id": "0.6.4-pdftranslate.linux-r1.1",
   "version": "0.6.4",
   "upstream": "https://github.com/funstory-ai/BabelDOC",
   "license": "AGPL-3.0",
@@ -8,7 +8,7 @@
       "path": "babeldoc/main.py",
       "patch": "main.patch",
       "original_sha256": "5b7340fb164cce57c55e6c00429f5c4972fd746d581309dcc01a1e8d46fd6958",
-      "patched_sha256": "34f76325371086975e9498dd43f1673a73a323929e124b7f660f67dd287bff53"
+      "patched_sha256": "4bdb0b746fb58460de3c931b68e38f90b2567a6acfdf5b1ce383e29ff6472417"
     },
     {
       "path": "babeldoc/format/pdf/high_level.py",
@@ -33,6 +33,12 @@
       "patch": "typesetting.patch",
       "original_sha256": "d9b135c263faf23f3811c78c18f74cf1c2aa91eb3d3596eb3d4d657d49a39d61",
       "patched_sha256": "9b145842def7c312ea69c696e7d5fdc9bee41763fb53ac31d3211cb018e93a91"
+    },
+    {
+      "path": "babeldoc/format/pdf/document_il/midend/styles_and_formulas.py",
+      "patch": "styles_and_formulas.patch",
+      "original_sha256": "5ee979f1c7ef1d48f4a32d9d07402e134f8a8fc91c5bfb5c6ce87d5f3fa2ba1d",
+      "patched_sha256": "877382d87637b4c6c9f2c6cf98cdbf99832ec234d72e62e9f00510320ad1ffcc"
     }
   ]
 }

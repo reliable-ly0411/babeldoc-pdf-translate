@@ -1,0 +1,500 @@
+{
+  "date": "2026-10-14",
+  "branch": "fix/linux-r1-layout-stability",
+  "baseline": "2849110720e4c874b25cc1c69663b086c3051dee",
+  "source_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "source_pages": 11,
+  "provider": {
+    "backend": "Codex ChatGPT login",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "low",
+    "workers": 1,
+    "qps": 1
+  },
+  "versions": {
+    "python": "3.12.3",
+    "babeldoc_distribution": "0.6.4",
+    "babeldoc_cli": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+    "compatibility": "0.6.4-pdftranslate.linux-r1.1",
+    "pymupdf": "1.28.2",
+    "bitstring": "4.4.0",
+    "codex": "0.162.0-alpha.17.2"
+  },
+  "final_run": {
+    "backend": "codex",
+    "completed_requests": 65,
+    "live_requests": 8,
+    "cache_hits": 57,
+    "attempts": 8,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_output_contract": "named-text-slots-schema-1",
+    "native_item_types": [
+      "agent_message"
+    ],
+    "native_inference_calls": 8,
+    "native_call_records": [
+      {
+        "request_sha256": "3657881a27ec528829b495f64349e425ef2b27e5dd06c4ad84ffdcad95e91aec",
+        "seconds": 37.221,
+        "usage": {
+          "input_tokens": 12755,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 369,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "0c2bb01786be2a0834d3b0aebeef1377d2838ccfc784d2f1e70b2dff011ae3bf",
+        "seconds": 28.518,
+        "usage": {
+          "input_tokens": 11741,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 287,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "2f6805cb5a0ccc1589baa142756bdb3279255c7ddee44b1f50549eabdee31e17",
+        "seconds": 27.468,
+        "usage": {
+          "input_tokens": 11752,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 266,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "9d173ed50fdb1f2ac7065b525f7217896dc403da4757d03df2f56a5cbfbc35e6",
+        "seconds": 33.325,
+        "usage": {
+          "input_tokens": 11776,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 250,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "887b363f07ffd8c34a8cf32fc6ce808aca50fd6797a864624ec4aa7461432a82",
+        "seconds": 28.599,
+        "usage": {
+          "input_tokens": 11880,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 252,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "cf3f5e67f85e5f8d472e76da4000db86c816a87605c7ea5fffe87c38e1680842",
+        "seconds": 26.866,
+        "usage": {
+          "input_tokens": 11305,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 75,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "b3b6e60630bd60d6ee13a7590a47729e608694619bf9425735bf950efb3cdc2e",
+        "seconds": 36.886,
+        "usage": {
+          "input_tokens": 11276,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 63,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "5be4adb5a148033d8c23d469135fe99afe5922bbf91a858c85459d66cb754391",
+        "seconds": 36.23,
+        "usage": {
+          "input_tokens": 11254,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 71,
+          "reasoning_output_tokens": 0
+        }
+      }
+    ]
+  },
+  "final_repeat": {
+    "backend": "codex",
+    "completed_requests": 65,
+    "live_requests": 0,
+    "cache_hits": 65,
+    "attempts": 0,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_output_contract": "named-text-slots-schema-1",
+    "native_item_types": [],
+    "native_inference_calls": 0,
+    "native_call_records": []
+  },
+  "validation": {
+    "unit_tests": 77,
+    "node_syntax": "passed",
+    "skill_resources": 27,
+    "sync": "passed",
+    "diff_check": "passed",
+    "runtime_apply_check_rollback_reapply_check": "passed",
+    "synthetic_real_engine_cases": 7,
+    "synthetic_pdfs": 22,
+    "synthetic_pages": 54
+  },
+  "outputs": [
+    {
+      "file": "deepseek-r1.en-zh.sample.pdf",
+      "bytes": 3266772,
+      "sha256": "1867fcc33e029ecc5b6c8a5dfe0e862f24cf9f387cc21fe8bfda672bd1b5874e",
+      "pages": 11
+    },
+    {
+      "file": "deepseek-r1.zh-CN.sample.pdf",
+      "bytes": 3189365,
+      "sha256": "d887f122016c263de4d7bc34cfca4d591fdd245309ff6642fc7e8fa1fc266a7c",
+      "pages": 11
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "cjk_chars": 1318,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 2,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "标题、摘要、双栏、DOI 无缺漏或溢出；标题在“进行”中换行，保留为轻微排版差异。",
+      "render": "pages/page-01.png",
+      "render_sha256": "cba8b4d88062547d7b82056ac66421d4a3ae547adbdb0f2404eeb5565e558396",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 2,
+      "cjk_chars": 1419,
+      "minimum_cjk_font_pt": 6.000199794769287,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "图 1 轴标题、图例和完整 a/b 图题补译；曲线、刻度、模型 ID 与正文完整。",
+      "render": "pages/page-02.png",
+      "render_sha256": "7e0671e169b99dfc4eda276c68d4ad1917be30ae7e692470706341e872581c85",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 3,
+      "cjk_chars": 1210,
+      "minimum_cjk_font_pt": 4.199999809265137,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "表 1 根号、上标、变量和推导行检查；两处行内公式用源 PDF 对象按原比例重排；碎片化注释统一字号；图 2 标签补译。",
+      "render": "pages/page-03.png",
+      "render_sha256": "2f237c3f38da229d42103a47411cf211f0ee996f1825e9fc75c5d1d7c406e61f",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 4,
+      "cjk_chars": 951,
+      "minimum_cjk_font_pt": 5.25,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "表 2 五模型列与 105 个数值顺序完全一致；统计阈值 P < 0.01 完整，5 个整数单元格位置微移，未越行。",
+      "render": "pages/page-04.png",
+      "render_sha256": "0c537ca73f2f550e66d727e5ff09f03c6fcb24d3f6009af8fd1627d5afadc721",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 5,
+      "cjk_chars": 1568,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "两栏正文、在线内容正常；全部文献、许可、出版社声明和版权以原英文保留。",
+      "render": "pages/page-05.png",
+      "render_sha256": "40f1b88d2d8d2a388767b77d406859433fae0e50a16f2d00e6dd9e992efff7a2",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 6,
+      "cjk_chars": 91,
+      "minimum_cjk_font_pt": 5.400000095367432,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "作者及单位保留英文；只翻译页眉，中文覆盖检查对此页采用例外。",
+      "render": "pages/page-06.png",
+      "render_sha256": "9ee69a9053fd7cee859710a23613a2a2ab5b35993eff54a1dccfa27886386433",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 7,
+      "cjk_chars": 1502,
+      "minimum_cjk_font_pt": 8.25,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "GRPO 公式 (1)–(6)、分数、上下标、符号及奖励/训练说明检查，无遮挡。",
+      "render": "pages/page-07.png",
+      "render_sha256": "8bcb3eed1ce8fe61b5b56b498a5b6ccd95f645992062aa3d926e91b638bf7a3a",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 8,
+      "cjk_chars": 1248,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 0,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "公式 (7)–(10)、跨页续文、链接和补充信息正常；文献保持原英文。",
+      "render": "pages/page-08.png",
+      "render_sha256": "d5a224ba330c31054cb062cb43c7db545965bd4ac67b47ac7e2a5595f036992c",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 9,
+      "cjk_chars": 408,
+      "minimum_cjk_font_pt": 6.800000190734863,
+      "image_objects": 2,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "两图坐标轴、完整 a/b 图题补译；Wait 和反思词语保留为被统计的原标识符，曲线/刻度不改。",
+      "render": "pages/page-09.png",
+      "render_sha256": "a5e294c16169a34fc9b911210f992f821da2a29afe908bd2e40ca90cb198a06f",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 10,
+      "cjk_chars": 275,
+      "minimum_cjk_font_pt": 6.900000095367432,
+      "image_objects": 2,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "PPO/GRPO 节点及图例补译；边框、箭头、变量和图题检查；原行内数学对象保留。",
+      "render": "pages/page-10.png",
+      "render_sha256": "a8a0df5a1d1dc214c790114120bc02a9f723ea6732de19d3d392c74a3c3db0d4",
+      "original_english_pixels_equal_72dpi": true
+    },
+    {
+      "page": 11,
+      "cjk_chars": 313,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 2,
+      "requires_visual_review": true,
+      "visual_review": "reviewed",
+      "note": "英文图片表格保留；完整中文提示词/评估转录无缺字，根号及基数条件不改；含非官方改动与 CC BY 说明。",
+      "render": "pages/page-11.png",
+      "render_sha256": "ad9cac24a21753dd0c4a0ed747b11fefcf07a40e9695ab3e5754ec0dccf9dc0a",
+      "original_english_pixels_equal_72dpi": true
+    }
+  ],
+  "asset_hashes": [
+    {
+      "path": "fonts/GoNotoKurrent-Bold.ttf",
+      "bytes": 15303772,
+      "sha256": "6f5ab7b16acedeac76625f75159d9d303be85b291d47376760a1c9f87802853e"
+    },
+    {
+      "path": "fonts/GoNotoKurrent-Regular.ttf",
+      "bytes": 15515760,
+      "sha256": "2f2cee5fbb2403df352ca2005247f6c4faa70f3086ebd31b6c62308b5f2f9865"
+    },
+    {
+      "path": "fonts/KleeOne-Regular.ttf",
+      "bytes": 8724704,
+      "sha256": "74cb0a6523cc22b221ceaa7b78b56cea66512ec14b4145fd0102ffe27c30d084"
+    },
+    {
+      "path": "fonts/LXGWWenKaiGB-Regular.1.520.ttf",
+      "bytes": 24903712,
+      "sha256": "252cde5857f7ce57ce76f7e2e1d2e91c1f912f1f4c13c7e4fb295b5fdf5923ed"
+    },
+    {
+      "path": "fonts/LXGWWenKaiTC-Regular.1.520.ttf",
+      "bytes": 15348376,
+      "sha256": "a36b11f231a923ad12a9bc045e54e6b1987dad5a6a201b6ea9e1093f9968e348"
+    },
+    {
+      "path": "fonts/MaruBuri-Regular.ttf",
+      "bytes": 3268988,
+      "sha256": "803429881927c79dbb49497274244e72b672c56e0503f28262503f77524cba7a"
+    },
+    {
+      "path": "fonts/NotoSans-Bold.ttf",
+      "bytes": 630964,
+      "sha256": "379bda1de5ceb6c81a6e0b7f8346d36e12b3202757fcba90a42dc5a7f8d5df38"
+    },
+    {
+      "path": "fonts/NotoSans-BoldItalic.ttf",
+      "bytes": 644340,
+      "sha256": "7c53c6334c7f7847201ba6ed93e4e00088b2ffae613aef69fb581153f347cac2"
+    },
+    {
+      "path": "fonts/NotoSans-Italic.ttf",
+      "bytes": 642344,
+      "sha256": "feb3e57888ce3acb604f270c278cfb304c674306518771619ddbdefca42a066b"
+    },
+    {
+      "path": "fonts/NotoSans-Regular.ttf",
+      "bytes": 629024,
+      "sha256": "fe8c022f48d8dd29f17b744d16f9346f4357e16f7d4f7be58b000ae7c291b614"
+    },
+    {
+      "path": "fonts/NotoSerif-Bold.ttf",
+      "bytes": 506864,
+      "sha256": "2015eba9ca7ca5cf7320bd5e6740439f84b55eefad7208e63b9b6d32e8c82410"
+    },
+    {
+      "path": "fonts/NotoSerif-BoldItalic.ttf",
+      "bytes": 535724,
+      "sha256": "c49e9f86cc43e05e8e5e8da53a7e00568fac08e2afb93b0d7979a2ea94fd6171"
+    },
+    {
+      "path": "fonts/NotoSerif-Italic.ttf",
+      "bytes": 535340,
+      "sha256": "be429bb62448b615f62cf7817d6a801fbc209e6cd2c11ffa15801f6d7dfac7cf"
+    },
+    {
+      "path": "fonts/NotoSerif-Regular.ttf",
+      "bytes": 504932,
+      "sha256": "76b746ed54a2f83fa41db9a85a43b4b39900dbdb8ae40ec3d93950b0b00c4bd7"
+    },
+    {
+      "path": "fonts/SourceHanSansCN-Bold.ttf",
+      "bytes": 10174460,
+      "sha256": "2dcaecc0dcba896fdc48e32617633123d91fa80c7eb9f7ae7c836da70e45ce88"
+    },
+    {
+      "path": "fonts/SourceHanSansCN-Regular.ttf",
+      "bytes": 10397552,
+      "sha256": "dd4ae04ab7d33f43202750cf755b2ba47a2122ba41412954e562da459337bbf6"
+    },
+    {
+      "path": "fonts/SourceHanSansHK-Bold.ttf",
+      "bytes": 6856692,
+      "sha256": "34fa1add2c9e7e8ee3fbb205a6ef5e8cb97f0393bbfe57c709273040cf10f48c"
+    },
+    {
+      "path": "fonts/SourceHanSansHK-Regular.ttf",
+      "bytes": 6999792,
+      "sha256": "b5a170508f5c3441b183d1eae39ec0f99545cab64918d07260492783bd5fa297"
+    },
+    {
+      "path": "fonts/SourceHanSansJP-Bold.ttf",
+      "bytes": 5603068,
+      "sha256": "e35443f4e468d7a038191c4bc5fc51bf7242bc12052eb427c07f00a1c3cec0fd"
+    },
+    {
+      "path": "fonts/SourceHanSansJP-Regular.ttf",
+      "bytes": 5723960,
+      "sha256": "4fb6ea21d30d3fe1751e590786950e9153bfc31e2669ac3528bd2f641b791d76"
+    },
+    {
+      "path": "fonts/SourceHanSansKR-Bold.ttf",
+      "bytes": 5858892,
+      "sha256": "51997e299785a2bc10806d95ff4fae0b1363caddea63c4e9fb43ee7d1dc899e0"
+    },
+    {
+      "path": "fonts/SourceHanSansKR-Regular.ttf",
+      "bytes": 5961704,
+      "sha256": "061c9a55b6b731af2a4667f06efb82ed7c80ba99d5350c1bba76f80472ea304f"
+    },
+    {
+      "path": "fonts/SourceHanSansTW-Bold.ttf",
+      "bytes": 6883224,
+      "sha256": "4cb4a8b665ef687fbfa15f4e5d551296d820183c68a324fb2432c88fa441c1e4"
+    },
+    {
+      "path": "fonts/SourceHanSansTW-Regular.ttf",
+      "bytes": 7024812,
+      "sha256": "e081fa19f3e92668c441c0e925ddc9ca35ed743d7c5d3308231a3c9a71302967"
+    },
+    {
+      "path": "fonts/SourceHanSerifCN-Bold.ttf",
+      "bytes": 14134156,
+      "sha256": "fafd6dc09a0ba3be1ac224aec3ff0befab97964c4ffba6b16f789702106577aa"
+    },
+    {
+      "path": "fonts/SourceHanSerifCN-Regular.ttf",
+      "bytes": 14047768,
+      "sha256": "8ba5ec09db04b1d1599edeff3fb5627ca11eaaf85e339e5c32684cb94e806993"
+    },
+    {
+      "path": "fonts/SourceHanSerifHK-Bold.ttf",
+      "bytes": 9532580,
+      "sha256": "52698377eb509bb60271fec92a26045f055958af7ace4c332eee2dfe1754776d"
+    },
+    {
+      "path": "fonts/SourceHanSerifHK-Regular.ttf",
+      "bytes": 9467292,
+      "sha256": "cf43b8a00e3e7e35c5e3d7d8d05dd2d21aeaaa386f0c4fa6665c29a11ea01b73"
+    },
+    {
+      "path": "fonts/SourceHanSerifJP-Bold.ttf",
+      "bytes": 7811832,
+      "sha256": "cbd7e67a0bc51b2da1d962a0de9a7745ad99a40a22febf6c56666119d21bfabe"
+    },
+    {
+      "path": "fonts/SourceHanSerifJP-Regular.ttf",
+      "bytes": 7748816,
+      "sha256": "3f3ecec06d2cfa6a9eb57469f75c7f551c4281741465e8eb1d6953f22abe453c"
+    },
+    {
+      "path": "fonts/SourceHanSerifKR-Bold.ttf",
+      "bytes": 12387920,
+      "sha256": "1e04d390823d458fc850f48d8fe6da19b55525249a5e63dded5690c288e138e1"
+    },
+    {
+      "path": "fonts/SourceHanSerifKR-Regular.ttf",
+      "bytes": 12459924,
+      "sha256": "140861eba42585f3280a47d4c5199449386b0f986c7ab2c67fd5aa1615bb15d7"
+    },
+    {
+      "path": "fonts/SourceHanSerifTW-Bold.ttf",
+      "bytes": 9551724,
+      "sha256": "a4d7ad443bccb130decc358cfbf3fea92d66cae22113cc9ac26c0200ed91b7cb"
+    },
+    {
+      "path": "fonts/SourceHanSerifTW-Regular.ttf",
+      "bytes": 9486772,
+      "sha256": "53b849ebd349db18bf574e3cbb1307c903cc036b98ff009e3f445632b7e09a7f"
+    },
+    {
+      "path": "models/doclayout_yolo_docstructbench_imgsz1024.onnx",
+      "bytes": 75324598,
+      "sha256": "fece9af02f618b603ff7921ccec6861d13e7e1f9830e091dfb7e8ad9311e5b21"
+    }
+  ],
+  "reading_order": {
+    "visual": "English left, translated right; top-to-bottom columns reviewed.",
+    "machine_linear_order": "Not approved as tagged/accessible PDF; covered underlying text and copied objects can yield duplicate extraction."
+  },
+  "limitations": [
+    "Paper-specific reviewed coordinate repairs and p11 transcription remain manual steps.",
+    "Independent cold request passed with wording differences; no whole-paper repeated cold-start claim.",
+    "No Windows merge, Release or HOL publication; no global PDF/OCR stability claim.",
+    "SIGKILL/host transport failure can leave stale manifests or orphan output; absence of usage is not zero consumption."
+  ],
+  "font_metric_note": "Minimum CJK font sizes come from extracted layers, which can include covered text. Visual legibility was checked separately.",
+  "tested_config_hashes": {
+    "prompt_sha256": "3aa7b24541ac52e5abfa768ba35d9e8341733146ab47117ccafb6f7c97b80be1",
+    "tested_glossary_sha256": "278098108b8a5b0b96450de42d9a8964c0c3790b57424e80334f139119b70e24",
+    "distributed_glossary_sha256": "451184e215a914121e5b199e76f324ca943c4be4dc101e0f3fccb066283c2626",
+    "distributed_job_sha256": "dc01a0f39676729fc867593b75221d0cfad7fa46fb88aed038985616d71293b1",
+    "csv_line_endings": "Distributed CSV normalized CRLF to LF; parsed rows verified equal to tested glossary."
+  }
+}

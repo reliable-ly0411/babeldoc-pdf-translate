@@ -1,0 +1,60 @@
+{
+  "source_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "pages": [
+    {
+      "page": 1,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "7bbe430508cad20c6ffa9858e73a1f92b8d6d80ddc5ec37040077f19a2e7e268"
+    },
+    {
+      "page": 2,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "a87609f8f8d4da24e4db164b1b532c1f41a49c15288ad49f604c9747b970e214"
+    },
+    {
+      "page": 3,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "04ca4b676d90cd00798eafda0d41b3a07b0e7d3dabaf67d048eeb88d5bd81b0d"
+    },
+    {
+      "page": 4,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "02bc431f9fcaf4dbee259b66d5370c701266f661d733445e543a0efa62ea594d"
+    },
+    {
+      "page": 5,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "2f468dee1d7b5f8353e1d12ff45d27906dd14f415b81df76236b59f34a3af23e"
+    },
+    {
+      "page": 6,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "6da81c1768510b587db93b66d0e9ffecb62802a05afe1f90080b7f13961cbc98"
+    },
+    {
+      "page": 7,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "75b0defeb6b8c281dcd3e30ff60291e529df1a6a06febc1001fa6320bb72a7a7"
+    },
+    {
+      "page": 8,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "b4cfad38520d2b4fad6cfae63edbf730e6ae7323e81dfdf61bed6aa499ba518d"
+    },
+    {
+      "page": 9,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "f14d37bc637555c6365ffe572e760150f920ee56c09a4f3a5811a5f30eb2e7bd"
+    },
+    {
+      "page": 10,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "a97d64307757e8bd4da2ec964e41f127c7671a2ac0e7d89f0a6243fef524415a"
+    },
+    {
+      "page": 11,
+      "original_english_pixels_equal_72dpi": true,
+      "original_pixel_sha256": "bef2f7c31a0a3b0b5ed00461bbea20147c74bfbb6214d0b3a0dfb0c9784db6b8"
+    }
+  ]
+}

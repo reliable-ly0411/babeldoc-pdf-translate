@@ -1,0 +1,668 @@
+{
+  "source_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "model": "gpt-6-luna",
+  "edits": [
+    {
+      "page": 5,
+      "retained_source_region": [
+        39,
+        630,
+        297,
+        746
+      ],
+      "reason": "References, affiliations, publisher/license/copyright text retained in English."
+    },
+    {
+      "page": 5,
+      "retained_source_region": [
+        305,
+        46,
+        564,
+        623
+      ],
+      "reason": "References, affiliations, publisher/license/copyright text retained in English."
+    },
+    {
+      "page": 6,
+      "retained_source_region": [
+        305,
+        98,
+        564,
+        146
+      ],
+      "reason": "References, affiliations, publisher/license/copyright text retained in English."
+    },
+    {
+      "page": 8,
+      "retained_source_region": [
+        305,
+        341,
+        564,
+        464
+      ],
+      "reason": "References, affiliations, publisher/license/copyright text retained in English."
+    },
+    {
+      "page": 3,
+      "inline_equation_reflow": "Two rows: source equation objects at original scale; surrounding Chinese reordered for grammar/spacing."
+    },
+    {
+      "page": 3,
+      "table_note_reflow": true,
+      "font_pt": 6.4,
+      "translation_sha256": "fca02bf43d292a724d873e7ade1957320af7b16b56497d3477b0115ee1a08678",
+      "reason": "Existing Luna words retained; unify 6/4.5 pt fragments at a readable note size."
+    },
+    {
+      "page": 2,
+      "source": "Steps",
+      "translation": "训练步数",
+      "mask": [
+        192.2049560546875,
+        230.43392944335938,
+        207.7634735107422,
+        237.43016052246094
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "Accuracy",
+      "translation": "准确率",
+      "mask": [
+        83.94071197509766,
+        126.0111312866211,
+        90.93694305419922,
+        151.1219482421875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "DeepSeek-R1-Zero AIME accuracy during training",
+      "translation": "DeepSeek-R1-Zero 在训练期间的 AIME 准确率",
+      "mask": [
+        132.75399780273438,
+        52.380462646484375,
+        267.21844482421875,
+        59.37669372558594
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "Human participant",
+      "translation": "人类参与者",
+      "mask": [
+        127.66899871826172,
+        78.27542114257812,
+        177.2426300048828,
+        85.27165222167969
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "Steps",
+      "translation": "训练步数",
+      "mask": [
+        419.6277770996094,
+        230.43167114257812,
+        435.186279296875,
+        237.4279022216797
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "Average length per response",
+      "translation": "每次响应的平均长度",
+      "mask": [
+        302.04962158203125,
+        100.00628662109375,
+        309.0458679199219,
+        177.126708984375
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 2,
+      "source": "DeepSeek-R1-Zero average length per response during training",
+      "translation": "DeepSeek-R1-Zero 在训练期间每次响应的平均长度",
+      "mask": [
+        342.1709899902344,
+        52.435516357421875,
+        512.6427612304688,
+        59.43174743652344
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Base",
+      "translation": "基础模型",
+      "mask": [
+        230.435791015625,
+        527.5095825195312,
+        243.9897918701172,
+        534.5055541992188
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Cold-start long CoT",
+      "translation": "冷启动长思维链",
+      "mask": [
+        210.831298828125,
+        568.376953125,
+        263.94329833984375,
+        575.3729248046875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Reasoning prompts",
+      "translation": "推理提示词",
+      "mask": [
+        211.05490112304688,
+        646.2196655273438,
+        263.73492431640625,
+        653.2156372070312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Rule-based reward",
+      "translation": "基于规则的奖励",
+      "mask": [
+        211.00660705566406,
+        666.5653686523438,
+        263.7825927734375,
+        673.5613403320312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "and language consistency",
+      "translation": "和语言一致性",
+      "mask": [
+        202.39060974121094,
+        673.7653198242188,
+        272.40460205078125,
+        680.7612915039062
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Non-reasoning",
+      "translation": "非推理",
+      "mask": [
+        365.8551940917969,
+        561.888671875,
+        405.6351623535156,
+        568.8846435546875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Reasoning",
+      "translation": "推理",
+      "mask": [
+        371.523193359375,
+        577.8085327148438,
+        399.9691467285156,
+        584.8045043945312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Base",
+      "translation": "基础模型",
+      "mask": [
+        379.1202087402344,
+        527.5095825195312,
+        392.6741943359375,
+        534.5055541992188
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Diverse prompts",
+      "translation": "多样化提示词",
+      "mask": [
+        363.623291015625,
+        646.0966186523438,
+        407.8553161621094,
+        653.0925903320312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Rule-based reward",
+      "translation": "基于规则的奖励",
+      "mask": [
+        360.184814453125,
+        666.5439453125,
+        411.2928161621094,
+        673.5399169921875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "and preference reward",
+      "translation": "和偏好奖励",
+      "mask": [
+        355.3548278808594,
+        673.7439575195312,
+        416.1288146972656,
+        680.7399291992188
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Sampling",
+      "translation": "采样",
+      "mask": [
+        314.48748779296875,
+        568.7030639648438,
+        339.7174987792969,
+        575.6990356445312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Models",
+      "translation": "模型",
+      "mask": [
+        455.023193359375,
+        573.7382202148438,
+        474.8052062988281,
+        580.7341918945312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Prompts + responses",
+      "translation": "提示词 + 响应",
+      "mask": [
+        455.023193359375,
+        588.6902465820312,
+        512.6351928710938,
+        595.6862182617188
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Training algorithms",
+      "translation": "训练算法",
+      "mask": [
+        455.023193359375,
+        603.6422729492188,
+        506.2511901855469,
+        610.6382446289062
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Prompts",
+      "translation": "提示词",
+      "mask": [
+        455.023193359375,
+        618.59423828125,
+        477.9192199707031,
+        625.5902099609375
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Rewards",
+      "translation": "奖励",
+      "mask": [
+        455.023193359375,
+        633.5462036132812,
+        478.6811828613281,
+        640.5421752929688
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Post-processing",
+      "translation": "后处理",
+      "mask": [
+        455.023193359375,
+        648.4982299804688,
+        499.13519287109375,
+        655.4942016601562
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Base",
+      "translation": "基础模型",
+      "mask": [
+        115.443603515625,
+        527.5095825195312,
+        128.9976043701172,
+        534.5055541992188
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Reasoning prompts",
+      "translation": "推理提示词",
+      "mask": [
+        95.87519836425781,
+        562.4794311523438,
+        148.55519104003906,
+        569.4754028320312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Accuracy and format",
+      "translation": "准确率和格式",
+      "mask": [
+        94.23169708251953,
+        576.8446655273438,
+        150.24169921875,
+        583.8406372070312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Sampling",
+      "translation": "采样",
+      "mask": [
+        126.41719818115234,
+        630.376953125,
+        151.64718627929688,
+        637.3729248046875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Accuracy",
+      "translation": "准确率",
+      "mask": [
+        89.0636978149414,
+        676.859375,
+        114.17369842529297,
+        683.8553466796875
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "and format",
+      "translation": "和格式",
+      "mask": [
+        86.99969482421875,
+        684.059326171875,
+        116.231689453125,
+        691.0552978515625
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Reasoning prompts",
+      "translation": "推理提示词",
+      "mask": [
+        95.88009643554688,
+        654.3495483398438,
+        148.56008911132812,
+        661.3455200195312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "+ human",
+      "translation": "+ 人类",
+      "mask": [
+        128.1425018310547,
+        684.059326171875,
+        151.7584991455078,
+        691.0552978515625
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Refine",
+      "translation": "优化",
+      "mask": [
+        131.4488983154297,
+        665.4667358398438,
+        148.4468994140625,
+        672.4627075195312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 3,
+      "source": "Filter",
+      "translation": "筛选",
+      "mask": [
+        94.9885025024414,
+        665.4667358398438,
+        108.20650482177734,
+        672.4627075195312
+      ],
+      "font_pt": 6.2
+    },
+    {
+      "page": 9,
+      "source": "The Frequency of Reflection Words",
+      "translation": "反思词语的出现频率",
+      "mask": [
+        116.5,
+        66,
+        125.5,
+        196
+      ],
+      "font_pt": 7
+    },
+    {
+      "page": 9,
+      "source": "The Frequency of Word 'Wait'",
+      "translation": "单词 'Wait' 的出现频率",
+      "mask": [
+        307,
+        66,
+        317,
+        196
+      ],
+      "font_pt": 7
+    },
+    {
+      "page": 9,
+      "source": "Steps",
+      "translation": "训练步数",
+      "mask": [
+        212,
+        213,
+        235,
+        222
+      ],
+      "font_pt": 7
+    },
+    {
+      "page": 9,
+      "source": "Steps",
+      "translation": "训练步数",
+      "mask": [
+        401,
+        213,
+        428,
+        222
+      ],
+      "font_pt": 7
+    },
+    {
+      "page": 10,
+      "source": "Policy Model",
+      "translation": "策略模型",
+      "mask": [
+        113.5,
+        84.5,
+        169,
+        103
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Reference Model",
+      "translation": "参考模型",
+      "mask": [
+        234,
+        54,
+        290,
+        72
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Reward Model",
+      "translation": "奖励模型",
+      "mask": [
+        234,
+        76,
+        290,
+        93
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Value Model",
+      "translation": "价值模型",
+      "mask": [
+        234,
+        98,
+        290,
+        114
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Policy Model",
+      "translation": "策略模型",
+      "mask": [
+        113.5,
+        165,
+        169,
+        182
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Reference Model",
+      "translation": "参考模型",
+      "mask": [
+        234,
+        142,
+        290,
+        159
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Reward Model",
+      "translation": "奖励模型",
+      "mask": [
+        234,
+        164,
+        290,
+        180
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Group Computation",
+      "translation": "组计算",
+      "mask": [
+        356,
+        163,
+        399,
+        178
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 10,
+      "source": "Trained Models",
+      "translation": "参与训练的模型",
+      "mask": [
+        478,
+        99,
+        527,
+        121
+      ],
+      "font_pt": 6.9
+    },
+    {
+      "page": 10,
+      "source": "Frozen Models",
+      "translation": "冻结的模型",
+      "mask": [
+        478,
+        132,
+        527,
+        154
+      ],
+      "font_pt": 7.5
+    },
+    {
+      "page": 2,
+      "complete_caption_reflow": true,
+      "source_text_sha256": "1a2532efd22c8ab4ba762d5ac04f79a65e9fdf3122f1b39434644c4d600e197d",
+      "translation_text_sha256": "adfddc14dd4800c8903530a42cf13ce611c1c69b2da127bb35d088192d33698d",
+      "font_pt": [
+        6.5,
+        6.8
+      ]
+    },
+    {
+      "page": 9,
+      "complete_caption_reflow": true,
+      "source_text_sha256": "e0a51cc1730af6adf210feb8b7156727171394e9dbc438ab470f303f74b822fd",
+      "translation_text_sha256": "a6c7f4556d4459677b0fd04ad257296b4777bfe871f8e4654a073cab68880a0d",
+      "font_pt": [
+        6.8,
+        6.8
+      ]
+    }
+  ],
+  "font_sha256": "dd4ae04ab7d33f43202750cf755b2ba47a2122ba41412954e562da459337bbf6",
+  "notation_edit": "The raster-table transcription writes (6 3) subscript 13 as 63 (base 13), preserving its value and meaning.",
+  "raster_table": "English raster retained; complete Chinese transcription added below; not automatic OCR."
+}

@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "id": 0,
+      "input": "Table {v1}An interesting ‘aha moment’ of an intermediate",
+      "layout_label": "fallback_line"
+    },
+    {
+      "id": 1,
+      "input": "version of DeepSeek-R1-Zero",
+      "layout_label": "fallback_line"
+    },
+    {
+      "id": 2,
+      "input": "<style id='1'>Question: If </style><style id='3'>a</style><style id='5'> </style>{v7}<style id='8'>, then the sum of the real solutions of </style><style id='10'>a</style>",
+      "layout_label": "fallback_line"
+    },
+    {
+      "id": 3,
+      "input": "a x x{v1}",
+      "layout_label": "fallback_line"
+    },
+    {
+      "id": 4,
+      "input": "is equal to",
+      "layout_label": "fallback_line"
+    },
+    {
+      "id": 5,
+      "input": "Response: {v1}think{v2}",
+      "layout_label": "fallback_line"
+    }
+  ],
+  "rejected_reply": [
+    {
+      "id": 0,
+      "output": "表 {v1}DeepSeek-R1-Zero 中间版本的一个有趣“顿悟时刻”"
+    },
+    {
+      "id": 1,
+      "output": ""
+    },
+    {
+      "id": 2,
+      "output": "<style id='1'>问题：如果 </style><style id='3'>a</style><style id='5'> </style>{v7}<style id='8'>，那么 </style><style id='10'>a</style>"
+    },
+    {
+      "id": 3,
+      "output": "a x {pdftranslate_code_ea0f4123503a8221}"
+    },
+    {
+      "id": 4,
+      "output": "等于"
+    },
+    {
+      "id": 5,
+      "output": "回答：{v1}{pdftranslate_code_755fe477ca92b24f}"
+    }
+  ],
+  "source": "Nature R1 physical p3, Fig.2; Guo et al. 2025; DOI 10.1038/s41586-025-09422-z; CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+  "error": "INCOMPLETE_TRANSLATION_BATCH"
+}

@@ -1,0 +1,252 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "source_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "rows": [
+    {
+      "source": "Accuracy",
+      "translation": "准确率"
+    },
+    {
+      "source": "Steps",
+      "translation": "训练步数"
+    },
+    {
+      "source": "Human participant",
+      "translation": "人类参与者"
+    },
+    {
+      "source": "Average length per response",
+      "translation": "每次响应的平均长度"
+    },
+    {
+      "source": "DeepSeek-R1-Zero AIME accuracy during training",
+      "translation": "DeepSeek-R1-Zero 在训练期间的 AIME 准确率"
+    },
+    {
+      "source": "DeepSeek-R1-Zero average length per response during training",
+      "translation": "DeepSeek-R1-Zero 在训练期间每次响应的平均长度"
+    },
+    {
+      "source": "Base",
+      "translation": "基础模型"
+    },
+    {
+      "source": "Reasoning prompts",
+      "translation": "推理提示词"
+    },
+    {
+      "source": "Accuracy and format",
+      "translation": "准确率和格式"
+    },
+    {
+      "source": "Accuracy",
+      "translation": "准确率"
+    },
+    {
+      "source": "and format",
+      "translation": "和格式"
+    },
+    {
+      "source": "Sampling",
+      "translation": "采样"
+    },
+    {
+      "source": "Cold-start long CoT",
+      "translation": "冷启动长思维链"
+    },
+    {
+      "source": "Non-reasoning",
+      "translation": "非推理"
+    },
+    {
+      "source": "Reasoning",
+      "translation": "推理"
+    },
+    {
+      "source": "Filter",
+      "translation": "筛选"
+    },
+    {
+      "source": "Refine",
+      "translation": "优化"
+    },
+    {
+      "source": "Rule-based reward",
+      "translation": "基于规则的奖励"
+    },
+    {
+      "source": "and language consistency",
+      "translation": "和语言一致性"
+    },
+    {
+      "source": "Diverse prompts",
+      "translation": "多样化提示词"
+    },
+    {
+      "source": "Models",
+      "translation": "模型"
+    },
+    {
+      "source": "Prompts + responses",
+      "translation": "提示词 + 响应"
+    },
+    {
+      "source": "Training algorithms",
+      "translation": "训练算法"
+    },
+    {
+      "source": "Prompts",
+      "translation": "提示词"
+    },
+    {
+      "source": "Rewards",
+      "translation": "奖励"
+    },
+    {
+      "source": "Post-processing",
+      "translation": "后处理"
+    },
+    {
+      "source": "The Frequency of Reflection Words",
+      "translation": "反思词语的出现频率"
+    },
+    {
+      "source": "The Frequency of Word 'Wait'",
+      "translation": "单词 'Wait' 的出现频率"
+    },
+    {
+      "source": "Policy Model",
+      "translation": "策略模型"
+    },
+    {
+      "source": "Reference Model",
+      "translation": "参考模型"
+    },
+    {
+      "source": "Reward Model",
+      "translation": "奖励模型"
+    },
+    {
+      "source": "Value Model",
+      "translation": "价值模型"
+    },
+    {
+      "source": "Group Computation",
+      "translation": "组计算"
+    },
+    {
+      "source": "Trained Models",
+      "translation": "参与训练的模型"
+    },
+    {
+      "source": "Frozen Models",
+      "translation": "冻结的模型"
+    },
+    {
+      "source": "PROMPT",
+      "translation": "提示词"
+    },
+    {
+      "source": "Evaluation",
+      "translation": "评估"
+    },
+    {
+      "source": "Let b ≥ 2 be an integer. Call a positive integer n b-beautiful if it has exactly two digits when expressed in base b, and these two digits sum to √n. For example, 81 is 13-beautiful because 81 = (6 3)₁₃ and 6 + 3 = √81. Find the largest integer b ≥ 2 for which there are more than ten b-beautiful integers. Please reason step by step, and put your final answer within \\boxed{}.",
+      "translation": "设 b ≥ 2 为一个整数。如果一个正整数 n 用 b 进制表示时恰有两位，且这两位数字之和等于 √n，则称 n 为 b-美丽数。例如，81 是 13-美丽数，因为 81 = (6 3)₁₃，且 6 + 3 = √81。求使得 b-美丽数多于十个的最大整数 b ≥ 2。请逐步推理，并将最终答案写在 \\boxed{} 中。"
+    },
+    {
+      "source": "Parse the final answer within \\boxed{} and use a rule-based grader to determine if it equals the ground truth. Round numerical values as needed, and use SymPy to parse expressions.",
+      "translation": "解析 \\boxed{} 中的最终答案，并使用基于规则的评分器判断其是否等于标准答案。必要时对数值进行四舍五入，并使用 SymPy 解析表达式。"
+    },
+    {
+      "source": "and preference reward",
+      "translation": "和偏好奖励"
+    },
+    {
+      "source": "+ human",
+      "translation": "+ 人类"
+    },
+    {
+      "kind": "caption",
+      "page": 2,
+      "source": "Fig. 1 | Accuracy and output length of DeepSeek-R1-Zero throughout the training process. a, AIME accuracy of DeepSeek-R1-Zero during training. AIME takes a mathematical problem as input and a number as output, illustrated in Extended Data Table 1. pass@1 and cons@16 are described in Supplementary Information, section 4.1. The baseline is the average score achieved by human participants in the AIME competition. b, The average response length of DeepSeek-R1-Zero on the training set during the RL process. DeepSeek-R1-Zero naturally learns to solve reasoning tasks with more thinking time. Note that a training step refers to a single policy update operation.",
+      "translation": "图 1 | DeepSeek-R1-Zero 在整个训练过程中的准确率和输出长度。a，DeepSeek-R1-Zero 在训练期间的 AIME 准确率。AIME 以一道数学题作为输入，并输出一个数字，如扩展数据表 1 所示。pass@1 和 cons@16 的说明见补充信息第 4.1 节。基线为人类参赛者在 AIME 竞赛中取得的平均分数。b，RL 过程中 DeepSeek-R1-Zero 在训练集上的平均响应长度。DeepSeek-R1-Zero 会自然地学会通过投入更多思考时间来解决推理任务。请注意，一个训练步骤指一次策略更新操作。"
+    },
+    {
+      "kind": "caption",
+      "page": 9,
+      "source": "Extended Data Fig. 1 | Evolution of reasoning-related linguistic features in model outputs across training steps. a, Frequency of representative reflective terms in model-generated outputs throughout the training process. Reflective terms—including ‘wait’, ‘mistake’, ‘however’, ‘but’, ‘retry’, ‘error’, ‘verify’, ‘wrong’, ‘evaluate’ and ‘check’—were identified and curated by a panel of three human experts. Each expert independently proposed a set of words indicative of reflective reasoning, which were subsequently consolidated through consensus into a final vocabulary list. b, Frequency of the term ‘wait’ in model outputs over the course of training. This term was virtually absent during the initial training stages, appeared sporadically between steps 4,000 and 7,000 and exhibited a marked increase in frequency after step 8,000. These trends suggest the emergence of temporal reasoning or self-monitoring behaviour as training progresses.",
+      "translation": "扩展数据图 1 | 模型输出中与推理相关的语言特征随训练步数的变化。a，训练过程中模型生成的输出中具有代表性的反思词语的出现频率。反思词语包括 ‘wait’、‘mistake’、‘however’、‘but’、‘retry’、‘error’、‘verify’、‘wrong’、‘evaluate’ 和 ‘check’，由三位人类专家组成的小组识别并整理。每位专家独立提出一组表示反思性推理的词语，随后通过协商一致将其汇总为最终词汇表。b，模型输出中 ‘wait’ 一词在训练过程中的出现频率。在训练初期，该词几乎没有出现；在 4,000 至 7,000 步之间零星出现，并在 8,000 步之后显著增多。这些趋势表明，随着训练推进，模型开始呈现时间推理或自我监控行为。"
+    },
+    {
+      "kind": "caption",
+      "page": 10,
+      "source": "Extended Data Fig. 2 | Illustration of the proposed GRPO for RL-based training. In the proposed framework, a LLM is used as a policy model to generate responses {o1, o2,…, oG} conditioned on a given query q. Each response within the group is evaluated by a reward model—either learned (model-based) or manually specified (rule-based)—to assign a scalar reward signal. Subsequently, GRPO computes the relative advantages of each group member based on their assigned rewards. Rather than relying on an explicit value function, as in PPO, GRPO directly estimates advantages from the intra-group reward distribution. The policy parameters are then updated to maximize the expected reward while simultaneously minimizing divergence from a reference policy, typically quantified through the KL divergence. By eliminating the need for a separate value network, GRPO offers a simplified yet effective alternative to traditional actor-critic methods such as PPO.",
+      "translation": "扩展数据图 2 | 所提出的用于基于 RL 训练的 GRPO 示意图。在所提出的框架中，LLM 被用作策略模型，根据给定查询 q 生成响应 {o1, o2,…, oG}。组内的每个响应都由奖励模型进行评估，该模型可以是训练得到的（基于模型）或人工指定的（基于规则），并据此分配一个标量奖励信号。随后，GRPO 根据分配的奖励计算组内每个成员的相对优势。与 PPO 使用显式价值函数不同，GRPO 直接根据组内奖励分布估计优势。然后更新策略参数，以最大化期望奖励，同时尽量减小与参考策略之间的差异，通常用 KL 散度量化。通过省去单独的价值网络，GRPO 为 PPO 等传统 actor-critic 方法提供了一种更简单而有效的替代方案。"
+    }
+  ],
+  "bridge": {
+    "backend": "codex",
+    "completed_requests": 1,
+    "live_requests": 1,
+    "cache_hits": 0,
+    "attempts": 1,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_output_contract": "named-text-slots-schema-1"
+  },
+  "native_inference_calls": 1,
+  "call_records": [
+    {
+      "request_sha256": "5cab6b56bcba58a1a734bd0488488340bf370b411a8f63fbd9216794a0271a3a",
+      "seconds": 34.979,
+      "usage": {
+        "input_tokens": 12553,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 704,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ],
+  "review_edits": [
+    {
+      "row": 37,
+      "change": "Corrected manual transcription escaping to the single backslash shown in the original raster table; translation words unchanged."
+    },
+    {
+      "row": 38,
+      "change": "Corrected manual transcription escaping to the single backslash shown in the original raster table; translation words unchanged."
+    }
+  ],
+  "extra_label_call_records": [
+    {
+      "request_sha256": "617a60626ae5780ef6ac4a35e64f6ecfcf34343433a30ec5695acc4730f8fb71",
+      "seconds": 32.183,
+      "usage": {
+        "input_tokens": 11296,
+        "cached_input_tokens": 6912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 39,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ],
+  "caption_call_records": [
+    {
+      "request_sha256": "e25fb3e660df04d4a2b1ebec7069fbb12dd636ede319bdcbbee52909f652b1c6",
+      "seconds": 35.521,
+      "usage": {
+        "input_tokens": 11602,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 630,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ]
+}

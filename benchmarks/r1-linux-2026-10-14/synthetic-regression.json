@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "case": "single-watermark",
+      "returncode": 0,
+      "seconds": 21.16,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "table-numbers",
+      "returncode": 0,
+      "seconds": 20.55,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "split-alternating",
+      "returncode": 0,
+      "seconds": 31.85,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "retained-pages",
+      "returncode": 0,
+      "seconds": 20.37,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "retained-late-page",
+      "returncode": 0,
+      "seconds": 20.41,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "split-no-watermark",
+      "returncode": 0,
+      "seconds": 23.21,
+      "pdf_count": 1,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "late-watermarked",
+      "returncode": 0,
+      "seconds": 16.88,
+      "pdf_count": 1,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "unknown": [],
+  "requested_texts": [
+    "Configuration example: gain{v1}.5; sample{v2}rate{v3}; mode{v4}TEST",
+    "Controller",
+    "Delay",
+    "Equation 1 describes a first-order system. Preserve all variable names, numbers, units, and mathematical relationships in the translation.",
+    "Figure 1. A vector block diagram of the controller.",
+    "Figure 2. Step response with a preserved raster image.",
+    "Figures and Two Columns",
+    "Flight Control Experiment",
+    "Gain",
+    "Measurements and Parameters",
+    "Parameter",
+    "Reference identifier: CTRL-2026-A. The source PDF must remain unchanged.",
+    "Safety note: this document contains invented measurements for testing. It is not a flight procedure or a calibration certificate.",
+    "Sampling rate",
+    "Synthetic test document {v1}physical page 1",
+    "Synthetic test document {v1}physical page 2",
+    "Synthetic test document {v1}physical page 3",
+    "Table 1 summarizes the experiment. The voltage is 12.5 V. A negative offset of -0.25 m was measured at 20 degrees Celsius.",
+    "The controller improves flight stability. The phase margin is 45 degrees. The landing gear remains retracted during the experiment. The sampling rate is 100 Hz and the measured delay is 0.02 s.",
+    "The landing gear is a separate mechanical assembly. Domain terms should use the approved glossary consistently.",
+    "The phase margin determines robustness near the crossover frequency. The controller should retain stable performance.",
+    "This page checks column order, image preservation, and caption placement.",
+    "Transfer function",
+    "Unit",
+    "Value",
+    "Voltage"
+  ],
+  "translation_source": "Reviewed synthetic fixture replay; no live provider inference"
+}

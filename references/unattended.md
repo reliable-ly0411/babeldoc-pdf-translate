@@ -31,8 +31,10 @@ python scripts/pdf_translate.py run /path/to/job.json --engine /path/to/babeldoc
 | route | 仅 DSH；默认 `deepseek-account`；明确选择 `deepseek-official` 会使用已配置官方 API 的余额 |
 | dsh_package / node_bin | 仅 DSH；CLI 的 package.json 必填，Node 默认 `node` |
 | timeout_seconds | 每次调用 5–1800 秒，默认 180 |
-| retries | 可恢复传输/超时/限流错误重试 0–2 次，默认 1；鉴权、额度、格式错误不重试 |
+| retries | 可恢复传输/超时/限流及受限格式修正重试 0–2 次，默认 1；鉴权、额度错误不重试 |
 | cache_dir | 可选私有译文缓存；不填仅在本次进程中去重 |
+| reasoning_effort | 仅 Codex；可选 `low`、`medium`、`high`，省略则沿用 CLI 默认值；进入缓存键 |
+| diagnostics_dir | 可选失败请求/回复诊断目录，必须私有（0700/0600）；包含文档内容，禁止上传或提交 |
 
 原生 provider 不接受端点、密钥正文或密钥环境字段。DSH 当前仅适配官方端点与标准凭据引用，不自动读取其他 profile 的自定义网关。顶层 `timeout_seconds` 限制整个引擎执行（5–86400 秒，默认 7200），独立于每次模型调用。原生后端强制关闭 BabelDOC 翻译缓存，由桥接分别记录成功模型请求和缓存命中；普通 API 后端继续尊重 `ignore_cache`。
 
@@ -42,7 +44,9 @@ python scripts/pdf_translate.py run /path/to/job.json --engine /path/to/babeldoc
 
 成功回复立即原子写入配置的缓存，文件权限 0600、目录 0700；仅保存请求哈希与回复，不保存请求原文。缓存键包含后端、模型、原生版本与完整翻译上下文，改变术语或提示会产生不同键。损坏或开放权限的缓存会拒绝。
 
-BabelDOC 批量回复必须逐项返回完整、唯一的输入 ID；漏项或重复项直接失败。ASCII 赋值代码及被 `{vN}` 公式占位符拆开的标识符在请求前保护、回复后原样恢复，并校验占位符数量，防止 `sample_rate` 被误译。此规则覆盖受测代码形式，不是通用代码解析器；其他复杂语法仍需核验。
+BabelDOC 批量回复必须逐项返回完整、唯一的输入 ID。桥接版本 3 将批量及已识别的单段翻译拆成独立文本槽；Codex 原生输出 schema 为每个槽声明必填字段，公式、样式和代码标记由程序保留并按原位恢复。空槽、合并、漏项、重复项或新增标记拒绝；受限格式修正最多使用 `retries` 次追加请求，不能无限重试。ASCII 赋值代码及被 `{vN}` 公式占位符拆开的标识符在请求前保护、回复后原样恢复，并核对标记的完整计数。此规则覆盖受测代码形式，不是通用代码解析器；逐槽翻译也可能影响跨公式的中文语序，仍需视觉与语义核验。
+
+清单额外记录 `native_inference_calls` 及脱敏 `native_call_records`（请求哈希、耗时、原生客户端返回的 usage）。缓存命中不算新的模型调用。异常强杀可能来不及记录最后一次调用，缺失 usage 不等于零消费。模型别名的冷启动回复可以有措辞差异；缓存恢复的逐页文字/像素一致性应单独验证。
 
 重试时保留 `cache_dir`，将 `output` 改为新目录再运行；已成功片段复用缓存，其余重新请求。缓存含译文，按用户保留要求管理，勿提交到 Git。旧输出不覆盖，中断清单和部分 PDF 保留诊断，不能当成成品。
 
