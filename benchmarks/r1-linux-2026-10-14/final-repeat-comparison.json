@@ -1,0 +1,420 @@
+{
+  "comparisons": [
+    {
+      "first_sha256": "8890d75b097b15e87d59cd8fc691d0ac3d65bf5726cf05114f054345ffc85b47",
+      "second_sha256": "b5137a0ce1bda9e233aaf89bbf8cc8ed2be2d64a70f99dc3023b79e464e07ab0",
+      "byte_equal": false,
+      "page_counts_equal": true,
+      "dpi": 72,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "2bd2b99a47b4b90b0b837953ba971f6494ad37180ca9e494f7e0fcadb57ea2f5",
+          "pixels_sha256": "ab46764eb750b6f8c2d90321983f32ad33b812f663b7aa5c7f19783c88170db8"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "cdc5847aced4aa6df742c96d3f6ed22ed8eed8ff50d397bffa387804256506fc",
+          "pixels_sha256": "32c507018d67c70815ca5fb691f684e00d45ef70aca111d5553d53502612c484"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "33fd775b105ff2302218d156eca17d02094c92cbdcd495afb1e8d2e743302358",
+          "pixels_sha256": "e375a45a3c73d757e76567983d628a4c033839018fd5d94abebfe6bc00c79192"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "bcb85e6599ed261c75f3fba9e67a4ffb2e283478dcca0a92af66bc4f917515a7",
+          "pixels_sha256": "93a211bb910d206173111b802b50921cdc9ec968ad49636dc99a387048ba8460"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "83cbbae9ae625670b4d4a67430410db970a92ba4ac644b05ec7f141ae85e9d6a",
+          "pixels_sha256": "b0e1a9d401dd918dcb784ae73215a24bedcc2e2a1dc7885d8ffb941c37d81a66"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "2061f63f7a81294f58b7158f8586f5af4da8004df5d966610f08a657260d1844",
+          "pixels_sha256": "b9b9db40fc575637fadd3f43e5916efc786a0649be67df510e1d99d3dc905dec"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "59a80568eebee7b00e89ce9672cb161a0267cd6c408bc6e15342c0914261fb7a",
+          "pixels_sha256": "2df5cce4b7ff05463f2b384b1d8517e12134744197c926b79eb782061a91a49b"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "3f7f61dc23284c7c6f3caa4385556d1fbd723e51560881e694d00474e903a777",
+          "pixels_sha256": "62bad8a8e9d6b129cf05ac11d31757618e4483f163a703492301f60c6cd98c07"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "d3f2270cf259285397b635c8b23a9eac04612e289202d9c52f8b501b357121d3",
+          "pixels_sha256": "a9b5b20c1cd6cb46a14045721a6773d8f575932afdd18a3e7488f280fe86c0ef"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "b49c7213921311d8380d2ee62db4c85f5351d4ca08274205164818b183933017",
+          "pixels_sha256": "331b5e246b641775c0be0598e1b6aded55bf16db4624f3d4a3c4f2b885e38f40"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "7cf72a460b25cf6c8f2f67317ac396076375f9af73f7abbac125487f5a68e3e8",
+          "pixels_sha256": "3367befb2fe84bff5b9e40b2e022aa7c5a6a869b3fd998b61746d9c494e4831b"
+        }
+      ],
+      "passed": true,
+      "scope": "Fixed-cache content/pixel comparison only; byte metadata may differ. Visual and semantic QA are separate.",
+      "kind": "mono"
+    },
+    {
+      "first_sha256": "1dbd98b13d3e382d2de5e085553a33f13710218d4e3664c2bdd079cf3b198369",
+      "second_sha256": "7694c22e20265a9b7e7dbfd905441bbd1f84705e4545dd3c430ad6fabd034a10",
+      "byte_equal": false,
+      "page_counts_equal": true,
+      "dpi": 72,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "73f39420e7cd924a0bb144b722e5494d183ad9bc358cd0662885323c4d20ac59",
+          "pixels_sha256": "f903732ab24aca00114760d94e383dc7536ef6450bb7da0045b67335317b5016"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "ba8ec97b344688e7f0546fa87aabf4085a128175c7ac3a886983cf2e10507d44",
+          "pixels_sha256": "9c6bed0c541c1530bb1f830462225a184fbeee1abb79135aa18ea79e0b372636"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "877ddbde9f62b07aa44fdfedd9948188d7e97bd05f42d1b2a5d310d6c3f71f27",
+          "pixels_sha256": "6069f952bde6f93fe2bee1aeaba6db876afbf93ffbc8517992322c8409d5d8f4"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "d3f89f2159c2614292f90cfe78390e8754e4cc9e2a747419155e88e45a588a88",
+          "pixels_sha256": "f140e219e1a808c1e6fe51a7888d20856cc42f30fe5ad8c764cb8b135e5e6db0"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "0a1ff05654a137d71c974093c96bc00a79fac1588c7c657e9dc2a64f70cc3027",
+          "pixels_sha256": "7ee1e4649fa811a9e2aae68ce53076f50c2736eae9200590ecc43a96b11bfaa8"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "c51e4dc8fc6afa3bf049c013b2c53a586c750635e90acdb9bd4bafbd39a2bcae",
+          "pixels_sha256": "3fd5601a8bfeea9390e703b5e510b0e9367a56e5711ae931d94eeaae4f92c8e0"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "9b9efd4f694a6eba2796ef57e793a9e637a34b027654100d2976d69fd3661c30",
+          "pixels_sha256": "de4862a6b4df4e0abef379fcb485f1d4dce43ac5cf12ef28c34dd37f7d2de59c"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "7228b51355840692f20f607afd65a379652a7ecbe62ea39e4164e155ab4d5932",
+          "pixels_sha256": "32d870f44fdd11c4eaa423aa566e11827fead3542add46c3d0079638d6c1f78d"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "f4a10b4c58a1674f8f3c53cd84c58cd883741072f36d7433afb3eb197f47b923",
+          "pixels_sha256": "c943dd73de2f8c570061e1658f0539bf0b047b97ffa99624355f9b522fa5b400"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "8979490d662cdf9959211a35c7f9e4ea814a6ff25aad85d1a3b388370d57ca66",
+          "pixels_sha256": "95848648ae54cb8de237224f7a3322e91db07238691377407295626463bddc95"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "ea65bf996d2b68612e5bbc6abeaf7b525d3cb4c87724ef1f7fdbd7b20ccf01a3",
+          "pixels_sha256": "c359b02d386169bb610cca519b3b1638e697fe852b4a3b4da55dde43ee4e2ff5"
+        }
+      ],
+      "passed": true,
+      "scope": "Fixed-cache content/pixel comparison only; byte metadata may differ. Visual and semantic QA are separate.",
+      "kind": "dual"
+    },
+    {
+      "first_sha256": "d887f122016c263de4d7bc34cfca4d591fdd245309ff6642fc7e8fa1fc266a7c",
+      "second_sha256": "21015140bcaf436f14c722b6a7022069d414a3669db8d02232d20bf11380ca4f",
+      "byte_equal": false,
+      "page_counts_equal": true,
+      "dpi": 72,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "2bd2b99a47b4b90b0b837953ba971f6494ad37180ca9e494f7e0fcadb57ea2f5",
+          "pixels_sha256": "ab46764eb750b6f8c2d90321983f32ad33b812f663b7aa5c7f19783c88170db8"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "86f314efc2495b286946f9aa93d6b52b5609091f9a5428120fba986f6c026870",
+          "pixels_sha256": "5bd79cfb3a21cfc27404dda3421c51e9b3cdd78766ec40feb043bebf8b0df201"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "b1ba94132b666e83e8c98e3842223b34186825ee99d8d363e3a48092e3fb5eb1",
+          "pixels_sha256": "c418ad5657d8aea4a650b45310778d43fa370764f89e8f988642d252afb96684"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "bcb85e6599ed261c75f3fba9e67a4ffb2e283478dcca0a92af66bc4f917515a7",
+          "pixels_sha256": "93a211bb910d206173111b802b50921cdc9ec968ad49636dc99a387048ba8460"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "d327052e195b3e6305db624cf20950d6d3e5813f8728e641be866979880438de",
+          "pixels_sha256": "5ea1a79a099ebe6c84a95614baac1bbb05c17ece49993132d027add67218e88e"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "e759943fe731e356f2adb6855222bf78940cf6c803693a148ac620dded230c67",
+          "pixels_sha256": "ad1d9968db406ab3644b54e3e5f36883a7bbe2b2b5fdc54a557e5435a0b1c2d7"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "59a80568eebee7b00e89ce9672cb161a0267cd6c408bc6e15342c0914261fb7a",
+          "pixels_sha256": "2df5cce4b7ff05463f2b384b1d8517e12134744197c926b79eb782061a91a49b"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "a726fbc8013072dadf939cb6c0a8cf3e5dd1435b0cd3fbdb926d210a290d7ebc",
+          "pixels_sha256": "6ec899b5544997a939f13c4d241f2b2457ea753521d59e7d3e6260cc8642a276"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "98d49facdd5628c38bfe65152fe8cdeaedd98e43a7a0825c383237d08559bc7f",
+          "pixels_sha256": "0130ace48f2c2e6c4f33be2d08195d553be7bf3efdbfea23411adf1f677555b6"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "2b92de7118aa3fba44f07596f615d25cce03437b4d0d10727c7382c9cd3040cc",
+          "pixels_sha256": "e72b0dc023363b65fdeb8f0e09d0782cdd9dfe607d96001fd950aa7144e3692b"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "70b7d8dec0572ead11e2bce57ff10013652e766555bee3c25da2a15f686ab359",
+          "pixels_sha256": "6620c7800843692fb003b79a1b4818db55622686cb36b79d10707c5328b3ed2d"
+        }
+      ],
+      "passed": true,
+      "scope": "Fixed-cache content/pixel comparison only; byte metadata may differ. Visual and semantic QA are separate.",
+      "kind": "reviewed-mono"
+    },
+    {
+      "first_sha256": "1867fcc33e029ecc5b6c8a5dfe0e862f24cf9f387cc21fe8bfda672bd1b5874e",
+      "second_sha256": "217f5e0c1bff9178eee286278018157cbf3b2c7fdd92fa3f5864861b259b096e",
+      "byte_equal": false,
+      "page_counts_equal": true,
+      "dpi": 72,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "73f39420e7cd924a0bb144b722e5494d183ad9bc358cd0662885323c4d20ac59",
+          "pixels_sha256": "f903732ab24aca00114760d94e383dc7536ef6450bb7da0045b67335317b5016"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "7153f6254bde3ca204f507d0608178092d311ee1c4f130b3c6ed07bc9465003e",
+          "pixels_sha256": "41cedebad043a7c7a02b29ee519b069edaea05a03af4155859fcc14374e4466d"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "0a7d76426e4d3412b794f2b83c6c7f32e2fa7041e32edeb4cb538b8ea0eb4459",
+          "pixels_sha256": "bff21380766b0f55c2d56f15d046e87d4167da5dd6df7126179ba639e00f2dc2"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "d3f89f2159c2614292f90cfe78390e8754e4cc9e2a747419155e88e45a588a88",
+          "pixels_sha256": "f140e219e1a808c1e6fe51a7888d20856cc42f30fe5ad8c764cb8b135e5e6db0"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "b2063449746214b4ce4729ed21bad5c898ee3804940173641fb34aa711f8193f",
+          "pixels_sha256": "b1908c731d021dc055218216d3fe3eeefb9fc150628655d81902dfb775ebbfce"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "8482f0b13edbab68243f995907814ad40989b6fe0452319020f10eab9c2f5de9",
+          "pixels_sha256": "b17a44f19280ae3f75b02badd02246eeb204aa31f70be88a09948435e130c9b7"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "9b9efd4f694a6eba2796ef57e793a9e637a34b027654100d2976d69fd3661c30",
+          "pixels_sha256": "de4862a6b4df4e0abef379fcb485f1d4dce43ac5cf12ef28c34dd37f7d2de59c"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "09b7436d8cb68f7f03fece7d793f408d7183b03a8ccacdccda6f7089595b16c6",
+          "pixels_sha256": "227391a1eb33681067b13c42dd087535075c70d8a6e1b77b3b2d80b0d75df9e4"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "74c76486a9c58f1907399ee1a7c1d0dfb732bb72cf772ef9cd463af57d35f69d",
+          "pixels_sha256": "5312a3ab60f7b2fbc0e66bbe165aaa20b5758721f4d77eb1a0333b31f84f9472"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "7fcf7fa25ccf91b075b78164513b2e72213aef79320309dedf97b79c4511329f",
+          "pixels_sha256": "cf6a13ba56f303d727d6463477235bc013c1ed00403e2fe9b487c231f8bebd13"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "dimensions_equal": true,
+          "pixels_equal": true,
+          "text_sha256": "a86a7d10ec6092f4f5a706ade024895744e82e01bb8a23f171c50296046fe78a",
+          "pixels_sha256": "c66032201bdb9566473c09cb11b5a13cefdb08e5344c3aaddaf3d98021e39b52"
+        }
+      ],
+      "passed": true,
+      "scope": "Fixed-cache content/pixel comparison only; byte metadata may differ. Visual and semantic QA are separate.",
+      "kind": "reviewed-dual"
+    }
+  ],
+  "repeat_bridge": {
+    "backend": "codex",
+    "completed_requests": 65,
+    "live_requests": 0,
+    "cache_hits": 65,
+    "attempts": 0,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_output_contract": "named-text-slots-schema-1",
+    "native_item_types": [],
+    "native_inference_calls": 0,
+    "native_call_records": []
+  }
+}

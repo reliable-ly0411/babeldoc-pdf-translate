@@ -376,6 +376,9 @@ def run_job(job_path, engine, execute=False):
         if bridge:
             plan["bridge"] = dict(bridge.stats)
             plan["bridge"]["native_item_types"] = getattr(bridge.client, "event_types", [])
+            if hasattr(bridge.client, 'inference_calls'):
+                plan['bridge']['native_inference_calls'] = bridge.client.inference_calls
+                plan['bridge']['native_call_records'] = bridge.client.call_records
         plan["source_unchanged"] = digest(source) == plan["input_sha256"]
         manifest.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     return plan
