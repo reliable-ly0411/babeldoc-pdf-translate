@@ -1,5 +1,7 @@
 # BabelDOC PDF Translate — 通用 Agent 技能
 
+[![HOL Guard verified badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dreliable-ly0411%252Fbabeldoc-pdf-translate%26metric%3Dtrust)](https://hol.org/registry/plugins/reliable-ly0411%2Fbabeldoc-pdf-translate)
+
 Layout-preserving PDF translation skill for **Codex and DeepSeek Harness**, powered by a separately installed BabelDOC runtime. Supports bilingual output, page selection, custom glossaries and contextual terminology review. Local parsing/typesetting; translation uses the provider you configure. No telemetry or bundled cloud account.
 
 ## Codex plugin 安装
