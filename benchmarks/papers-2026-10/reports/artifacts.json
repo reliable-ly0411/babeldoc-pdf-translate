@@ -1,0 +1,331 @@
+[
+  {
+    "path": "references/compatibility-probes/pilot-stein-codex-offset.pdf",
+    "sha256": "7f2a0ab406e12490a4b62c2349ec8508a71b8edbe28602c9aa768705f38c5129",
+    "bytes": 1355926,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/compatibility-probes/pilot-stein-codex-plain.pdf",
+    "sha256": "efcf9c07c40534511ee119f401e2e8ec8966b30ef20b03e279077246707d52b4",
+    "bytes": 1342811,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-en-fr-dsh/fragment-en.no_watermark.fr.dual.pdf",
+    "sha256": "c5477a38f0dc8db422b56808361d851aa2e4be2c3c3b35f7083b68bb3bb14d88",
+    "bytes": 23086,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-en-fr-dsh/fragment-en.no_watermark.fr.mono.pdf",
+    "sha256": "408f3403056c284e3eea88e88bec10bee246639cd8f280c161e149b6ab3ac923",
+    "bytes": 30877,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-en-fr-dsh-text/fragment-en.no_watermark.fr.dual.pdf",
+    "sha256": "a7a27438043384b124108a8e0a0bfe8a9e4f3733c704e5dc87a01b9a5fe7c133",
+    "bytes": 24774,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-en-fr-dsh-text/fragment-en.no_watermark.fr.mono.pdf",
+    "sha256": "e8a0821f3ed22a8f5c116536c540390849c2452ade608869cae19230fa67116b",
+    "bytes": 33773,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-fr-en-dsh/roundtrip-fr.no_watermark.en.dual.pdf",
+    "sha256": "14b0e3ca085d423fe59ca5be0d83ccf67791f6244d13dcb7b6c1cb562dae68e9",
+    "bytes": 32580,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-fr-en-dsh/roundtrip-fr.no_watermark.en.mono.pdf",
+    "sha256": "178c3c8783700e4f1deda1ce209e777bfadbc403882d18930acabfcbb7d735b9",
+    "bytes": 30096,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-ja-zh-codex/roundtrip-ja.no_watermark.zh-CN.dual.pdf",
+    "sha256": "5ccc07ec4da8b283c8bce4667fea771677dadb3c9b3c6967ccf4c42fe34c0a1a",
+    "bytes": 107444,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-ja-zh-codex/roundtrip-ja.no_watermark.zh-CN.mono.pdf",
+    "sha256": "5cc93d058fc8b713409edc35c39fe0453c47e1caed4b8368cf4ccdfdb722b31f",
+    "bytes": 41159,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-zh-ja-codex/fragment-zh.no_watermark.ja.dual.pdf",
+    "sha256": "f51a26f9b66bfae8e0b99f69639d8c65bc21f694731a6fcb7f15c741cfeb5d57",
+    "bytes": 72234,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/fragment-zh-ja-codex/fragment-zh.no_watermark.ja.mono.pdf",
+    "sha256": "8f1686c95747f6b5952414551c6cbf10aeb12a81fa8582c580d38fce05090290",
+    "bytes": 73920,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-dueling-codex/dueling2016.no_watermark.zh-CN.dual.pdf",
+    "sha256": "270ee26bbd7001e0e33fbd9d002a1d3f065a3a36fdf137b193d5e0073661846b",
+    "bytes": 1187660,
+    "pages": 9,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-dueling-codex/dueling2016.no_watermark.zh-CN.mono.pdf",
+    "sha256": "4b7c2e26f07dabc897274c3cd4e8a703b52771ef15344d17098b5137fc1b91cd",
+    "bytes": 1114024,
+    "pages": 9,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-r1-dsh/deepseekr1.no_watermark.zh-CN.dual.pdf",
+    "sha256": "c3d32aeb5936bccb69c1aed0530f8f333f7ca3946835f78010869b78d0d1a1d6",
+    "bytes": 3230457,
+    "pages": 11,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-r1-dsh/deepseekr1.no_watermark.zh-CN.mono.pdf",
+    "sha256": "d59ad8bce7c3cdad9504c2ee0b7da48c04279d058a92ee22755ff67de23d2f46",
+    "bytes": 2941479,
+    "pages": 11,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-stein-codex/stein2003.no_watermark.zh-CN.dual.pdf",
+    "sha256": "6788b9e49a2e8ca953c6d29b16f9ac410550a9e195be90d1f31034277c771d6b",
+    "bytes": 7743523,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-stein-codex/stein2003.no_watermark.zh-CN.mono.pdf",
+    "sha256": "0d128940dfe8dacf3a98dfa729e33550e39e2b884b158090d56842a9d71e52d1",
+    "bytes": 7760988,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.dual.pdf",
+    "sha256": "f5fd7bb1381701443b291f6e4e15b3aeefae9851a4c826e4fc265f2a5c96ed88",
+    "bytes": 10392359,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.mono.pdf",
+    "sha256": "70374f19c299182b80e747bfd0962b0c8ebbdb9cde03cd5887d3c69e3eb357dc",
+    "bytes": 10877687,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/installed-zh-en-dsh/fragment-zh.no_watermark.en.dual.pdf",
+    "sha256": "6a843987e7c9ef8769d8a07193dd7ef28ab1aaac92d5259d0046304c6c2bc1e5",
+    "bytes": 22859,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/installed-zh-en-dsh/fragment-zh.no_watermark.en.mono.pdf",
+    "sha256": "58325698c0e9c137fadbb854323191fae1a6bef5c40eaca4a3d711566b125b2f",
+    "bytes": 31005,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/installed-zh-en-dsh-text/fragment-zh.no_watermark.en.dual.pdf",
+    "sha256": "a5d8ec3fbebc147b483f77f36ed57330044d3e210b11675803e6e1df668ac124",
+    "bytes": 24477,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/installed-zh-en-dsh-text/fragment-zh.no_watermark.en.mono.pdf",
+    "sha256": "6100262ab655ee0b1b5b34c94087e2aa7b1be2ee61b1c00b438b28683401b9d7",
+    "bytes": 33094,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-r1-codex/deepseekr1.no_watermark.zh-CN.dual.pdf",
+    "sha256": "8e88998d3e704ffc959149d7287981e91399c2828f647ac1cea238cd43d5c064",
+    "bytes": 902990,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-r1-codex/deepseekr1.no_watermark.zh-CN.mono.pdf",
+    "sha256": "4ee11e208ad84b1aa4ac97bc0fe3913ce378399e737094505930a177966f6dca",
+    "bytes": 2739569,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.no_watermark.zh-CN.dual.pdf",
+    "sha256": "23304dbff8a684bf8a313cd10c080b6552ec78b9ce8242ac7060f0a7ece9baee",
+    "bytes": 1057281,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.no_watermark.zh-CN.mono.pdf",
+    "sha256": "591dc0aaee215c876cc4d1556437c95e6494b54af2306659a03ca7be49b35ead",
+    "bytes": 1355876,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.zh-CN.dual.pdf",
+    "sha256": "25db0e19ce0779ecf08f04aa1fb0f6ce84c66332e1e61924626540a1053db217",
+    "bytes": 1168671,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-stein-codex/stein2003.zh-CN.mono.pdf",
+    "sha256": "c076fda06806e0de8c86bcce051bcff725fe4964f2199c3488a5dfd64c9e36f9",
+    "bytes": 1613883,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-swift-dsh/swift2023.no_watermark.zh-CN.dual.pdf",
+    "sha256": "c1152c18948e68746b10cf170219f9149ff5bd0bbe6eee8647b5229dd9f29f54",
+    "bytes": 3624176,
+    "pages": 3,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/pilot-swift-dsh/swift2023.no_watermark.zh-CN.mono.pdf",
+    "sha256": "e50fe0d62c1ed13f49bcd5a073c72152aa653643f39df27bd76bd416826dec90",
+    "bytes": 8893908,
+    "pages": 3,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/roundtrip-r1-codex/roundtrip-r1-zh.no_watermark.en.dual.pdf",
+    "sha256": "f3808c95db13416c9c9c3fa55718f3e82aa045cf35ed58c677c7b1ea6abdc30b",
+    "bytes": 599250,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/roundtrip-r1-codex/roundtrip-r1-zh.no_watermark.en.mono.pdf",
+    "sha256": "68f7945307ced1342f6d9f370bafe6dcbc25b31bf9d00af072b59d4707c75d0e",
+    "bytes": 2779292,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/roundtrip-swift-dsh/roundtrip-swift-zh.no_watermark.en.dual.pdf",
+    "sha256": "b0e982c9bf4f72b13eae8b5b08ab3064bbb926b7bb629d1031cac9d3f80a7d53",
+    "bytes": 10695456,
+    "pages": 28,
+    "parser_repaired": false
+  },
+  {
+    "path": "references/roundtrip-swift-dsh/roundtrip-swift-zh.no_watermark.en.mono.pdf",
+    "sha256": "8be2d66b0a76fac65f1b75f6b12721bf079aeeca9d3ded4f9b1a5abd0b7de71f",
+    "bytes": 10981071,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/deepseekr1.pdf",
+    "sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+    "bytes": 2735576,
+    "pages": 11,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/dueling2016.pdf",
+    "sha256": "a7fc5ec03df43475818876983803437411ba38bdad96ca4613c93c996ebb7e32",
+    "bytes": 754524,
+    "pages": 9,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/fragment-en.pdf",
+    "sha256": "e4f5cf56043dae5becc7289379d81ea9cbd5d384091b37e0ba06f51db829efc6",
+    "bytes": 1977,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/fragment-scan.pdf",
+    "sha256": "46a0a2eba7d9482c5d703fbf14bc5238b4820681cc55796f9f7c03f72c79e9ca",
+    "bytes": 58423,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/fragment-zh.pdf",
+    "sha256": "7d9ab1a72d103866b5869d2a25b067e9b7b79908254268d9b7fbf29ae7299014",
+    "bytes": 3079,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/roundtrip-fr.pdf",
+    "sha256": "e869cc2136acebb0b04f8231d85cdc5de218845713fc224c88eee005073db9cf",
+    "bytes": 30810,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/roundtrip-ja.pdf",
+    "sha256": "83648fc4ae4eb472cb8bdc37fcd2279743708681decf75618d05d062559aca71",
+    "bytes": 73832,
+    "pages": 1,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/roundtrip-r1-zh.pdf",
+    "sha256": "4035f850cb7b24de71415309d39830a20a9e2caf0a0f911a6929129d5d27cb5c",
+    "bytes": 2723385,
+    "pages": 2,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/roundtrip-swift-zh.pdf",
+    "sha256": "ab784c194a6a4f19c591a96841adf33617c9daa510a86702e8ef7eaac927b476",
+    "bytes": 9805269,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/stein2003.pdf",
+    "sha256": "a1f3c297cf7c85389efd3a962c5643771dd3dca510edaa00ebf240c759ffeb11",
+    "bytes": 6859908,
+    "pages": 14,
+    "parser_repaired": false
+  },
+  {
+    "path": "sources/swift2023.pdf",
+    "sha256": "c9bcbd98ddbf2b0a18b4cbdbc4e62e429c6a659e1b1054b5d1c2e0219b8da40f",
+    "bytes": 9924246,
+    "pages": 14,
+    "parser_repaired": false
+  }
+]

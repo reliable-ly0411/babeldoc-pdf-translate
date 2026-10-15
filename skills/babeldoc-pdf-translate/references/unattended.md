@@ -31,20 +31,28 @@ python scripts/pdf_translate.py run /path/to/job.json --engine /path/to/babeldoc
 | route | 仅 DSH；默认 `deepseek-account`；明确选择 `deepseek-official` 会使用已配置官方 API 的余额 |
 | dsh_package / node_bin | 仅 DSH；CLI 的 package.json 必填，Node 默认 `node` |
 | timeout_seconds | 每次调用 5–1800 秒，默认 180 |
-| retries | 可恢复传输/超时/限流错误重试 0–2 次，默认 1；鉴权、额度、格式错误不重试 |
+| retries | 可恢复传输错误或可纠正的格式/占位符错误重试 0–2 次，默认 1；鉴权、额度错误不重试 |
 | cache_dir | 可选私有译文缓存；不填仅在本次进程中去重 |
 
 原生 provider 不接受端点、密钥正文或密钥环境字段。DSH 当前仅适配官方端点与标准凭据引用，不自动读取其他 profile 的自定义网关。顶层 `timeout_seconds` 限制整个引擎执行（5–86400 秒，默认 7200），独立于每次模型调用。原生后端强制关闭 BabelDOC 翻译缓存，由桥接分别记录成功模型请求和缓存命中；普通 API 后端继续尊重 `ignore_cache`。
 
 ## 失败与恢复
 
-账户未登录、超时、空答案、截断、无效 JSON、意外工具事件不能计为成功。只接受完整最终回答，不将中间思考当译文。原生请求最终失败会终止引擎，避免 BabelDOC 回退原文后仍生成貌似成功的 PDF。退出码 1 为任务失败，2 为配置/启动错误，正常中断为 130。检查 `run-manifest.json` 的 `status`、`error`、`bridge.errors`、`live_requests`、`cache_hits`。
+账户未登录、超时、空答案、截断、无效 JSON、意外工具事件不能计为成功。只接受完整最终回答，不将中间思考当译文。桥接为批量输入提供逐段占位符数量清单，并拒绝遗漏、新增或改写的公式标记。临时传输错误，以及标记变更、批次不完整和 JSON 格式错误，最多在 `retries` 额度内重试；后几类重试会追加纠正要求，不盲目补回缺失公式。身份、额度错误不自动改路由。原生请求最终失败会终止引擎，避免 BabelDOC 回退原文后仍生成貌似成功的 PDF。退出码 1 为任务失败，2 为配置/启动错误，正常中断为 130。检查 `run-manifest.json` 的 `status`、`error`、`bridge.errors`、`live_requests`、`cache_hits`。
 
 成功回复立即原子写入配置的缓存，文件权限 0600、目录 0700；仅保存请求哈希与回复，不保存请求原文。缓存键包含后端、模型、原生版本与完整翻译上下文，改变术语或提示会产生不同键。损坏或开放权限的缓存会拒绝。
 
 BabelDOC 批量回复必须逐项返回完整、唯一的输入 ID；漏项或重复项直接失败。ASCII 赋值代码及被 `{vN}` 公式占位符拆开的标识符在请求前保护、回复后原样恢复，并校验占位符数量，防止 `sample_rate` 被误译。此规则覆盖受测代码形式，不是通用代码解析器；其他复杂语法仍需核验。
 
 重试时保留 `cache_dir`，将 `output` 改为新目录再运行；已成功片段复用缓存，其余重新请求。缓存含译文，按用户保留要求管理，勿提交到 Git。旧输出不覆盖，中断清单和部分 PDF 保留诊断，不能当成成品。
+
+## 耗时和 token 记录
+
+执行清单的 `elapsed_seconds` 是整个作业的墙钟耗时，包含能力检查、PDF 处理、模型等待和输出检查。`bridge.request_metrics` 仅保存每次尝试的请求 SHA256、序号、耗时及原生 usage 字段，不保存提示正文或思考内容。失败重试的耗时包含退避等待。缓存命中不产生新的模型计量项。
+
+`bridge.token_usage.native_counters` 分字段累加原生计数，不按字符估算。Codex 保留 `input_tokens`、`cached_input_tokens`、`output_tokens` 等原名；缓存、推理等细分项可能与总数重叠，不将这些字段全部相加。DSH 保留 `inputTokens`、`cacheReadTokens`、`cacheWriteTokens`、`outputTokens`、`totalTokens`：本次验证的 DSH 0.2.1-alpha.1 将 `inputTokens` 定义为未缓存输入，缓存读写另列，`totalTokens` 是含缓存的完整总量。不要用不同提供方的同名近似字段直接比较计费。模型未返回 usage、超时或被中断时记为 `unreported_calls`，表示未知，不能当作零消耗；`reported_calls` 统计实际收到计数的尝试（包括有计数的失败尝试）。这些数据不包含外围 agent 会话的消耗，也不是金额账单。
+
+原生用量以桥接清单为准。兼容 HTTP 层没有将不同原生口径强行归一到 OpenAI usage；BabelDOC 自己的日志因而可能显示 token 为 0，这不能解释为原生账户没有消耗。
 
 Ctrl-C / SIGTERM 关闭本次桥接和子进程；SIGKILL、断电、系统崩溃不能运行清理。此类异常后应先确认旧进程已结束，避免同一作业并行运行。
 

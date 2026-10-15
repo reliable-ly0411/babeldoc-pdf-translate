@@ -1,0 +1,111 @@
+{
+  "backend": "codex",
+  "route": null,
+  "seconds": 84.21,
+  "checkpoints_before_SIGTERM": 2,
+  "interrupted_returncode": 130,
+  "interrupted_status": "interrupted-or-failed",
+  "interrupted_bridge": {
+    "backend": "codex",
+    "completed_requests": 2,
+    "live_requests": 2,
+    "cache_hits": 0,
+    "attempts": 3,
+    "failed_requests": 1,
+    "errors": [
+      "CANCELLED"
+    ],
+    "protected_code_requests": 1,
+    "token_usage": {
+      "reported_calls": 2,
+      "unreported_calls": 1,
+      "native_counters": {
+        "input_tokens": 21930,
+        "cached_input_tokens": 8320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 293,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "1e5a698b685bd79d3711a807b848039ee0b31e0856034b2def836cc4b6fd115d",
+        "attempt": 1,
+        "seconds": 17.399,
+        "native_usage": {
+          "input_tokens": 10957,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 199,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "30db2a62a3721ab933b9680aa44512a8cec4376a5c126bf887209366650a1862",
+        "attempt": 1,
+        "seconds": 16.137,
+        "native_usage": {
+          "input_tokens": 10973,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 94,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "5c22b292655f2172422e7ef3eb108b51f409321078714de2eea81d2e9f3484f8",
+        "attempt": 1,
+        "seconds": 0.268,
+        "native_usage": null
+      }
+    ],
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_item_types": [
+      "agent_message"
+    ]
+  },
+  "resumed_bridge": {
+    "backend": "codex",
+    "completed_requests": 3,
+    "live_requests": 1,
+    "cache_hits": 2,
+    "attempts": 1,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "token_usage": {
+      "reported_calls": 1,
+      "unreported_calls": 0,
+      "native_counters": {
+        "input_tokens": 10543,
+        "cached_input_tokens": 8320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 45,
+        "reasoning_output_tokens": 10
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "5c22b292655f2172422e7ef3eb108b51f409321078714de2eea81d2e9f3484f8",
+        "attempt": 1,
+        "seconds": 18.049,
+        "native_usage": {
+          "input_tokens": 10543,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 45,
+          "reasoning_output_tokens": 10
+        }
+      }
+    ],
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_item_types": [
+      "agent_message"
+    ]
+  },
+  "resumed_returncode": 0,
+  "source_unchanged": true,
+  "passed": true
+}

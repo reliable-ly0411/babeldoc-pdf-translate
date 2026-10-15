@@ -72,7 +72,7 @@ try {
     if (blocks.some(block => !['text', 'reasoning'].includes(block.type))) throw {code: 'INVALID_RESPONSE'};
     const content = blocks.filter(block => block.type === 'text').map(block => block.text).join('');
     if (!content.trim() || Buffer.byteLength(content) > LIMIT) throw {code: 'EMPTY_RESPONSE'};
-    response = {version, content};
+    response = {version, content, usage: assembler.usage ?? null};
   }
 } catch (error) {
   const code = typeof error?.code === 'string' && /^[A-Z_0-9]{1,64}$/.test(error.code) ? error.code : 'UNSUPPORTED_DSH';

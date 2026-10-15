@@ -1,0 +1,450 @@
+[
+  {
+    "id": "stein2003",
+    "title": "Respect the Unstable",
+    "authors": "Gunter Stein",
+    "year": 2003,
+    "download_url": "https://ieeecss.org/sites/ieeecss/files/2021-09/Gunter%20Stein%20IEEE_2003.pdf",
+    "landing_url": "https://ieeecss.org/paper/respect-unstable",
+    "license": "LicenseRef-Maintainer-Authorized",
+    "rights_note": "Maintainer confirmed permission to redistribute the original and translate the whole paper on 2026-10-11. Original IEEE copyright retained; no general open licence is claimed.",
+    "license_url": null,
+    "retrieved": "2026-10-11",
+    "path": "sources/stein2003.pdf",
+    "sha256": "a1f3c297cf7c85389efd3a962c5643771dd3dca510edaa00ebf240c759ffeb11",
+    "bytes": 6859908,
+    "pages": 14,
+    "page_features": [
+      {
+        "page": 1,
+        "characters": 4047,
+        "image_objects": 2,
+        "vector_paths": 16
+      },
+      {
+        "page": 2,
+        "characters": 3877,
+        "image_objects": 2,
+        "vector_paths": 6
+      },
+      {
+        "page": 3,
+        "characters": 4136,
+        "image_objects": 2,
+        "vector_paths": 10
+      },
+      {
+        "page": 4,
+        "characters": 4122,
+        "image_objects": 2,
+        "vector_paths": 2
+      },
+      {
+        "page": 5,
+        "characters": 4546,
+        "image_objects": 1,
+        "vector_paths": 9
+      },
+      {
+        "page": 6,
+        "characters": 4484,
+        "image_objects": 1,
+        "vector_paths": 9
+      },
+      {
+        "page": 7,
+        "characters": 4369,
+        "image_objects": 989,
+        "vector_paths": 12
+      },
+      {
+        "page": 8,
+        "characters": 4781,
+        "image_objects": 2193,
+        "vector_paths": 2
+      },
+      {
+        "page": 9,
+        "characters": 3142,
+        "image_objects": 5070,
+        "vector_paths": 4
+      },
+      {
+        "page": 10,
+        "characters": 5234,
+        "image_objects": 1,
+        "vector_paths": 1
+      },
+      {
+        "page": 11,
+        "characters": 3490,
+        "image_objects": 3213,
+        "vector_paths": 3
+      },
+      {
+        "page": 12,
+        "characters": 5407,
+        "image_objects": 1,
+        "vector_paths": 1
+      },
+      {
+        "page": 13,
+        "characters": 3315,
+        "image_objects": 4,
+        "vector_paths": 2
+      },
+      {
+        "page": 14,
+        "characters": 6261,
+        "image_objects": 1,
+        "vector_paths": 0
+      }
+    ]
+  },
+  {
+    "id": "swift2023",
+    "title": "Champion-level drone racing using deep reinforcement learning",
+    "authors": "Elia Kaufmann et al.",
+    "year": 2023,
+    "download_url": "https://rpg.ifi.uzh.ch/docs/Nature23_Kaufmann.pdf",
+    "landing_url": "https://www.nature.com/articles/s41586-023-06419-4",
+    "license": "CC-BY-4.0",
+    "rights_note": "Copyright the authors. Licence notice in the article and publisher page. Translation is an adaptation; no endorsement claimed.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-10-11",
+    "path": "sources/swift2023.pdf",
+    "sha256": "c9bcbd98ddbf2b0a18b4cbdbc4e62e429c6a659e1b1054b5d1c2e0219b8da40f",
+    "bytes": 9924246,
+    "pages": 14,
+    "page_features": [
+      {
+        "page": 1,
+        "characters": 5771,
+        "image_objects": 1,
+        "vector_paths": 16
+      },
+      {
+        "page": 2,
+        "characters": 4574,
+        "image_objects": 9,
+        "vector_paths": 2
+      },
+      {
+        "page": 3,
+        "characters": 4219,
+        "image_objects": 7,
+        "vector_paths": 140
+      },
+      {
+        "page": 4,
+        "characters": 6625,
+        "image_objects": 4,
+        "vector_paths": 2373
+      },
+      {
+        "page": 5,
+        "characters": 5125,
+        "image_objects": 18,
+        "vector_paths": 85
+      },
+      {
+        "page": 6,
+        "characters": 4186,
+        "image_objects": 0,
+        "vector_paths": 12
+      },
+      {
+        "page": 7,
+        "characters": 6355,
+        "image_objects": 0,
+        "vector_paths": 28
+      },
+      {
+        "page": 8,
+        "characters": 7142,
+        "image_objects": 0,
+        "vector_paths": 7
+      },
+      {
+        "page": 9,
+        "characters": 7712,
+        "image_objects": 0,
+        "vector_paths": 3
+      },
+      {
+        "page": 10,
+        "characters": 7921,
+        "image_objects": 0,
+        "vector_paths": 2
+      },
+      {
+        "page": 11,
+        "characters": 2105,
+        "image_objects": 0,
+        "vector_paths": 4
+      },
+      {
+        "page": 12,
+        "characters": 546,
+        "image_objects": 2,
+        "vector_paths": 4
+      },
+      {
+        "page": 13,
+        "characters": 162,
+        "image_objects": 1,
+        "vector_paths": 59
+      },
+      {
+        "page": 14,
+        "characters": 963,
+        "image_objects": 1,
+        "vector_paths": 2
+      }
+    ]
+  },
+  {
+    "id": "dueling2016",
+    "title": "Dueling Network Architectures for Deep Reinforcement Learning",
+    "authors": "Ziyu Wang et al.",
+    "year": 2016,
+    "download_url": "https://proceedings.mlr.press/v48/wangf16.pdf",
+    "landing_url": "https://proceedings.mlr.press/v48/wangf16.html",
+    "license": "CC-BY-4.0",
+    "rights_note": "Copyright the authors. PMLR licence: https://proceedings.mlr.press/pmlr-license-agreement.html . Translation is an adaptation; no endorsement claimed.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-10-11",
+    "path": "sources/dueling2016.pdf",
+    "sha256": "a7fc5ec03df43475818876983803437411ba38bdad96ca4613c93c996ebb7e32",
+    "bytes": 754524,
+    "pages": 9,
+    "page_features": [
+      {
+        "page": 1,
+        "characters": 3285,
+        "image_objects": 60,
+        "vector_paths": 72
+      },
+      {
+        "page": 2,
+        "characters": 4459,
+        "image_objects": 2,
+        "vector_paths": 2
+      },
+      {
+        "page": 3,
+        "characters": 4384,
+        "image_objects": 0,
+        "vector_paths": 1
+      },
+      {
+        "page": 4,
+        "characters": 5115,
+        "image_objects": 0,
+        "vector_paths": 1
+      },
+      {
+        "page": 5,
+        "characters": 5100,
+        "image_objects": 0,
+        "vector_paths": 2
+      },
+      {
+        "page": 6,
+        "characters": 4833,
+        "image_objects": 0,
+        "vector_paths": 467
+      },
+      {
+        "page": 7,
+        "characters": 5418,
+        "image_objects": 0,
+        "vector_paths": 271
+      },
+      {
+        "page": 8,
+        "characters": 5607,
+        "image_objects": 0,
+        "vector_paths": 448
+      },
+      {
+        "page": 9,
+        "characters": 4510,
+        "image_objects": 0,
+        "vector_paths": 1
+      }
+    ]
+  },
+  {
+    "id": "deepseekr1",
+    "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning",
+    "authors": "DeepSeek-AI et al.",
+    "year": 2025,
+    "download_url": "https://www.nature.com/articles/s41586-025-09422-z.pdf",
+    "landing_url": "https://www.nature.com/articles/s41586-025-09422-z",
+    "license": "CC-BY-4.0",
+    "rights_note": "Copyright the authors. This is the CC BY Nature article, not the differently licensed arXiv report. Translation is an adaptation; no endorsement claimed.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "retrieved": "2026-10-11",
+    "path": "sources/deepseekr1.pdf",
+    "sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+    "bytes": 2735576,
+    "pages": 11,
+    "page_features": [
+      {
+        "page": 1,
+        "characters": 5858,
+        "image_objects": 1,
+        "vector_paths": 15
+      },
+      {
+        "page": 2,
+        "characters": 5910,
+        "image_objects": 0,
+        "vector_paths": 132
+      },
+      {
+        "page": 3,
+        "characters": 5484,
+        "image_objects": 0,
+        "vector_paths": 118
+      },
+      {
+        "page": 4,
+        "characters": 5010,
+        "image_objects": 0,
+        "vector_paths": 148
+      },
+      {
+        "page": 5,
+        "characters": 10265,
+        "image_objects": 0,
+        "vector_paths": 13
+      },
+      {
+        "page": 6,
+        "characters": 1932,
+        "image_objects": 0,
+        "vector_paths": 3
+      },
+      {
+        "page": 7,
+        "characters": 7050,
+        "image_objects": 0,
+        "vector_paths": 21
+      },
+      {
+        "page": 8,
+        "characters": 7178,
+        "image_objects": 0,
+        "vector_paths": 5
+      },
+      {
+        "page": 9,
+        "characters": 964,
+        "image_objects": 1,
+        "vector_paths": 2
+      },
+      {
+        "page": 10,
+        "characters": 974,
+        "image_objects": 1,
+        "vector_paths": 4
+      },
+      {
+        "page": 11,
+        "characters": 426,
+        "image_objects": 1,
+        "vector_paths": 2
+      }
+    ]
+  },
+  {
+    "id": "fragment-en",
+    "title": "Project-authored flight control short fixture",
+    "authors": "babeldoc-pdf-translate contributors",
+    "year": 2026,
+    "license": "MIT",
+    "rights_note": "Original synthetic text, not a quotation from the selected papers.",
+    "path": "sources/fragment-en.pdf",
+    "sha256": "e4f5cf56043dae5becc7289379d81ea9cbd5d384091b37e0ba06f51db829efc6",
+    "bytes": 1977,
+    "pages": 1
+  },
+  {
+    "id": "fragment-zh",
+    "title": "Project-authored flight control short fixture",
+    "authors": "babeldoc-pdf-translate contributors",
+    "year": 2026,
+    "license": "MIT",
+    "rights_note": "Original synthetic text, not a quotation from the selected papers.",
+    "path": "sources/fragment-zh.pdf",
+    "sha256": "7d9ab1a72d103866b5869d2a25b067e9b7b79908254268d9b7fbf29ae7299014",
+    "bytes": 3079,
+    "pages": 1
+  },
+  {
+    "id": "roundtrip-swift-zh",
+    "title": "Explicit AI translation round-trip input",
+    "authors": "Elia Kaufmann et al.",
+    "year": 2026,
+    "license": "CC-BY-4.0",
+    "rights_note": "Machine translation derivative; original rights and attribution apply. See ATTRIBUTION.md.",
+    "path": "sources/roundtrip-swift-zh.pdf",
+    "sha256": "ab784c194a6a4f19c591a96841adf33617c9daa510a86702e8ef7eaac927b476",
+    "bytes": 9805269,
+    "pages": 14,
+    "derived_from": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.mono.pdf"
+  },
+  {
+    "id": "roundtrip-r1-zh",
+    "title": "Explicit AI translation round-trip input",
+    "authors": "DeepSeek-AI et al.",
+    "year": 2026,
+    "license": "CC-BY-4.0",
+    "rights_note": "Machine translation derivative; original rights and attribution apply. See ATTRIBUTION.md.",
+    "path": "sources/roundtrip-r1-zh.pdf",
+    "sha256": "4035f850cb7b24de71415309d39830a20a9e2caf0a0f911a6929129d5d27cb5c",
+    "bytes": 2723385,
+    "pages": 2,
+    "derived_from": "references/pilot-r1-codex/deepseekr1.no_watermark.zh-CN.mono.pdf"
+  },
+  {
+    "id": "roundtrip-fr",
+    "title": "Explicit AI translation round-trip input",
+    "authors": "babeldoc-pdf-translate contributors",
+    "year": 2026,
+    "license": "MIT",
+    "rights_note": "Machine translation derivative; original rights and attribution apply. See ATTRIBUTION.md.",
+    "path": "sources/roundtrip-fr.pdf",
+    "sha256": "e869cc2136acebb0b04f8231d85cdc5de218845713fc224c88eee005073db9cf",
+    "bytes": 30810,
+    "pages": 1,
+    "derived_from": "references/fragment-en-fr-dsh/fragment-en.no_watermark.fr.mono.pdf"
+  },
+  {
+    "id": "roundtrip-ja",
+    "title": "Explicit AI translation round-trip input",
+    "authors": "babeldoc-pdf-translate contributors",
+    "year": 2026,
+    "license": "MIT",
+    "rights_note": "Machine translation derivative; original rights and attribution apply. See ATTRIBUTION.md.",
+    "path": "sources/roundtrip-ja.pdf",
+    "sha256": "83648fc4ae4eb472cb8bdc37fcd2279743708681decf75618d05d062559aca71",
+    "bytes": 73832,
+    "pages": 1,
+    "derived_from": "references/fragment-zh-ja-codex/fragment-zh.no_watermark.ja.mono.pdf"
+  },
+  {
+    "id": "fragment-scan",
+    "title": "Image-only synthetic scan control",
+    "authors": "babeldoc-pdf-translate contributors",
+    "year": 2026,
+    "license": "MIT",
+    "rights_note": "Rasterized project-authored fragment-en control.",
+    "path": "sources/fragment-scan.pdf",
+    "sha256": "46a0a2eba7d9482c5d703fbf14bc5238b4820681cc55796f9f7c03f72c79e9ca",
+    "bytes": 58423,
+    "pages": 1
+  }
+]

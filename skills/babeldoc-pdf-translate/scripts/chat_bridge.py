@@ -6,6 +6,7 @@ model tools, or document prompts in diagnostic records. Python 3.10+.
 """
 import hashlib
 import hmac
+from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
@@ -23,6 +24,7 @@ VERSION = "2"
 MAX_REQUEST = 512 * 1024
 MAX_REPLY = 1024 * 1024
 TRANSIENT = {"TIMEOUT", "TRANSPORT", "RATE_LIMIT", "SERVER", "STREAM_CLOSED"}
+REPAIRABLE = {"PROTECTED_TEXT_CHANGED", "INCOMPLETE_TRANSLATION_BATCH", "INVALID_JSON_RESPONSE"}
 ASSIGNMENT = r"\b[A-Za-z_][A-Za-z0-9_.]*\s*=\s*(?:[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?|[A-Za-z_][A-Za-z0-9_]*)\b"
 # BabelDOC moves operators, digits and even underscores into {vN} formula
 # placeholders. Protect adjacent identifier fragments as one unit as well.
@@ -70,11 +72,18 @@ def mask_code(request):
             return token
         row['input'] = CODE.sub(mask, row['input'])
         protected[str(row['id'])] = replacements
-    if not any(protected.values()):
-        return request, {}
     masked = json.loads(canonical(request))
     masked['messages'][index]['content'] = request['messages'][index]['content'][:start] + canonical(rows)
-    return masked, protected
+    required = {str(row['id']): dict(Counter(re.findall(
+        r'\{(?:v\d+|pdftranslate_code_[a-f0-9]+)\}', row['input']))) for row in rows}
+    required = {key: value for key, value in required.items() if value}
+    if required:
+        masked['messages'].insert(0, {'role': 'system', 'content':
+            'Literal token contract by input row ID (token: exact occurrence count): '
+            + canonical(required) + '. Keep every listed token in the corresponding output row, '
+            'even if it appears inside a split word or next to a hyphen. Do not discard a token '
+            'when joining a word or improving grammar. Do not invent new tokens.'})
+    return masked, protected if any(protected.values()) else {}
 
 
 def batch_response(content, request):
@@ -237,9 +246,8 @@ def checked_content(content, request):
             for fragment in CODE.findall(source):
                 if fragment not in row['output']:
                     raise BridgeError("PROTECTED_TEXT_CHANGED")
-            for token in set(re.findall(r'\{v\d+\}', source)):
-                if source.count(token) != row['output'].count(token):
-                    raise BridgeError("PROTECTED_TEXT_CHANGED")
+            if Counter(re.findall(r'\{v\d+\}', source)) != Counter(re.findall(r'\{v\d+\}', row['output'])):
+                raise BridgeError("PROTECTED_TEXT_CHANGED")
     return content
 
 
@@ -255,6 +263,7 @@ class NativeClient:
             self.env.pop("DEEPSEEK_API_KEY", None)
         self.version = "unprobed"
         self.event_types = []
+        self.last_usage = None
 
     def invoke(self, argv, prompt="", *, cwd=None, timeout=None):
         try:
@@ -298,8 +307,11 @@ class NativeClient:
         return {"backend": self.kind, "native_version": self.version, "ready": True}
 
     def translate(self, request):
+        self.last_usage = None
         if self.kind == "dsh":
-            return self.dsh({"operation": "translate", **request})["content"]
+            response = self.dsh({"operation": "translate", **request})
+            self.last_usage = response.get("usage")
+            return response["content"]
         with tempfile.TemporaryDirectory(prefix="pdf-codex-") as tmp:
             folder = Path(tmp)
             schema, answer = folder / "schema.json", folder / "answer.json"
@@ -334,6 +346,8 @@ class NativeClient:
                 raise BridgeError(code)
             try:
                 events = [json.loads(line) for line in result.stdout.splitlines() if line.strip()]
+                completed = [e for e in events if e.get("type") == "turn.completed"]
+                self.last_usage = completed[-1].get("usage") if completed else None
                 self.event_types = sorted({e["item"]["type"] for e in events if e.get("item", {}).get("type")})
                 if not any(e.get("type") == "turn.completed" for e in events):
                     raise BridgeError("INCOMPLETE_TURN")
@@ -365,6 +379,8 @@ class ChatBridge:
         if provider["type"] == "dsh":
             self.stats["route"] = provider.get("route", "deepseek-account")
         self.memory = {}
+        self.stats["token_usage"] = {"reported_calls": 0, "unreported_calls": 0, "native_counters": {}}
+        self.stats["request_metrics"] = []
         self.server = self.thread = None
         self.cache = Path(provider["cache_dir"]) if provider.get("cache_dir") else None
 
@@ -469,19 +485,46 @@ class ChatBridge:
             if content is not None:
                 self.stats["cache_hits"] += 1
             else:
+                last_error = None
                 for attempt in range(self.provider.get("retries", 1) + 1):
                     self.stats["attempts"] += 1
+                    started = time.monotonic()
+                    if hasattr(self.client, 'last_usage'):
+                        self.client.last_usage = None
                     try:
                         masked, protected = mask_code(request)
+                        if attempt and last_error in REPAIRABLE:
+                            masked = json.loads(canonical(masked))
+                            masked['messages'].insert(0, {'role': 'system', 'content':
+                                'The previous attempt failed validation: ' + last_error
+                                + '. Translate the entire batch again, retaining every row ID and '
+                                'the exact literal token counts. Return only complete valid JSON.'})
                         if protected:
                             self.stats["protected_code_requests"] += 1
                         content = checked_content(restore_code(self.client.translate(masked), request, protected), request)
                         break
                     except BridgeError as error:
-                        if error.code not in TRANSIENT or attempt == self.provider.get("retries", 1):
+                        last_error = error.code
+                        if error.code not in TRANSIENT | REPAIRABLE or attempt == self.provider.get("retries", 1):
                             raise
                         if self.cancel.wait(min(2 ** attempt, 4)):
                             raise BridgeError("CANCELLED")
+                    finally:
+                        # Native usage only; never estimate tokens from characters.
+                        # Cache/reasoning counters can overlap totals: preserve their
+                        # provider names and semantics rather than summing them all.
+                        raw = getattr(self.client, 'last_usage', None)
+                        allowed = {'input_tokens', 'cached_input_tokens', 'cache_write_input_tokens',
+                                   'output_tokens', 'reasoning_output_tokens', 'total_tokens',
+                                   'inputTokens', 'outputTokens', 'totalTokens', 'cacheReadTokens',
+                                   'cacheWriteTokens', 'reasoningTokens'}
+                        counters = {k: v for k, v in raw.items() if k in allowed and type(v) is int and v >= 0} if isinstance(raw, dict) else {}
+                        usage = self.stats['token_usage']
+                        usage['reported_calls' if counters else 'unreported_calls'] += 1
+                        for name, count in counters.items():
+                            usage['native_counters'][name] = usage['native_counters'].get(name, 0) + count
+                        self.stats['request_metrics'].append({'request_sha256': key, 'attempt': attempt + 1,
+                            'seconds': round(time.monotonic() - started, 3), 'native_usage': counters or None})
                 self.stats["live_requests"] += 1
                 if path:
                     data = {"request_sha256": key, "content_sha256": hashlib.sha256(content.encode()).hexdigest(), "content": content}

@@ -1,0 +1,63 @@
+{
+  "translation_source": "Reviewed synthetic fixture replay; no live provider inference",
+  "cases": [
+    {
+      "case": "single-watermark",
+      "returncode": 0,
+      "seconds": 20.87,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "table-numbers",
+      "returncode": 0,
+      "seconds": 22.94,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "split-alternating",
+      "returncode": 0,
+      "seconds": 35.04,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "retained-pages",
+      "returncode": 0,
+      "seconds": 22.9,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "retained-late-page",
+      "returncode": 0,
+      "seconds": 21.21,
+      "pdf_count": 4,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "split-no-watermark",
+      "returncode": 0,
+      "seconds": 24.21,
+      "pdf_count": 1,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "case": "late-watermarked",
+      "returncode": 0,
+      "seconds": 17.47,
+      "pdf_count": 1,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "unknown_text_count": 0,
+  "native_model_calls": 0
+}

@@ -1,0 +1,161 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "a1f3c297cf7c85389efd3a962c5643771dd3dca510edaa00ebf240c759ffeb11",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 221.44,
+  "bridge": {
+    "backend": "codex",
+    "completed_requests": 10,
+    "live_requests": 7,
+    "cache_hits": 3,
+    "attempts": 7,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 4,
+    "token_usage": {
+      "reported_calls": 7,
+      "unreported_calls": 0,
+      "native_counters": {
+        "input_tokens": 78469,
+        "cached_input_tokens": 33280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2072,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "2e0796ee0054c58c8c1b55e410638daf2522d86f5720b6a043b21e0044cf3c68",
+        "attempt": 1,
+        "seconds": 23.557,
+        "native_usage": {
+          "input_tokens": 11342,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 404,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "fe6fab0e8f7db6f7f1ab76d0b3108a479ca3f373e49f60601e0d2494506b5038",
+        "attempt": 1,
+        "seconds": 37.0,
+        "native_usage": {
+          "input_tokens": 11303,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 356,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "34dd8d1fedabdf41cb2309a373b3e14e0077266d23bbf53d17d27b2ab2256d5b",
+        "attempt": 1,
+        "seconds": 23.976,
+        "native_usage": {
+          "input_tokens": 11197,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 344,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "c59057ce0a1e2e6ab3c78cc4708e4e565ec0836488ea4d2102c9ec4c497baf07",
+        "attempt": 1,
+        "seconds": 30.593,
+        "native_usage": {
+          "input_tokens": 11174,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 284,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "ea33778f2e4b737730bd4b27a1ca86dbfeaee1c1f3824e3b3325ddd55be4441b",
+        "attempt": 1,
+        "seconds": 21.451,
+        "native_usage": {
+          "input_tokens": 11283,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 323,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "df8686adacf024d3393c366240051d03c840b22e0398f4f05446076806b9a2a0",
+        "attempt": 1,
+        "seconds": 20.402,
+        "native_usage": {
+          "input_tokens": 11076,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 186,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "c8c5ed3e7201c1016fec2ef57923958c9bdb24ca886cfd8d8f8395c5a8d3ac89",
+        "attempt": 1,
+        "seconds": 28.433,
+        "native_usage": {
+          "input_tokens": 11094,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 175,
+          "reasoning_output_tokens": 0
+        }
+      }
+    ],
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_item_types": [
+      "agent_message"
+    ]
+  },
+  "run": "pilot-stein-codex-plain",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "stein2003.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "watermarked",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "watermarked",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.no_watermark.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.no_watermark.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}

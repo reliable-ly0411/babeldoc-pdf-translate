@@ -1,0 +1,97 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "83648fc4ae4eb472cb8bdc37fcd2279743708681decf75618d05d062559aca71",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 87.775,
+  "bridge": {
+    "backend": "codex",
+    "completed_requests": 3,
+    "live_requests": 3,
+    "cache_hits": 0,
+    "attempts": 3,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 1,
+    "token_usage": {
+      "reported_calls": 3,
+      "unreported_calls": 0,
+      "native_counters": {
+        "input_tokens": 32607,
+        "cached_input_tokens": 24960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 350,
+        "reasoning_output_tokens": 33
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "96474378d3a3bcdefc7ca282cd833354ea994fe7a8b145bbc3fef4279c06bb79",
+        "attempt": 1,
+        "seconds": 23.61,
+        "native_usage": {
+          "input_tokens": 11058,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 220,
+          "reasoning_output_tokens": 23
+        }
+      },
+      {
+        "request_sha256": "070d2551dc1072897d1ccf55147c36930721817d8789fe40f22109cc6975ec07",
+        "attempt": 1,
+        "seconds": 28.168,
+        "native_usage": {
+          "input_tokens": 10994,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 85,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "b858f7fb35915007fed09ce5a38eb6610e93aa7c8f76d20e6a0dc21e4f5ce1e0",
+        "attempt": 1,
+        "seconds": 17.649,
+        "native_usage": {
+          "input_tokens": 10555,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 45,
+          "reasoning_output_tokens": 10
+        }
+      }
+    ],
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_item_types": [
+      "agent_message"
+    ]
+  },
+  "run": "fragment-ja-zh-codex-prepared",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "roundtrip-ja.no_watermark.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      },
+      {
+        "file": "roundtrip-ja.no_watermark.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}
