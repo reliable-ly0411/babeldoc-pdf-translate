@@ -1,3 +1,12 @@
+# rc.28 explicit Codex reasoning compatibility
+
+`1.5.0-rc.28` permits explicit `max` reasoning for Codex models that support it.
+The installed model catalog supports the already requested Astra/max development
+assessment, but the plugin rejected it before any call. Defaults, retries, total
+call limits, cache identity and the no-repair development role are unchanged.
+Other backends and `ultra` remain rejected. The engine and rc.26 PDFs do not
+change. Both plugin manifests advance within the same unpublished 1.5.0 target.
+
 # rc.27 cross-platform native callback lifetime
 
 `1.5.0-rc.27` keeps the rc.26 engine and translated candidate unchanged. A native

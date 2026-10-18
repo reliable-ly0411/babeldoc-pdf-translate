@@ -86,6 +86,16 @@ class SlotTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 bridge.validate_provider({'type': 'codex', 'reasoning_effort': value}, Path('.'))
 
+    def test_max_effort_is_explicit_codex_configuration_without_a_budget_change(self):
+        provider={'type':'codex','model':'gpt-6-astra','reasoning_effort':'max','max_model_calls':12,'retries':0}
+        validated=bridge.validate_provider(provider,Path('.'))
+        self.assertEqual(validated['reasoning_effort'],'max')
+        self.assertEqual(validated['max_model_calls'],12)
+        self.assertEqual(validated['retries'],0)
+        self.assertNotIn('reasoning_effort',bridge.validate_provider({'type':'codex'},Path('.')))
+        with self.assertRaises(ValueError):
+            bridge.validate_provider({**provider,'type':'dsh'},Path('.'))
+
     def test_real_r1_failure_is_complete_json_but_merges_slots(self):
         fixture = json.loads((Path(__file__).parent / 'fixtures/r1-slot-failure.json').read_text(encoding='utf-8'))
         r = request(fixture['rows'])

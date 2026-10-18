@@ -175,11 +175,14 @@ class VisualTests(unittest.TestCase):
                 self.cfg(provider=provider)
 
     def test_native_cli_attaches_images_with_tools_disabled(self):
-        native = v.NativeVision({'type': 'codex', 'model': 'gpt-6-astra', 'timeout_seconds': 5})
+        native = v.NativeVision(b.validate_provider({'type': 'codex', 'model': 'gpt-6-astra',
+            'reasoning_effort':'max','timeout_seconds': 5,'retries':0},self.root))
         def invoke(argv, prompt='', **kwargs):
             self.assertEqual(argv.count('--image'), 2)
             self.assertIn('read-only', argv)
             self.assertIn('features.shell_tool=false', argv)
+            self.assertIn('features.multi_agent=false', argv)
+            self.assertIn('model_reasoning_effort="max"', argv)
             Path(argv[argv.index('-o') + 1]).write_text('{"issues": []}', encoding='utf-8')
             return subprocess.CompletedProcess(argv, 0, '{"type":"turn.completed","usage":{"input_tokens":12}}', '')
         with patch.object(native.native, 'invoke', side_effect=invoke), patch.object(b, 'executable', return_value='fixture'):

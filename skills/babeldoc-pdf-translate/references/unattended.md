@@ -50,7 +50,7 @@ python scripts/pdf_translate.py run /path/to/job.json --engine /path/to/babeldoc
 | timeout_seconds | 每次调用 5–1800 秒，默认 180 |
 | retries | 可恢复传输/超时/限流及受限格式修正重试 0–2 次，默认 1；鉴权、额度错误不重试 |
 | cache_dir | 可选私有译文缓存；不填仅在本次进程中去重 |
-| reasoning_effort | 仅 Codex；可选 `low`、`medium`、`high`，省略则沿用 CLI 默认值；进入缓存键 |
+| reasoning_effort | 仅 Codex；可选 `low`、`medium`、`high`、`max`，必须由所选模型支持；省略则沿用 CLI 默认值；进入缓存键；不改变调用预算或重试次数 |
 | diagnostics_dir | 可选失败请求/回复诊断目录，必须私有（0700/0600）；包含文档内容，禁止上传或提交 |
 
 原生 provider 不接受端点、密钥正文或密钥环境字段。DSH 当前仅适配官方端点与标准凭据引用，不自动读取其他 profile 的自定义网关。顶层 `timeout_seconds` 限制整个引擎执行（5–86400 秒，默认 7200），独立于每次模型调用。原生后端强制关闭 BabelDOC 翻译缓存，由桥接分别记录成功模型请求和缓存命中；普通 API 后端继续尊重 `ignore_cache`。

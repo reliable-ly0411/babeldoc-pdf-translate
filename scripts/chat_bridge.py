@@ -876,8 +876,8 @@ def validate_provider(provider, base):
     if kind not in {"codex", "dsh"} or set(provider) - common - extra:
         raise ValueError("Native provider type must be codex or dsh, with documented fields only")
     if 'reasoning_effort' in provider and (kind != 'codex' or not isinstance(provider['reasoning_effort'], str)
-                                         or provider['reasoning_effort'] not in {'low', 'medium', 'high'}):
-        raise ValueError('provider.reasoning_effort is supported for Codex: low, medium, high')
+                                         or provider['reasoning_effort'] not in {'low', 'medium', 'high', 'max'}):
+        raise ValueError('provider.reasoning_effort is supported for Codex: low, medium, high, max')
     result = dict(provider)
     if not isinstance(result.get('output_contract','text_slots'),str) or result.get('output_contract','text_slots') not in {'text_slots','paragraphs'}:
         raise ValueError('provider.output_contract must be text_slots or paragraphs')
