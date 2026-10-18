@@ -1,6 +1,6 @@
 # Validation status
 
-Current development candidate: **1.5.0-rc.25**. Source publication is separate
+Current development candidate: **1.5.0-rc.26**. Source publication is separate
 from PDF acceptance; this draft does not enable the unvalidated production gate.
 
 The inherited rc.24 full offline run was 609 tests: 607 passed and 2 existing skips,
@@ -15,7 +15,7 @@ Historical detailed findings remain in [issue10](https://github.com/reliable-ly0
 Large raw evidence and full PDFs are retained locally rather than shipped here.
 
 
-Current rc.25 public profile: **614 tests, 584 passed, 30 explicitly reported
+Preceding rc.25 public profile: **614 tests, 584 passed, 30 explicitly reported
 skips, zero failures/errors, zero real model calls**. The skips include the
 unbundled real-document evidence and existing optional/platform checks. Node
 syntax, the six-file installed runtime patch and 83 skill mirrors also passed.

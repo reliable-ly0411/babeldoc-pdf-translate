@@ -1,6 +1,6 @@
 --- a/babeldoc/format/pdf/document_il/midend/styles_and_formulas.py
 +++ b/babeldoc/format/pdf/document_il/midend/styles_and_formulas.py
-@@ -359,10 +359,378 @@
+@@ -359,10 +359,392 @@
              if form in page.pdf_form:
                  page.pdf_form.remove(form)
  
@@ -78,6 +78,7 @@
 +                             and n[0].xobj_id == a[0].xobj_id and near(a[2], n[2], size))
 +            if any(nodes[j][4] for j in group):
 +                groups.append(group)
++        split_paragraphs = set()
 +        for group in groups:
 +            parts = [nodes[j] for j in group]
 +            anchor = next((n[0] for n in parts if len(n[1]) == len(chars_of(n[0]))), None)
@@ -111,7 +112,10 @@
 +                    continue
 +                for comp in p.pdf_paragraph_composition:
 +                    if comp.pdf_line:
-+                        comp.pdf_line.pdf_character = [c for c in comp.pdf_line.pdf_character if id(c) not in seen]
++                        previous = comp.pdf_line.pdf_character
++                        comp.pdf_line.pdf_character = [c for c in previous if id(c) not in seen]
++                        if len(comp.pdf_line.pdf_character) != len(previous):
++                            split_paragraphs.add(id(p))
 +            anchor.pdf_paragraph_composition = [PdfParagraphComposition(pdf_formula=formula)]
 +            anchor.box = box
 +            anchor.unicode = ''.join(c.char_unicode or '' for c in chars)
@@ -119,7 +123,17 @@
 +            lines = [c for c in p.pdf_paragraph_composition if c.pdf_line]
 +            remaining = [ch for c in lines for ch in c.pdf_line.pdf_character]
 +            if lines and remaining:
-+                p.box = bounds(remaining)
++                if id(p) in split_paragraphs:
++                    p.box = bounds(remaining)
++                    # Extracted spacing can span glyphs now owned by the formula.
++                    # Keep every source object and the vertical metrics, but start
++                    # and end translated prose at its visible horizontal extent.
++                    visible = [c for c in remaining if (c.char_unicode or '').strip()]
++                    if visible:
++                        ink = bounds(visible)
++                        p.box.x, p.box.x2 = ink.x, ink.x2
++                # Retain the existing source-glyph reconstruction for every
++                # line, including untouched ones (e.g. a native ellipsis).
 +                p.unicode = ''.join(c.char_unicode or '' for c in remaining)
 +            if lines and not remaining:
 +                p.pdf_paragraph_composition = [c for c in p.pdf_paragraph_composition if not c.pdf_line]
@@ -379,7 +393,7 @@
          self.process_comma_formulas(page)
          self.merge_overlapping_formulas(page)
          if not self.translation_config.skip_formula_offset_calculation:
-@@ -380,6 +748,10 @@
+@@ -380,6 +762,10 @@
              self.process_page_offsets(page)
          self.update_all_formula_data(page)
          self.process_page_styles(page)
@@ -390,7 +404,7 @@
  
      def update_line_data(self, line: PdfLine):
          min_x = min(char.visual_bbox.box.x for char in line.pdf_character)
-@@ -996,9 +1368,8 @@
+@@ -996,9 +1382,8 @@
                  current_chars.append(char)
              # 检查是否是逗号，且不在括号内
              elif char.char_unicode == "," and bracket_level == 0:
@@ -402,7 +416,7 @@
              else:
                  current_chars.append(char)
  
-@@ -1211,12 +1582,12 @@
+@@ -1211,12 +1596,12 @@
                              )
  
                              # 如果有逗号，添加为文本行

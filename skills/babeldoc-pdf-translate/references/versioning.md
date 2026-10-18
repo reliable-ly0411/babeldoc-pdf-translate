@@ -1,3 +1,20 @@
+# rc.26 paragraph/formula boundary correction
+
+`1.5.0-rc.26` corrects the existing table math grouping boundary. After math
+glyphs leave a mixed paragraph, its retained spacing objects can still occupy
+the formula area. Only paragraphs whose glyph ownership changed get their
+horizontal prose extent recomputed from visible glyphs. Source objects and
+vertical metrics remain intact, and the operation is idempotent. No source
+coordinates or document identity are hardcoded. The engine component advances
+to `0.6.4-pdftranslate.math-integrity.3`, with verified migration from revision 2
+and support for fresh upstream 0.6.4. Both plugin manifests use rc.26.
+
+The first public Linux CI also exposed an ownership error in native glyph
+inventory: constructing an owning `FzPath` from a borrowed device callback path
+could free the interpreter's path. The non-owning MuPDF query retains that path.
+Native object mapping advances to `0.3.0-draft.2`; clipping/occlusion criteria are
+unchanged. Separate child-process replays cover clip and fill lifetime.
+
 # rc.25 public review candidate
 
 `1.5.0-rc.25` continues the unpublished 1.5.0 target. It carries forward the tested

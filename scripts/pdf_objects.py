@@ -14,7 +14,7 @@ import unicodedata
 
 import pymupdf as fitz
 
-VERSION = '0.3.0-draft.1'
+VERSION = '0.3.0-draft.2'
 m = fitz.mupdf
 
 
@@ -56,7 +56,9 @@ class GlyphDevice(fitz.JM_new_texttrace_device):
             getattr(self,'use_virtual_'+name)()
 
     def clip_path(self, ctx, path, even_odd, ctm, scissor):
-        self.clip_stack.append(not bool(m.fz_path_is_rect(m.FzPath(path),m.FzMatrix(ctm))))
+        # Callback pointers are borrowed from the interpreter. FzPath(raw)
+        # owns and drops that pointer; use the non-owning low-level query.
+        self.clip_stack.append(not bool(m.ll_fz_path_is_rect(path, ctm)))
 
     def clip_stroke_path(self, *args):self.clip_stack.append(True)
     def clip_text(self, *args):self.clip_stack.append(True)
@@ -86,7 +88,7 @@ class GlyphDevice(fitz.JM_new_texttrace_device):
         # A rectangle is a proof of occlusion only within its actual clip and
         # outside unsupported transparency groups. No bounding-box inference
         # from an arbitrary path or a clipped rectangle is accepted.
-        if alpha==1 and not any(self.clip_stack) and not any(self.group_stack) and m.fz_path_is_rect(m.FzPath(path),m.FzMatrix()):
+        if alpha==1 and not any(self.clip_stack) and not any(self.group_stack) and m.ll_fz_path_is_rect(path,m.FzMatrix().internal()):
             # The native rectangle may have a tiny rotation/shear in its CTM.
             # Keep its actual quadrilateral; its bounding box alone cannot
             # prove occlusion near a rotated corner. A null stroke is essential
