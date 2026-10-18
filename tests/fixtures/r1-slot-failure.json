@@ -1,0 +1,32 @@
+{
+  "rows": [
+    {
+      "id": 0,
+      "input": "<style id='1'>Model-based rewards.</style> For general data, we resort to reward models to capture human preferences in complex and nuanced scenarios. We build on the DeepSeek-V3 pipeline and use a similar distribution of pref- erence pairs and training prompts. For helpfulness, we focus exclusively on the final summary, ensuring that the assessment emphasizes the use and relevance of the response to the user while minimizing interference with the underlying reasoning process. For harmlessness, we evaluate the entire response of the model, including both the reasoning process and the summary, to identify and mitigate any potential risks, biases or harmful content that may arise during the generation process."
+    },
+    {
+      "id": 1,
+      "input": "<style id='1'>Helpful reward model.</style> For helpful reward model training, we first gen- erate preference pairs by prompting DeepSeek-V3 using the Arena-Hard prompt format, listed in Supplementary Information, section 2.2, for which each pair consists of a user query along with two candidate responses. For each preference pair, we query DeepSeek-V3 four times, randomly assigning the responses as either Response A or Response B to mitigate positional bias. The final preference score is determined by averaging the four independent judgments, retaining only those pairs for which the score difference ({v3}) exceeds 1 to ensure meaningful distinctions. Furthermore, to minimize length-related biases, we ensure that the chosen and rejected responses of the whole dataset have com- parable lengths. In total, we curated 66,000 data pairs for training the reward model. The prompts used in this dataset are all non-reasoning questions and are sourced either from publicly available open-source datasets or from users who have explicitly consented to share their data for the purpose of model improvement. The architecture of our reward model is consistent with that of DeepSeek-R1, with the addition of a reward head designed to predict scalar preference scores."
+    }
+  ],
+  "rejected_reply": {
+    "rows": [
+      {
+        "id": 0,
+        "texts": [
+          "基于模型的奖励。",
+          "对于通用数据，我们采用奖励模型来捕捉复杂且细致情境中的人类偏好。我们沿用 DeepSeek-V3 流程，并使用类似分布的偏好对和训练提示。对于有用性，我们只关注最终摘要，确保评估侧重于回答对用户的用途和相关性，同时尽量减少对底层推理过程的干扰。对于无害性，我们评估模型的整个回答，包括推理过程和摘要，以识别并缓解生成过程中可能出现的任何潜在风险、偏见或有害内容。"
+        ]
+      },
+      {
+        "id": 1,
+        "texts": [
+          "有用性奖励模型。",
+          "在训练有用性奖励模型时，我们首先使用补充信息第 2.2 节所列的 Arena-Hard 提示格式提示 DeepSeek-V3，生成偏好对；每个偏好对由一个用户查询和两个候选回答组成。对于每个偏好对，我们向 DeepSeek-V3 查询四次，并随机将回答指定为 Response A 或 Response B，以减轻位置偏差。最终偏好分数通过对四次独立判断取平均值确定，只保留分数差（{v3}）大于 1 的偏好对，以确保差异具有实际意义。此外，为了尽量减少与长度相关的偏差，我们确保整个数据集中被选回答和被拒回答的长度相当。我们总共整理了 66,000 个数据对，用于训练奖励模型。该数据集使用的提示全都是非推理问题，来源要么是公开可用的开源数据集，要么是明确同意分享数据以改进模型的用户。我们的奖励模型架构与 DeepSeek-R1 一致，另增加了一个奖励头，用于预测标量偏好分数。"
+        ]
+      }
+    ]
+  },
+  "source": "Nature R1, physical p7; Guo et al. (2025), DOI 10.1038/s41586-025-09422-z; CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+  "failure": "Complete JSON; second row merges 3 slots into 2 and emits {v3}; not truncation."
+}

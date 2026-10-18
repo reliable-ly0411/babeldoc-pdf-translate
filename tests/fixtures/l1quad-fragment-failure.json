@@ -1,0 +1,12 @@
+{
+  "source": "<style id='1'>Remark 2: </style>The implementation of the {v3}Quad controller doesnot requireknowledge ofthe bounds in Assumptions 1 or 2, as illustrated in Algorithm 1. The knowledge of these bounds is needed only for analysis.",
+  "bad_outputs": [
+    "<style id='1'>备注 2： </style>L1Quad {v3}控制器的实现不需要知道假设 1 或 2 中的界，如算法 1 所示。只有在分析中才需要知道这些界。",
+    "<style id='1'>备注 2： </style>L1Quad 控制器的 {v3}实现无需了解假设 1 或 2 中的界限，如算法 1 所示。只有在分析时才需要了解这些界限。"
+  ],
+  "diagnostic_sha256": [
+    "18f20cd923f20d006faa70373eec2a00c1ea7774f19952fe131320cc74c68234",
+    "a46ad753ab668ba19971d865638eaff833d35bcb401a194b8b74108166253e0c"
+  ],
+  "provenance": "Exact row0 from the two independent 3a12dd8 L1Quad failure diagnostics; full private prompt/cache excluded."
+}

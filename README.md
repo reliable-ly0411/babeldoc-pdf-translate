@@ -4,6 +4,24 @@
 
 Layout-preserving PDF translation skill for **Codex and DeepSeek Harness**, powered by a separately installed BabelDOC runtime. Supports bilingual output, page selection, custom glossaries and contextual terminology review. Local parsing/typesetting; translation uses the provider you configure. No telemetry or bundled cloud account.
 
+Candidate **1.5.0-rc.25** adds Windows process containment, validated structured translation,
+source-bound text/math guards, and optional bounded visual and semantic review.
+Use [the production pipeline](references/production-pipeline.md) for configuration;
+review [the current validation and limits](references/windows-stability-review.md) before acceptance.
+
+Translation, review, repair and final audit keep separate model roles and explicit call limits.
+Retained `best.*` PDFs are review candidates unless the configured acceptance gates pass.
+The experimental semantic/final-audit protocol remains unvalidated; known D02 failures
+and the original user contract cannot be waived by a model's clear verdict.
+Small readable layout imperfections may be accepted under the user's stated criteria.
+Preserved raster figures can retain English text; this is a disclosed feature boundary,
+not a claim of complete OCR translation. Paper-specific repair utilities are explicitly scoped.
+
+This draft contains source, tests, small attributed fixtures and a concise technical report.
+Full PDFs, raw native-event archives, large real-document geometry extracts, credentials
+and private paths are not part of the distribution. Optional external test data is documented
+in [tests/README.md](tests/README.md). No new Release is created by this candidate.
+
 ## Codex plugin 安装
 
 ```sh
@@ -62,6 +80,6 @@ patches/              带哈希保护的 BabelDOC 0.6.4 兼容补丁及上游许
 
 支持单双语、双语页顺序、页码、术语表、自动术语提取、风格提示、字体、扫描处理、并发和云端兼容接口。专业领域判断由 agent 结合上下文完成；本包不自带各行业权威词库，不保证复杂 PDF 完全免返工。
 
-运行与测试边界见 [VALIDATION.md](VALIDATION.md)。不要在分发包中加入个人密钥、PDF、缓存或虚拟环境。
+运行与测试边界见 [VALIDATION.md](VALIDATION.md)。不要在分发包中加入个人密钥、用户私有 PDF、缓存或虚拟环境。本分支的实测范围及剩余验收见 [稳定性技术说明](references/windows-stability-review.md)；当前为草稿候选，未发布新版本。
 
 1.2.0 的修复需要按部署文档显式运行 `scripts/repair_runtime.py --apply`；更新技能文件不会自动修改引擎。补丁检查原始文件哈希并保留可验证回滚副本，未知版本或文件会拒绝修改。`doctor` 仅证明 CLI 可用，`needs-review` 表示结构校验通过，译文与版式仍需检查。

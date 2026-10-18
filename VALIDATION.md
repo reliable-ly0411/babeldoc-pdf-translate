@@ -1,77 +1,32 @@
-# 验证记录
+# Validation status
 
-## 1.3.0 无人值守桥接验收 — 2026-10-11
+Current development candidate: **1.5.0-rc.26**. Source publication is separate
+from PDF acceptance; this draft does not enable the unvalidated production gate.
 
-维修分支 `dev/pdf-repairs-20261011`，在 1.2.0 的已修补运行时上增加原生客户端桥接。完整实验、发现的问题及部署记录见 [Issue #8](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/8)。环境为 Linux / Python 3.12.3、BabelDOC 0.6.4+pdftranslate.1、PyMuPDF 1.28.2、Codex CLI 0.162.0-alpha.17.2、DSH 0.2.1-alpha.1 / Node 24.20.0。
+The inherited rc.24 full offline run was 609 tests: 607 passed and 2 existing skips,
+with zero model calls. The rc.25 context regression adds changed-contract and
+preservation-scope checks. Public and optional-external-evidence suite results
+are reported on the pull request and CI; skipped evidence is not a passed check.
 
-### 真实模型实验
+See [the concise Windows technical report](references/windows-stability-review.md)
+for implemented behavior, real-run limits and remaining acceptance. Reproduction
+commands and optional fixtures are in [tests/README.md](tests/README.md).
+Historical detailed findings remain in [issue10](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/10).
+Large raw evidence and full PDFs are retained locally rather than shipped here.
 
-Codex 通过原生 ChatGPT 登录调用；DSH 经用户明确选择，复用当前已配置的官方 DeepSeek API 与同一余额（`deepseek-official`），没有新增密钥，也没有把 API 消费称为账户订阅消费。默认 `deepseek-account` 已验证未登录时拒绝；该订阅路由未做成功推理验收。
 
-| 实验 | Codex | DSH |
-|---|---|---|
-| 三页全文、自动术语、表格、双语与两种水印 | 11 次真实请求，0 失败 | 11 次真实请求，0 失败 |
-| 最终代码保护复测 | 1 次真实请求 + 10 个成功检查点，0 失败 | 1 次真实请求 + 10 个成功检查点，0 失败 |
-| SIGTERM 后续跑 | 2 个成功检查点后中断；退出 130；续跑 9 次真实请求 + 2 次缓存 | 2 个成功检查点后中断；退出 130；续跑 9 次真实请求 + 2 次缓存 |
-| 最终产物 | 4 份 PDF，18 个物理页 | 4 份 PDF，18 个物理页 |
+Preceding rc.25 public profile: **614 tests, 584 passed, 30 explicitly reported
+skips, zero failures/errors, zero real model calls**. The skips include the
+unbundled real-document evidence and existing optional/platform checks. Node
+syntax, the six-file installed runtime patch and 83 skill mirrors also passed.
+The first packaging attempt omitted a test dependency; its failed log is retained
+locally, the source dependency was added, and the complete public suite reran.
+The optional external-evidence profile also completed: **614 tests, 612 passed,
+2 existing Windows/POSIX skips, zero failures/errors and zero real model calls**.
+Source hashes were unchanged throughout both successful runs. A separate
+external-profile attempt was interrupted by the execution transport; its partial
+log is retained and is not counted as a passed run.
 
-各阶段单独计数，不将检查点复用称为新增模型调用。最初试译发现模型会翻译代码变量名；最终增加请求前保护、回复后还原，兼容 BabelDOC 将下划线、数字和等号拆入 `{vN}` 的形式。修复后的 `gain=2.5; sample_rate=100; mode=TEST` 在两端均逐字保持。早期 Codex 的不稳定功能警告曾造成严格事件检查失败，现由原生 CLI 关闭该提示；真正的错误、工具事件和不完整回复仍拒绝。退出时等待处理线程完成，避免取消错误统计竞态。
-
-### 自动与成品验证
-
-- 61 项测试通过，含原有 37 项和新增 24 项桥接测试：原生鉴权、明确路由、有限重试、私有缓存、并发去重、批量 ID 完整性、代码及占位符保护、超时、输出上限、进程组清理、取消统计、错误脱敏和零请求不能记为翻译成功。
-- 根目录与嵌套技能的 26 项资源按字节一致；Python 测试、Node 语法检查及 `git diff --check` 通过。安装验收发现原生 Codex 优先读取根目录 `plugin.json`；两个清单已统一为 1.3.0，并在同步检查中阻止名称或版本不一致。CI 不使用任何账户凭据或真实模型。
-- 七组真实 BabelDOC 回归全部通过，22 份 PDF / 54 页；采用已审阅合成译文回放，与上述真实模型证据分开记录。覆盖范围同 1.2.0 表格。
-- 本轮共渲染最终模型产物与功能回归产物 30 份 PDF / 90 页。PyMuPDF 与 Poppler 独立提取核对最终 8 份产物中的负数、编号、代码、数值与三项指定术语；逐页视觉复核两端全部三页译文，以及水印和交替双语代表页，未见遮挡、丢图或公式损坏。
-- 输入样本 SHA256 为 `6f63c35500b0698ad9e0400a13cdc393332838e9c3167ee6717b41ae99a9d33b`，源文件保持不变。试译、缓存、日志、私有配置和生成 PDF 均留在本机实验目录，不进入 Git。
-
-这是受测 Linux 环境与合成工程样本的验收。任意复杂 PDF、完整 OCR、其他系统，以及 DSH 账户订阅路由的成功调用仍需独立验证。每次运行的 `needs-review` 只表示调用与结构检查通过，不自动等同于视觉或译文质量通过。复现命令见 [tests/README.md](tests/README.md)。
-
-## 1.2.0 维修验收 — 2026-10-11
-
-环境：Linux、Python 3.12.3、BabelDOC 0.6.4 + `0.6.4-pdftranslate.1`、PyMuPDF 1.28.2。维修分支 `dev/pdf-repairs-20261011`。问题和完整实验报告见 [Issue #4](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/4)。
-
-修复 #1（水印与分块）、#2（损坏/不完整产物误判）、#3（表格短词和负号断行）、#5（IPv6 no_proxy）、#6（编号 Unicode 保真）。补丁仅适用于哈希匹配的 BabelDOC 0.6.4，显式安装并保留可验证回滚副本。原创适配器与上游衍生补丁分别保留 MIT、AGPL-3.0 许可。
-
-### 自动验证
-
-- 37 项单元测试通过；覆盖真实引擎参数解析、实际 PDF 结构、错误产物和 CLI 退出码、代理子进程环境、数字排版、ActualText、交替页水印合并、分块命名及补丁失败恢复。
-- 根目录与嵌套技能的 21 项资源按字节一致。
-- 实际运行时完成应用、检查、回滚和重新应用；未知版本、原文件被改、补丁被改、回滚副本缺失及中途写入失败由自动测试覆盖。
-- 七组真实 BabelDOC 回归：22 份 PDF、54 个输出物理页。全部检查结构、页数/尺寸、变体文件名、水印有无及源文件哈希。
-
-| 场景 | 请求 | PDF 数量 | 结果 |
-|---|---|---:|---|
-| 单页水印 | 第 1 页，mono/左右 dual，各含/不含水印 | 4 | 通过 |
-| 表格与负数 | 第 2 页，同上，sans-serif | 4 | 通过 |
-| 分块交替 | 第 1、3 页，每块 1 页，译文优先 | 4 | 通过 |
-| 保留未选页 | 翻译第 1 页，保留全部 3 页，左右双语 | 4 | 通过 |
-| 后页翻译与保留 | 翻译第 2 页，保留全部页，交替双语原文优先 | 4 | 通过 |
-| 分块无水印 | 第 1、3 页，左右 dual，仅无水印 | 1 | 通过 |
-| 后页单独水印 | 第 2 页，交替 dual，仅含水印 | 1 | 通过 |
-
-表格 `Unit/Gain` 已翻为 `单位/增益`；`-0.25` 保持单行；`Hz/s/V` 保持 11 pt 原字号。默认表格阈值采用 4：试验发现阈值 1 会将这些短单位重排到 5.5 pt，因此未采用该默认值。显式低阈值仍需视觉复核。编号 `CTRL-2026-A` 的连字符保持 U+002D，ActualText 不会把原本合法的其他 Unicode 连字符一律归一化。
-
-### 可复现性与边界
-
-[tests/README.md](tests/README.md) 提供测试命令；样本生成器、经过审阅的合成文本翻译映射和回归程序均入库。生成的技术样本 SHA256：`6f63c35500b0698ad9e0400a13cdc393332838e9c3167ee6717b41ae99a9d33b`（字体/ReportLab/Pillow 版本变化可能影响字节）。样本包含公式、矢量图、表格、栅格图、双栏、编号、代码和三项自定义术语。
-
-本轮回归使用本机回放服务和真实引擎，译文来自先前 Codex/DSH 聊天实验及本次短词审阅；没有再次调用云端模型，也不将回放称为新的 DSH 模型验收。先前的 Codex 发现、DSH 原生模型会话与聊天辅助翻译证据保留在 Issue #4。1.2.0 当时未提供无人值守桥接；后续开发与实测见 Issue #8。
-
-使用 Poppler 渲染并检查公式、表格、图像/双栏和水印/双语代表页；PyMuPDF 与 Poppler 独立提取核对技术编号和负数。`needs-review` 是结构门槛，不是译文质量合格证。扫描/OCR 的原有限制、任意复杂 PDF、macOS 以及修补后 Windows 的完整翻译尚不在本轮实机验收范围内。临时密钥、用户提示词、日志、PDF、模型、缓存和虚拟环境不进入仓库。
-
-## 历史 1.1.0 验证
-
-日期：2026-10-10。环境：Windows，Python，BabelDOC 0.6.4。
-
-v1.1.0 添加 Codex 插件清单、仓库市场、DSH 文件系统技能安装说明和 MIT 许可。嵌套技能通过 scripts/sync_plugin_skill.py 从根目录资源生成并按字节核对；10 项适配脚本测试通过。DSH 安装目录结构依据官方 discovery 文档；不声称执行了 DSH 模型会话或完整云端翻译。
-
-- SKILL.md 标准前置信息通过技能校验器。
-- 适配脚本通过语法检查与自动测试：参数映射、错误值、未知参数、凭证字段、术语冲突、不支持参数、无翻译调用的 dry-run、执行清单、临时凭证清理、日志密钥脱敏。
-- 真实 BabelDOC 配置解析器验证了临时 TOML 的 `openai-api-key` 字段；无需云端调用。
-- 对真实 14 页 PDF 运行只读检查与真实引擎能力探测/dry-run。
-- 独立 agent 按“选页、交替双语、固定术语、暂缺接口”场景审查，随后改进了规划边界、页码检查与参数探测。
-
-未在本次技能制作中付费调用云端模型，也未对新包装脚本运行完整云端翻译。先前论文翻译属于另一条桥接流程，不能视为本脚本的端到端测试。
-macOS/Linux 未实机验证；脚本使用跨平台标准库，但不能据此宣称所有平台已测。
-临时凭证文件在 POSIX 使用 0600；Windows 依赖用户 TEMP 目录的继承 ACL，未增加独立 Windows ACL 设置。正常退出清理临时文件，强制杀进程/断电可能遗留。运行环境应使用用户私有临时目录。
+An independent all-page review found one remaining PDF release blocker on page 3:
+translated prose overlaps the end of an inline formula. Code publication remains
+a draft while the generic layout fix and candidate recheck are pending.

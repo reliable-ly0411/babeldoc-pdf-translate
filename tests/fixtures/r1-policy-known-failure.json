@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "source_document_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "provenance": "New author-aware regression fixture from the actually rendered historical R1 physical page7. Opaque slots transcribe the complete native question/output-group/old-policy/current-policy objects. Not a native raw response, blind control, translation rule, general role detector or new model score.",
+  "failures": [
+    {
+      "id": "R1-P07-POLICY-ROLE",
+      "source": "For each question {v1}, GRPO samples a group of outputs {v2} from the old policy {v3} and then optimizes the policy model {v4} by maximizing the following objective:",
+      "target": "对于每个问题{v1}，GRPO从旧策略中采样一组输出{v2}，然后通过最大化以下目标来优化策略模型{v3}并{v4}：",
+      "reason": "The old policy generates samples; the current policy is optimized. The actual candidate attaches both policy objects to optimization despite preserving the marker sequence."
+    }
+  ]
+}
