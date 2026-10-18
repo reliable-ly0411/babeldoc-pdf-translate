@@ -1,0 +1,27 @@
+{
+  "source": "https://arxiv.org/abs/2302.07208v2",
+  "license": "CC-BY-4.0",
+  "source_pdf_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "scope": "Actual remaining page-5 finding after rc.5 first-round corrections; not a source-specific production rule.",
+  "pairs": {
+    "pair_8": {
+      "source": "Comparing the above equation with the ideal form in{v1}, we can use {v2}in{v3}to describethis effect where{v4}{v5}",
+      "target": "将上述方程与{v1}中的理想形式进行比较，我们可以使用{v2}{v3}来描述这种效应，其中{v4}{v5}"
+    }
+  },
+  "actual_review": {
+    "pairs": {
+      "pair_8": {
+        "status": "different",
+        "summary": "The target omits the relation “in” between {v2} and {v3}.",
+        "findings": [{
+          "category": "omitted_meaning",
+          "severity": "major",
+          "source_quote": "in",
+          "target_quote": "",
+          "reason": "The source says to use {v2} in {v3} to describe the effect. The target places the two opaque objects together without expressing that relation."
+        }]
+      }
+    }
+  }
+}

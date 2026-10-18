@@ -51,7 +51,8 @@ class BridgeTests(unittest.TestCase):
             with opener.open(req, timeout=5) as response:
                 return response.status, json.load(response)
         except HTTPError as error:
-            return error.code, json.load(error)
+            with error:
+                return error.code, json.load(error)
 
     def test_loopback_auth_and_openai_response(self):
         client = FakeClient()
@@ -122,6 +123,26 @@ class BridgeTests(unittest.TestCase):
             self.assertEqual(self.post(bridge)[0], 400)
             self.assertEqual(client.calls, 2)
 
+    def test_model_call_budget_stops_new_requests_but_allows_cached_reply(self):
+        client = FakeClient(['电压', '电流'])
+        with b.ChatBridge({**self.provider, 'max_model_calls': 1}, client) as bridge:
+            self.assertEqual(bridge.complete(REQUEST), '电压')
+            self.assertEqual(bridge.complete(REQUEST), '电压')
+            with self.assertRaisesRegex(b.BridgeError, 'NATIVE_CALL_BUDGET_EXHAUSTED'):
+                bridge.complete({'messages': [{'role': 'user', 'content': 'Translate current'}], 'response_format': None})
+            self.assertEqual(client.calls, 1)
+            self.assertEqual(bridge.stats['cache_hits'], 1)
+
+    def test_model_call_budget_counts_failed_attempts_and_validates_types(self):
+        for value in (True, 0, 513, '4'):
+            with self.assertRaises(ValueError):
+                b.validate_provider({**self.provider, 'max_model_calls': value}, self.base)
+        client = FakeClient([b.BridgeError('TRANSPORT'), '电压'])
+        with b.ChatBridge({**self.provider, 'retries': 1, 'max_model_calls': 1}, client) as bridge:
+            with self.assertRaisesRegex(b.BridgeError, 'NATIVE_CALL_BUDGET_EXHAUSTED'):
+                bridge.complete(REQUEST)
+            self.assertEqual(client.calls, 1)
+
     def test_parallel_duplicates_are_serialized_and_deduplicated(self):
         client = FakeClient()
         with b.ChatBridge(self.provider, client) as bridge:
@@ -140,10 +161,11 @@ class BridgeTests(unittest.TestCase):
                 self.assertEqual(client.calls, int(live))
         paths = list((self.base / 'cache').iterdir())
         self.assertEqual(len(paths), 1)
-        self.assertEqual(paths[0].stat().st_mode & 0o777, 0o600)
-        self.assertNotIn('Translate voltage', paths[0].read_text())
+        if os.name == 'posix':
+            self.assertEqual(paths[0].stat().st_mode & 0o777, 0o600)
+        self.assertNotIn('Translate voltage', paths[0].read_text(encoding='utf-8'))
         # A modified checkpoint cannot silently become translation output.
-        data = json.loads(paths[0].read_text())
+        data = json.loads(paths[0].read_text(encoding='utf-8'))
         data['content'] = 'tampered'
         paths[0].write_text(json.dumps(data))
         with b.ChatBridge(self.provider, FakeClient()) as bridge:
@@ -158,6 +180,7 @@ class BridgeTests(unittest.TestCase):
                 self.post(bridge)
                 self.assertEqual(client.calls, 1)
 
+    @unittest.skipUnless(os.name == 'posix', 'POSIX permission bits')
     def test_public_cache_is_rejected(self):
         path = self.base / 'public'
         path.mkdir(mode=0o755)
@@ -302,7 +325,7 @@ class BridgeTests(unittest.TestCase):
         self.assertNotIn('DEEPSEEK_API_KEY', client.env)
         result = subprocess.CompletedProcess([], 0, 'Logged in using an API key', '')
         with patch.object(b, 'executable', return_value='codex'), patch.object(client, 'invoke', return_value=result):
-            with self.assertRaisesRegex(b.BridgeError, 'CHATGPT_SIGN_IN_REQUIRED'):
+            with self.assertRaisesRegex(b.BridgeError, 'CODEX_AUTH_METHOD_MISMATCH'):
                 client.doctor()
 
     def test_codex_rejects_missing_completion_empty_output_and_tool_use(self):
