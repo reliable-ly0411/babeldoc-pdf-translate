@@ -135,7 +135,7 @@ class ParagraphTests(unittest.TestCase):
                 content=valid if mode!='new_guard_refusal' else json.dumps([{'id':0,'output':'数值 {v1} 安全。}' }])
                 record={'request_sha256':key,'content_sha256':hashlib.sha256(content.encode()).hexdigest(),'content':content}
                 if mode=='corrupt':record['content_sha256']='0'*64
-                path=Path(tmp,key+'.json');path.write_text(json.dumps(record),encoding='utf8');before=path.read_bytes()
+                path=Path(tmp,key+'.json');path.write_text(json.dumps(record),encoding='utf8');path.chmod(0o600);before=path.read_bytes()
                 client=Client();provider={'type':'codex','retries':0,'output_contract':'paragraphs','cache_dir':tmp}
                 with b.ChatBridge(provider,client) as server:
                     if mode=='corrupt':

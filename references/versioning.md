@@ -1,3 +1,14 @@
+# rc.27 cross-platform native callback lifetime
+
+`1.5.0-rc.27` keeps the rc.26 engine and translated candidate unchanged. A native
+matrix `internal()` view needs its owning `FzMatrix` to stay alive through both
+low-level path queries. Linux CI exposed this second borrowed-view lifetime
+issue after the owning-path error was fixed. Native mapping advances to
+`0.3.0-draft.3`; clipping, cover bounds and fidelity requirements are unchanged.
+The offline adapter tests now stub executable discovery and create legacy cache
+fixtures with private POSIX permissions. They do not need a Codex installation
+or account. Both plugin manifests advance within the same unpublished target.
+
 # rc.26 paragraph/formula boundary correction
 
 `1.5.0-rc.26` corrects the existing table math grouping boundary. After math

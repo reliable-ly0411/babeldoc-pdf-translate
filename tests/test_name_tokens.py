@@ -123,7 +123,7 @@ class NameTokenTests(unittest.TestCase):
                 'protected_identifiers':['Lipschitz'],'protected_identifier_revision':1}
             key=hashlib.sha256(b.canonical(identity).encode()).hexdigest()
             record={'request_sha256':key,'content_sha256':hashlib.sha256(content.encode()).hexdigest(),'content':content}
-            path=Path(tmp,key+'.json');path.write_text(json.dumps(record),encoding='utf8');before=path.read_bytes()
+            path=Path(tmp,key+'.json');path.write_text(json.dumps(record),encoding='utf8');path.chmod(0o600);before=path.read_bytes()
             with b.ChatBridge({'type':'codex','retries':0,'output_contract':'paragraphs','cache_dir':tmp,
                     'protected_identifiers':['Lipschitz']},NoCalls()) as server:
                 self.assertEqual(server.complete(original),content)

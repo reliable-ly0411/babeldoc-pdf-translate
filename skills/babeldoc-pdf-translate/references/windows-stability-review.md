@@ -2,7 +2,8 @@
 
 This draft carries the Windows work through rc.24 into a clean branch based on
 public main, then fixes the review-context treatment of the original translation
-contract in rc.25. It contains implementation and tests, not a claim of completed
+contract in rc.25, corrects paragraph/formula bounds in rc.26, and fixes native
+borrowed-view lifetimes and test portability in rc.27. It contains implementation and tests, not a claim of completed
 full-paper quality acceptance. No production protocol flag is enabled.
 
 ## Changes that are ready for code review
@@ -40,12 +41,28 @@ independent review covered all 11 pages without new API/native calls. It is a
 rendered-document review, not the separate Astra final audit.
 Call counts and unknown cost are reported separately from repeatability.
 
-That review identified one remaining release blocker: translated prose on page 3
+That review identified one release blocker in rc.24: translated prose on page 3
 starts inside the visible inline formula ending `= x`. Source geometry shows that
 synthetic spaces remain after adjacent mathematical glyphs are grouped; those
 spaces pull the prose paragraph's left boundary into the preserved formula.
-A generic spacing/boundary correction, fresh render and independent recheck are
-pending. No paper-coordinate overlay is proposed.
+rc.26 corrects the horizontal bounds of only the paragraphs that donated math
+glyphs, retaining source objects and vertical metrics. Two fresh full renders
+each used 66 cache hits and zero new calls or failures, with equal text,
+dimensions and 144 dpi pixels. Both variants changed only the affected page 3
+region; the other ten pages remain equal to rc.24. The complete formula crop
+matches the original at 600 dpi. The fixed rc.26 source passed 620 of 622 local
+tests with two existing platform skips. Independent recheck is in progress.
+Inspection crop coordinates are evidence only, never repair coordinates.
+
+Linux CI exposed two native lifetime errors: an owning path wrapper dropped a
+borrowed callback path, and a temporary matrix released the owner of an
+`internal()` view before low-level queries used it. rc.26 fixed the former;
+rc.27 retains the matrix owner through both queries. Child-process replay checks
+actual fill classification and clipping/render stability. An owner-expiring-view
+counterexample fails on rc.26 and passes with the fix. Offline adapter tests also
+stub executable discovery and give synthetic legacy cache files the private
+permissions required on POSIX. All 99 targeted local tests pass; CI must still
+confirm the complete Linux run. Bounds, fidelity and budget guards are unchanged.
 
 All 105 Table 2 values and their row/column positions were consistent. The other
 observations below were classified as minor disclosed limitations under the

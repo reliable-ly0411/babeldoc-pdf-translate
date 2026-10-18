@@ -99,7 +99,8 @@ class SchemaCorrectionTests(unittest.TestCase):
             Path(argv[argv.index('-o')+1]).write_bytes(b.canonical(response).encode())
             stdout=b.canonical({'type':'turn.completed','usage':{'input_tokens':1,'output_tokens':1}})+'\n'
             return subprocess.CompletedProcess(argv,0,stdout,'')
-        with mock.patch.object(client,'invoke',side_effect=invoke):content=client.translate(req,force_slots=True)
+        with mock.patch.object(b,'executable',return_value='offline-codex'), mock.patch.object(client,'invoke',side_effect=invoke):
+            content=client.translate(req,force_slots=True)
         self.assertEqual(observed,['object'])
         self.assertEqual(b.MARKER.findall(json.loads(content)[0]['output']),b.MARKER.findall(b.translation_batch(req)[2][0]['input']))
 

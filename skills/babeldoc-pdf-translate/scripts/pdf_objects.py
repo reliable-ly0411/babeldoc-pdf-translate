@@ -14,7 +14,7 @@ import unicodedata
 
 import pymupdf as fitz
 
-VERSION = '0.3.0-draft.2'
+VERSION = '0.3.0-draft.3'
 m = fitz.mupdf
 
 
@@ -88,12 +88,15 @@ class GlyphDevice(fitz.JM_new_texttrace_device):
         # A rectangle is a proof of occlusion only within its actual clip and
         # outside unsupported transparency groups. No bounding-box inference
         # from an arbitrary path or a clipped rectangle is accepted.
-        if alpha==1 and not any(self.clip_stack) and not any(self.group_stack) and m.ll_fz_path_is_rect(path,m.FzMatrix().internal()):
+        # internal() is a borrowed view too. Retain its owning matrix until
+        # both native calls return; a temporary owner can die before the call.
+        identity=m.FzMatrix()
+        if alpha==1 and not any(self.clip_stack) and not any(self.group_stack) and m.ll_fz_path_is_rect(path,identity.internal()):
             # The native rectangle may have a tiny rotation/shear in its CTM.
             # Keep its actual quadrilateral; its bounding box alone cannot
             # prove occlusion near a rotated corner. A null stroke is essential
             # here: default stroke bounds add ink that the fill does not paint.
-            box=fitz.Rect(rect(m.ll_fz_bound_path(path,None,m.FzMatrix().internal())))
+            box=fitz.Rect(rect(m.ll_fz_bound_path(path,None,identity.internal())))
             matrix=fitz.Matrix(ctm.a,ctm.b,ctm.c,ctm.d,ctm.e,ctm.f)
             quad=[list(point*matrix) for point in (box.tl,box.tr,box.br,box.bl)]
             clip=fitz.Rect(rect(m.fz_device_current_scissor(self)))

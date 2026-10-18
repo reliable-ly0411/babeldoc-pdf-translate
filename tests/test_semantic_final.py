@@ -300,7 +300,7 @@ class SemanticFinalTests(unittest.TestCase):
             self.assertIn('--ignore-user-config',argv)
             return SimpleNamespace(returncode=0,stdout='{"type":"turn.completed","usage":{"input_tokens":7}}\n',stderr='PRIVATE_TRANSPORT_MARKER')
         capture=self.root/'raw-native'
-        with mock.patch.object(client.native,'invoke',side_effect=invoke):
+        with mock.patch.object(chat_bridge,'executable',return_value='offline-codex'), mock.patch.object(client.native,'invoke',side_effect=invoke):
             response,usage=client.inspect_raw('source and target',[],30,schema={'type':'object'},record_dir=capture)
         self.assertEqual(response,raw);self.assertEqual(usage,{'input_tokens':7})
         self.assertEqual((capture/'answer.raw').read_bytes(),raw)
@@ -327,7 +327,7 @@ class SemanticFinalTests(unittest.TestCase):
             Path(argv[argv.index('-o')+1]).write_bytes(raw)
             return SimpleNamespace(returncode=0,stdout='{"type":"turn.completed","usage":{"input_tokens":9,"output_tokens":4}}\n',stderr='')
         provider={'type':'codex','model':'offline-native','reasoning_effort':'high','retries':0,'timeout_seconds':30}
-        with mock.patch.object(chat_bridge.NativeClient,'invoke',side_effect=native),mock.patch.object(final,'PROTOCOL_VALIDATED',True):
+        with mock.patch.object(chat_bridge,'executable',return_value='offline-codex'), mock.patch.object(chat_bridge.NativeClient,'invoke',side_effect=native),mock.patch.object(final,'PROTOCOL_VALIDATED',True):
             result=self.run_final(semantic_auditor=gate.native_reviewer(provider))
             self.assertTrue(result['delivery_allowed'],result)
             self.assertTrue(final.verify_before_delivery(self.source,self.artifacts,result['receipt']))

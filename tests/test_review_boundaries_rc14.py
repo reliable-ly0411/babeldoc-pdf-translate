@@ -25,6 +25,8 @@ class ReviewBoundaryTests(unittest.TestCase):
         temporary=tempfile.TemporaryDirectory(prefix='rc14-bounds-');self.addCleanup(temporary.cleanup)
         self.root=Path(temporary.name)
         self.provider={'type':'codex','model':'offline-native','retries':0,'timeout_seconds':30}
+        executable=mock.patch.object(chat_bridge,'executable',return_value='offline-codex')
+        executable.start();self.addCleanup(executable.stop)
 
     def client(self,raw):
         client=visual.NativeVision(self.provider)
