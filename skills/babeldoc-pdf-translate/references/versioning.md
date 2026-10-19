@@ -1,6 +1,6 @@
 # Current version: 1.5.0-rc.28
 
-The rc.28 source is merged as `fba043bdc6a6d33bc889ac1459171dd18876821f`. Public package availability is listed in [GitHub Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases). This is a Windows/R1 bounded prerelease, not a stable 1.5.0. See [current validation and limits](windows-stability-review.md). Documentation-only updates may follow the fixed release source without retagging or replacing its assets.
+The rc.28 source is merged as `fba043bdc6a6d33bc889ac1459171dd18876821f`. The bounded prerelease is published in [GitHub Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/tag/v1.5.0-rc.28). This is a Windows/R1 bounded prerelease, not a stable 1.5.0. See [current validation and limits](windows-stability-review.md). Documentation-only updates may follow the fixed release source without retagging or replacing its assets.
 
 Entries below are historical development decisions. “Unpublished”, “no Release” and old main/tag snapshots describe the state at those checkpoints. They are retained for traceability, not as the current download status. Explicit `max` support is configuration compatibility; real `max` inference is unverified.
 

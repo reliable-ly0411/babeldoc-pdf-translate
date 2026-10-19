@@ -6,7 +6,7 @@ Layout-preserving PDF translation skill for **Codex and DeepSeek Harness**, powe
 
 ## 当前版本与适用范围
 
-**1.5.0-rc.28 是 Windows / R1 限定预发布，非正式稳定版。** 源码已合并；下载与发布状态见 [GitHub Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases)。
+**1.5.0-rc.28 是 Windows / R1 限定预发布，非正式稳定版。** 源码已合并并发布预发布包；下载与发布状态见 [GitHub Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/tag/v1.5.0-rc.28)。
 
 - 主要流程：Luna 翻译 → BabelDOC 排版 → 单独配置的低成本视觉审查 → 有界定点返工 → 再验收 → 输出前审计。Astra 仅用于单独的开发评估，不自动升级生产模型。
 - 已修复 R1 第 3 页正文遮挡行内公式，以及原生路径/矩阵视图生命周期问题。rc.28 增加显式 Codex `max` 参数的校验和转发支持；真实 `max` 推理尚未验证。
@@ -18,7 +18,21 @@ Layout-preserving PDF translation skill for **Codex and DeepSeek Harness**, powe
 
 ## 下载与安装入口
 
-选择 [Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases) 中标记为 Pre-release 的 rc.28，下载插件 ZIP 和配套 SHA256 文件，校验后解压。ZIP 包含技能、脚本、补丁与文档，不包含 Python、BabelDOC 引擎、模型或账户。必须继续完成 [运行时部署](references/deployment.md)。
+选择 [Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/tag/v1.5.0-rc.28) 中标记为 Pre-release 的 rc.28，下载插件 ZIP 和配套 SHA256 文件，校验后解压。ZIP 包含技能、脚本、补丁与文档，不包含 Python、BabelDOC 引擎、模型或账户。必须继续完成 [运行时部署](references/deployment.md)。
+
+直接下载：[插件 ZIP](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/download/v1.5.0-rc.28/babeldoc-pdf-translate-v1.5.0-rc.28.zip) · [SHA256SUMS](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/download/v1.5.0-rc.28/SHA256SUMS)。将两者保存到同一目录后校验：
+
+```sh
+sha256sum -c SHA256SUMS
+```
+
+Windows PowerShell 可用下列命令计算 ZIP 哈希，并与 `SHA256SUMS` 中对应文件的值比较：
+
+```powershell
+Get-FileHash ./babeldoc-pdf-translate-v1.5.0-rc.28.zip -Algorithm SHA256
+```
+
+该公开 ZIP 的 SHA256 为 `06985fbda5f625054779694aa4eb4437d9810b62619c2da4aaaabeeecf3a6ee5`（843031 字节）。历史技术记录中的本地 ZIP 是另一种归档字节，下载校验应以本 Release 的 `SHA256SUMS` 为准。
 
 需要可复现源码时，可直接检出已验证的固定提交：
 

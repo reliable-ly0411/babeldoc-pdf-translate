@@ -2,7 +2,7 @@
 
 ## 当前版本与兼容性
 
-当前目标为 `1.5.0-rc.28` Windows/R1 限定预发布；从 [Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases) 获取版本包与 SHA256。它不是自带依赖的独立应用。已测环境基线为 Python 3.12 / BabelDOC 0.6.4；Linux CI 的离线通过不代表所有平台、模型或 PDF 均已通过真实翻译验收。详见 [当前技术报告](windows-stability-review.md)。
+当前目标为 `1.5.0-rc.28` Windows/R1 限定预发布；从 [Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/tag/v1.5.0-rc.28) 获取版本包与 SHA256。它不是自带依赖的独立应用。已测环境基线为 Python 3.12 / BabelDOC 0.6.4；Linux CI 的离线通过不代表所有平台、模型或 PDF 均已通过真实翻译验收。详见 [当前技术报告](windows-stability-review.md)。
 
 在安装位置保留整个目录结构；Codex 插件使用嵌套 `skills/babeldoc-pdf-translate`，直接技能安装可使用根目录。运行下列命令时，以包含 `requirements.txt` 和 `scripts/` 的技能目录作为当前目录。需要预先安装 Python 及 uv（或改用下述 venv/pip 路线），并允许首次 warmup 下载上游字体/模型资源。
 
