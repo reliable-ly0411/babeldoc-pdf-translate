@@ -1,4 +1,18 @@
-# Windows bounded translation and review candidate
+# Windows/R1 bounded prerelease: rc.28
+
+Current source: `fba043bdc6a6d33bc889ac1459171dd18876821f` (merged PR #14). Engine overlay: `0.6.4-pdftranslate.math-integrity.3`. This prerelease covers the recorded Windows Luna/BabelDOC workflow and R1 reading preview; it is not full-paper cold-start or general automatic-repair acceptance.
+
+Windows offline results are 622 passed / 2 skipped; Linux CI is 594 passed / 30 skipped (29 unavailable real-document evidence checks and one Windows-only check). Independent rc.28 checks passed 14 offline tests, 15 configuration comparisons and 271 fixed-source file comparisons. The six-file runtime patch and 83 skill mirrors passed their recorded checks. See the [complete current report](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/10#issuecomment-6251690944) for immutable run links and artifact identities.
+
+The R1 page 3 overlap is fixed. Two 11-page cache renders each used 66 hits and zero new calls/failures; text, size and 144 dpi pixels matched. Other ten pages were unchanged by the layout fix. Minor English coverage/preservation, terminology, footer association and wrapping issues remain. PyMuPDF 1.28.2 can omit an equals sign in the bilingual 600 dpi view; lower-resolution views, the mono output and PDFium 600 dpi were normal. This exception prevents a blanket pixel-equality claim.
+
+L1Quad (arXiv:2302.07208) page 5 failed its real empty-cache pilot after five Luna/low calls: a missing math placeholder followed by invalid slots caused `INVALID_TEXT_SLOTS` / `BRIDGE_ABORTED`. No PDF was produced and no cache rerun occurred. Its full-paper acceptance remains incomplete. Source pass-through diagnostics are untranslated.
+
+rc.28 accepts explicit Codex `max` settings and passes mock argument-forwarding checks. Real `max` inference and full Astra final review remain unverified. Luna is the production translator with a separately configured economical vision/repair role; Astra is development-only. `PROTOCOL_VALIDATED=False` is unchanged.
+
+The chronology below preserves earlier observations. Historical draft/pending wording is scoped to its named version and does not supersede the current status above.
+
+# Historical engineering sequence
 
 This draft carries the Windows work through rc.24 into a clean branch based on
 public main, then fixes the review-context treatment of the original translation
@@ -49,9 +63,9 @@ rc.26 corrects the horizontal bounds of only the paragraphs that donated math
 glyphs, retaining source objects and vertical metrics. Two fresh full renders
 each used 66 cache hits and zero new calls or failures, with equal text,
 dimensions and 144 dpi pixels. Both variants changed only the affected page 3
-region; the other ten pages remain equal to rc.24. The complete formula crop
-matches the original at 600 dpi. The fixed rc.26 source passed 620 of 622 local
-tests with two existing platform skips. Independent recheck is in progress.
+region; the other ten pages remain equal to rc.24. The checked formula crop matches the original; the later bilingual MuPDF
+600 dpi exception is documented in the current status above. The fixed rc.26 source passed 620 of 622 local
+tests with two existing platform skips. The later independent recheck is summarized above.
 Inspection crop coordinates are evidence only, never repair coordinates.
 
 Linux CI exposed two native lifetime errors: an owning path wrapper dropped a
@@ -61,8 +75,7 @@ rc.27 retains the matrix owner through both queries. Child-process replay checks
 actual fill classification and clipping/render stability. An owner-expiring-view
 counterexample fails on rc.26 and passes with the fix. Offline adapter tests also
 stub executable discovery and give synthetic legacy cache files the private
-permissions required on POSIX. All 99 targeted local tests pass; CI must still
-confirm the complete Linux run. Bounds, fidelity and budget guards are unchanged.
+permissions required on POSIX. All 99 targeted local tests pass; The later complete Linux CI result is summarized above. Bounds, fidelity and budget guards are unchanged.
 
 All 105 Table 2 values and their row/column positions were consistent. The other
 observations below were classified as minor disclosed limitations under the

@@ -64,4 +64,4 @@ as full human quality acceptance.
 - [Unattended translation](references/unattended.md): native account setup, private checkpoints and recovery.
 - [Sources](references/sources.md): checked upstream documentation and compatibility baseline.
 - `scripts/pdf_translate.py`: inspect, glossary validation, capability probing, dry-run and execution through the BabelDOC CLI. Run `--help` for commands.
-- `scripts/repair_runtime.py`: explicit hash-guarded compatibility patch for BabelDOC 0.6.4, with check/apply/rollback. Follow deployment instructions. It changes pinned upstream source files; it does not run automatically during translation. This candidate's patched CLI identifies itself as `0.6.4+pdftranslate.math-integrity.2`.
+- `scripts/repair_runtime.py`: explicit hash-guarded compatibility patch for BabelDOC 0.6.4, with check/apply/rollback. Follow deployment instructions. It changes pinned upstream source files; it does not run automatically during translation. This candidate's patched CLI identifies itself as `0.6.4+pdftranslate.math-integrity.3`.

@@ -1,4 +1,30 @@
-# Validation status
+# Validation status: 1.5.0-rc.28
+
+This is a bounded Windows/R1 prerelease, not a stable release or validation of arbitrary PDFs. The release source is merge commit `fba043bdc6a6d33bc889ac1459171dd18876821f`; documentation may advance independently without changing that release.
+
+| Check | Recorded result |
+| --- | --- |
+| Windows offline suite | 624 tests: 622 passed, 2 existing platform skips |
+| Linux merged-source CI | 624 tests: 594 passed, 30 skips (29 unavailable real-document evidence checks, 1 Windows-only check) |
+| Independent rc.28 review | 14 offline tests passed; 15 configuration comparisons agreed; 271 release files matched the fixed source |
+| Runtime and skill packaging | Six-file patch installation/migration/rollback/reapply/idempotence checks passed; 83 skill mirrors matched |
+| R1 recovered full-paper cache renders | Two runs, each 66 cache hits, zero new calls/failures; all 11 pages matched in text, size and 144 dpi pixels |
+
+These results are separate checks, not an aggregate quality score. Skipped evidence is not a passed check. The R1 PDFs were generated with the rc.26 layout correction; rc.27/rc.28 do not change those PDF bytes. Cache recovery/repeatability does not establish a successful full-paper empty-cache translation.
+
+## Remaining limits
+
+- R1 page 3 formula overlap is fixed. English preservation/coverage, terminology, footer association and minor line wrapping remain disclosed limitations.
+- PyMuPDF 1.28.2 can omit the example equals sign in the bilingual 600 dpi view; 144/300 dpi, the monolingual output and PDFium 600 dpi were checked as normal. Do not claim strict equality for the affected view.
+- L1Quad (arXiv:2302.07208) page 5 empty-cache pilot failed after 5 Luna/low calls with `INVALID_TEXT_SLOTS` / `BRIDGE_ABORTED`. No PDF or cache rerun resulted; full-paper acceptance is incomplete. The 21-page source pass-through is an untranslated diagnostic.
+- Explicit Codex `max` configuration and mock CLI forwarding pass. Real `max` inference and the full Astra development final audit remain unverified.
+- `PROTOCOL_VALIDATED=False` remains in force. Model clear replies, offline tests and retained `best.*` files do not establish automatic delivery acceptance or general repair reliability.
+
+Sources: [rc.28 technical record](https://github.com/reliable-ly0411/babeldoc-pdf-translate/issues/10#issuecomment-6251690944), [merged-source CI](https://github.com/reliable-ly0411/babeldoc-pdf-translate/actions/runs/39142525785), [reproduction instructions](tests/README.md).
+
+The following notes retain earlier results and failures for traceability. Version-specific “draft” or “pending” statements below describe those historical checkpoints, not the current source-publication state.
+
+# Historical validation notes
 
 Current development candidate: **1.5.0-rc.26**. Source publication is separate
 from PDF acceptance; this draft does not enable the unvalidated production gate.
@@ -27,6 +53,5 @@ Source hashes were unchanged throughout both successful runs. A separate
 external-profile attempt was interrupted by the execution transport; its partial
 log is retained and is not counted as a passed run.
 
-An independent all-page review found one remaining PDF release blocker on page 3:
-translated prose overlaps the end of an inline formula. Code publication remains
-a draft while the generic layout fix and candidate recheck are pending.
+At rc.25, an independent all-page review found one remaining PDF release blocker on page 3:
+translated prose overlaps the end of an inline formula. This historical blocker was corrected in rc.26; see the current status above.
