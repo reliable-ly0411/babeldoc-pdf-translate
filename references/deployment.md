@@ -1,5 +1,11 @@
 # 部署与跨平台分发
 
+## 当前版本与兼容性
+
+当前目标为 `1.5.0-rc.28` Windows/R1 限定预发布；从 [Releases](https://github.com/reliable-ly0411/babeldoc-pdf-translate/releases/tag/v1.5.0-rc.28) 获取版本包与 SHA256。它不是自带依赖的独立应用。已测环境基线为 Python 3.12 / BabelDOC 0.6.4；Linux CI 的离线通过不代表所有平台、模型或 PDF 均已通过真实翻译验收。详见 [当前技术报告](windows-stability-review.md)。
+
+在安装位置保留整个目录结构；Codex 插件使用嵌套 `skills/babeldoc-pdf-translate`，直接技能安装可使用根目录。运行下列命令时，以包含 `requirements.txt` 和 `scripts/` 的技能目录作为当前目录。需要预先安装 Python 及 uv（或改用下述 venv/pip 路线），并允许首次 warmup 下载上游字体/模型资源。
+
 ## 三层架构
 
 1. 指令层：SKILL.md + references，平台无关的工作流程。
@@ -39,7 +45,7 @@ uv pip install --python .venv/Scripts/python.exe -r requirements.txt
 .venv/bin/python scripts/repair_runtime.py --rollback
 ```
 
-`--check` 返回 0 表示完整应用，1 表示尚未完整应用，2 表示版本、哈希或回滚材料异常。回滚副本位于该虚拟环境的 `site-packages/.babeldoc-pdf-translate-compat/`；保留它才能验证和回滚。升级引擎前先回滚，再重新验证兼容性；不将本补丁强行应用到其他版本。原始发行版元数据仍为 0.6.4，修补后的 CLI 版本显示 `0.6.4+pdftranslate.linux-r1.1`。详见 [补丁说明](../patches/babeldoc-0.6.4/README.md)。
+`--check` 返回 0 表示完整应用，1 表示尚未完整应用，2 表示版本、哈希或回滚材料异常。回滚副本位于该虚拟环境的 `site-packages/.babeldoc-pdf-translate-compat/`；保留它才能验证和回滚。升级引擎前先回滚，再重新验证兼容性；不将本补丁强行应用到其他版本。原始发行版元数据仍为 0.6.4，修补后的 CLI 版本显示 `0.6.4+pdftranslate.math-integrity.3`。详见 [补丁说明](../patches/babeldoc-0.6.4/README.md)。
 
 从旧 `0.6.4-pdftranslate.1` 升级时，先使用旧补丁包及旧清单执行 `--rollback`，保留已验证的回滚副本，再应用本分支的六文件补丁。也可使用新的独立 0.6.4 环境；不能用新清单猜测或覆盖旧补丁状态。
 
