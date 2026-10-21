@@ -9,6 +9,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import importlib.util
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -127,6 +128,8 @@ def main():
                             if title not in page.get_text():
                                 errors.append(pdf.name + ': incorrect retained page order')
                     if name == 'table-numbers' and '.mono.' in pdf.name:
+                        if 'gain=2.5;sample_rate=100;mode=TEST' not in re.sub(r'\s+','',texts[pdf.name]):
+                            errors.append(pdf.name + ': configuration identifiers or exact values changed')
                         lines = [''.join(span['text'] for span in line['spans']) for page in doc
                                  for block in page.get_text('dict')['blocks'] if block['type'] == 0 for line in block['lines']]
                         if not any('-0.25' in line for line in lines):

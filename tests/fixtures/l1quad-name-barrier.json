@@ -1,0 +1,21 @@
+{
+  "source_url": "https://arxiv.org/abs/2302.07208v2",
+  "source_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "license": "CC BY 4.0",
+  "physical_page": 5,
+  "row": {
+    "id": 4,
+    "input": "<style id='1'>Remark 1: </style>If the Lipschitz constant of {v3} with respect to the state {v4}is small enough, the upper bound in{v5} in Assumption 2 can always be satisfied by choosing a large enough {v6}. In real application, side wind is the most common cause of unmatched uncertainty for quadrotors. It is realistic to assume the magnitude of the side wind does notchange dramaticallywithin a relativelylarge region. Note that choosing a sufficiently large {v7}to satisfy the condition in{v8} may lead to a degradation of the performance bound."
+  },
+  "scope": "Actual two Luna responses, single public paragraph only. The configured name token is relabelled code -> name; all math tokens/text are otherwise unchanged. No semantic acceptance is implied.",
+  "responses": [
+    {
+      "expected": "missing_math_rejected",
+      "text": "<style id='1'>注 1： </style>如果 {pdftranslate_name_3bdd4f4bbd7c7a03} 常数相对于状态 {pdftranslate_code_f50c08e91b17b118}足够小，则通过选择足够大的 {pdftranslate_code_ea05b3aa806fc397}，总能满足假设 2 中的上界{pdftranslate_code_43824b3af2561786}。在实际应用中，侧风是四旋翼飞行器非匹配不确定性最常见的成因。可以合理地假设，在相对较大的区域内，侧风的大小不会发生剧烈变化。请注意，选择足够大的 {pdftranslate_code_85aa57bfe77957db}以满足{pdftranslate_code_48de4e3317cf7aee}中的条件，可能导致性能界限变差。"
+    },
+    {
+      "expected": "token_fidelity_passes_not_semantic_acceptance",
+      "text": "<style id='1'>备注 1： </style>如果相对于状态 {pdftranslate_code_f50c08e91b17b118} 的 {pdftranslate_name_3bdd4f4bbd7c7a03} 常数 {pdftranslate_code_ea05b3aa806fc397} 足够小，则总能通过选择足够大的 {pdftranslate_code_e80f755da5b41126}，满足假设 2 中 {pdftranslate_code_43824b3af2561786} 的上界。在实际应用中，侧风是四旋翼飞行器出现非匹配不确定性的最常见原因。假设侧风的大小在相对较大的区域内不会发生剧烈变化是合理的。请注意，选择足够大的 {pdftranslate_code_85aa57bfe77957db} 以满足 {pdftranslate_code_48de4e3317cf7aee} 中的条件，可能导致性能界限变差。"
+    }
+  ]
+}

@@ -6,7 +6,12 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ['SKILL.md', 'requirements.txt', 'scripts/pdf_translate.py', 'scripts/repair_runtime.py',
-         'scripts/chat_bridge.py', 'scripts/dsh_chat.mjs']
+         'scripts/chat_bridge.py', 'scripts/native_context.py', 'scripts/dsh_chat.mjs', 'scripts/windows_job.py', 'scripts/visual_review.py',
+         'scripts/model_endpoints.py','scripts/vision_backends.py','scripts/pdf_pipeline.py','scripts/semantic_pipeline.py','scripts/final_audit.py',
+         'scripts/audit_receipts.py','scripts/semantic_gate.py','scripts/semantic_mapping.py','scripts/semantic_unit_protocol.py',
+         'scripts/pdf_objects.py','scripts/engine_source_map.py','scripts/semantic_objects.py','scripts/native_capture.py','scripts/semantic_filesystem.py',
+         'scripts/clipping_relations.py','scripts/prose_ink.py','scripts/render_lineage.py','scripts/source_fragments.py','scripts/source_redaction.py','scripts/gap_rerender.py','scripts/date_literals.py','scripts/numeric_literals.py',
+         'scripts/repair_objects.py','scripts/expression_syntax.py','scripts/quantity_roles.py','scripts/translation_contract.py','scripts/semantic_quality.py','scripts/semantic_relations.py','scripts/semantic_relation_spans.py','scripts/semantic_blind.py','scripts/source_repair.py','scripts/region_review.py','scripts/math_operators.py','scripts/prose_completeness.py','scripts/semantic_review.py','scripts/translation_corrections.py']
 DIRS = ['references', 'assets', 'agents', 'patches']
 
 def main():

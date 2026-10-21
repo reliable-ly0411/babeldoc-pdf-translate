@@ -28,5 +28,6 @@
   "Gain": "增益",
   "Hz": "Hz",
   "s": "s",
-  "V": "V"
+  "V": "V",
+  "Configuration example: gain{v1}; sample{v2}rate{v3}; mode{v4}TEST": "配置示例：gain{v1}; sample{v2}rate{v3}; mode{v4}TEST"
 }

@@ -1,0 +1,80 @@
+{
+  "source_url": "https://arxiv.org/abs/2302.07208v2",
+  "license": "CC BY 4.0",
+  "source_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "physical_page": 5,
+  "scope": "Actual independent rc.2 cold failure. Public paper rows/replies only; no prompts, paths, account data or credentials.",
+  "rows": [
+    {
+      "id": 0,
+      "input": "The objective is to ensure that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 1,
+      "input": "Next we introduce the notion of ‘closeness’. Given a posi- tive scalar {v1}and the desired state {v2},{v3} denotes the set centered at {v4} with radius {v5}, i.e., {v6}{v7}. Clearly{v8} induces a tube centered around {v9} for all{v10}, where the tube is defined as",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 2,
+      "input": "Thus, {v1}needs to ensure",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 3,
+      "input": "for any given {v1} and {v2}",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 4,
+      "input": "<style id='1'>Assumption </style>{v3} is continuous, bounded, and Lip- schitz continuous in {v4}, uniformly in {v5}, for all {v6} and{v7}. In addition, {v8} and {v9} are bounded for all {v10} and {v11}",
+      "layout_label": "plain text"
+    }
+  ],
+  "protected_identifiers": [
+    "CPU",
+    "DOB",
+    "Hurwitz",
+    "L1Quad",
+    "LPF",
+    "Lipschitz",
+    "MPC",
+    "PID",
+    "PWM",
+    "RMSE",
+    "RMSEs"
+  ],
+  "first_restored_reply": [
+    {
+      "id": 0,
+      "output": "目标是确保对于所有{v4}，系统在{v2}中的状态{v1}始终“接近”期望轨迹{v3}。"
+    },
+    {
+      "id": 1,
+      "output": "接下来，我们引入“接近性”的概念。给定一个正标量{v1}，期望状态{v2},{v3}表示以{v4}为中心、半径为{v5}的集合，即{v6}{v7}。显然，{v8}会为所有{v10}在{v9}周围形成一个管状区域，其定义为"
+    },
+    {
+      "id": 2,
+      "output": "因此，{v1}需要确保"
+    },
+    {
+      "id": 3,
+      "output": "对于任意给定的{v1}和{v2}"
+    },
+    {
+      "id": 4,
+      "output": "<style id='1'>假设 </style>{v3}关于{v4}连续、有界且满足利普希茨连续性（Lipschitz continuity），并且关于{v5}一致；对于所有{v6}和{v7}均成立。此外，对于所有{v10}和{v11}，{v8}和{v9}均有界。"
+    }
+  ],
+  "retry_native_reply": {
+    "rows": {
+      "row_0": "目标是确保，对于所有{pdftranslate_code_c67849d5d5935ba9}，系统的状态{pdftranslate_code_9ac4614d29f4af39}保持在期望轨迹{pdftranslate_code_e8f96445709ed872}附近。",
+      "row_1": "接下来我们引入“接近”的概念。给定一个正标量{pdftranslate_code_19a7cc0c1b7d5c34}，期望状态{pdftranslate_code_60aca96e27fc5083}表示以{pdftranslate_code_80a98add5477fd40}为中心、半径为{pdftranslate_code_15f010d274ae3eb8}的集合，即{pdftranslate_code_cb7064aa26ed524d}。显然，{pdftranslate_code_8c856ace275143f1}对所有{pdftranslate_code_9ac57ac222082db1}都会形成一个以{pdftranslate_code_c24a8d5dd5eabdac}为中心的管状区域，该管状区域定义为",
+      "row_2": "因此，{pdftranslate_code_e5531fbaa480ec2c}需要确保",
+      "row_3": "对于任意给定的{pdftranslate_code_83fbabb2b356c201}和{pdftranslate_code_4b5d59f8ec37ca44}",
+      "row_4": "<style id='1'>假设 </style>{pdftranslate_code_ea05b3aa806fc397}关于{pdftranslate_code_f50c08e91b17b118}连续、有界且满足 Lipschitz 连续性，并且关于{pdftranslate_code_43824b3af2561786}是一致的，对所有{pdftranslate_code_e80f755da5b41126}和{pdftranslate_code_85aa57bfe77957db}均成立。此外，对于所有{pdftranslate_code_b8fc7f12eda3e6ec}和{pdftranslate_code_b11610e99ef816b4}，{pdftranslate_code_48de4e3317cf7aee}和{pdftranslate_code_180a9fe48b289781}均有界。"
+    }
+  },
+  "retry_missing_original_object": "{v2}",
+  "retry_missing_token": "{pdftranslate_code_0678fef15ed761c3}"
+}

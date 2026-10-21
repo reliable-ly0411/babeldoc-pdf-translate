@@ -41,7 +41,8 @@ def signature(c):
 
 class TableMathTests(unittest.TestCase):
     def fixture(self):
-        data = json.loads((Path(__file__).parent / 'fixtures/r1-math-geometry.json').read_text())
+        from evidence_support import evidence_file
+        data = json.loads(evidence_file('tests/fixtures/r1-math-geometry.json').read_text(encoding='utf-8'))
         return decode(il.Document, data).page[0]
 
     def test_real_fragmented_equations_retain_all_unique_source_glyph_coordinates(self):
@@ -79,6 +80,23 @@ class TableMathTests(unittest.TestCase):
         before = [signature(c) for c in glyphs(page)]
         StylesAndFormulas.preserve_table_math_geometry(page)
         self.assertEqual(before, [signature(c) for c in glyphs(page)])
+
+    def test_split_prose_does_not_begin_inside_preserved_inline_math(self):
+        page = self.fixture()
+        before = StylesAndFormulas.source_glyph_signature(page)
+        StylesAndFormulas.preserve_table_math_geometry(page)
+        prose = next(p for p in page.pdf_paragraph
+                     if (p.unicode or '').lstrip().startswith(', let’s start'))
+        visible = [c for part in prose.pdf_paragraph_composition if part.pdf_line
+                   for c in part.pdf_line.pdf_character if (c.char_unicode or '').strip()]
+        self.assertEqual(prose.box.x, min(c.visual_bbox.box.x for c in visible))
+        neighbors = [p for p in page.pdf_paragraph if p is not prose
+                     and any(c.pdf_formula for c in p.pdf_paragraph_composition)
+                     and p.box.y < prose.box.y2 and p.box.y2 > prose.box.y
+                     and p.box.x < prose.box.x]
+        self.assertTrue(neighbors)
+        self.assertTrue(all(p.box.x2 <= prose.box.x for p in neighbors))
+        self.assertEqual(before, StylesAndFormulas.source_glyph_signature(page))
 
 
 if __name__ == '__main__':

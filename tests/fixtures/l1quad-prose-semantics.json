@@ -1,0 +1,55 @@
+{
+  "source": "https://arxiv.org/abs/2302.07208v2",
+  "license": "CC-BY-4.0",
+  "source_pdf_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "independent_failed_candidate": "0e55c6cd34f5612d8a54dd671cee6253d8bed0f6",
+  "reproduction": {
+    "real_cache_hits": 8,
+    "actual_native_calls": 0,
+    "full_pdf_text_dimensions_pixels_equal": true,
+    "dpi": 150
+  },
+  "counterexample_scope": "Engineering wording checked against original source; not independent final model acceptance.",
+  "protected_identifiers": [
+    "CPU",
+    "DOB",
+    "Hurwitz",
+    "L1Quad",
+    "LPF",
+    "Lipschitz",
+    "MPC",
+    "PID",
+    "PWM",
+    "RMSE",
+    "RMSEs"
+  ],
+  "cases": [
+    {
+      "id": "D01",
+      "source_row_id": 0,
+      "source": "quadrotor’s translational dynamics is reflected by",
+      "actual_output": "quadrotor’s translational dynamics is reflected by",
+      "faithful_counterexample": "quadrotor（四旋翼飞行器）的平移动力学可表示为",
+      "required_relation": "An ordinary source sentence must be translated for the Chinese target.",
+      "upstream_request_sha256": "a17d3f194764a05d35f6f4c0d92e89efb581982df86cc6b02438edd075eacd52"
+    },
+    {
+      "id": "D02",
+      "source_row_id": 2,
+      "source": "Notice that both types of uncertainties, {v1} and{v2}, are modeled as non-parametric uncertainties, i.e., they are not necessarily parameterized with a finite number of parameters {v3}(in the form of {v4} with{v5}being unknown parameters and {v6}being known vector-valued nonlinear functions of {v7}forming a basis). Another importantfeature isthat bothuncertainties are nonlinearly dependent on time and state, which is the case for a broad class of uncertainties in practice.",
+      "actual_output": "请注意，两类不确定性，{v1}和{v2}，均被建模为非参数不确定性，即它们不一定要用有限个参数进行参数化{v3}（形式为{v4}，其中{v5}是未知参数，而{v6}是已知的、以{v7}为基底的向量值非线性函数）。另一个重要特征是，这两类不确定性都非线性地依赖于时间和状态，这也是实践中一大类不确定性的情况。",
+      "faithful_counterexample": "请注意，两类不确定性，{v1}和{v2}，均被建模为非参数不确定性，即它们不一定要用有限个参数进行参数化{v3}（形式为{v4}，其中{v5}是未知参数，而{v6}是关于{v7}的已知向量值非线性函数，且这些函数构成一组基）。另一个重要特征是，这两类不确定性都非线性地依赖于时间和状态，这也是实践中一大类不确定性的情况。",
+      "required_relation": "The nonlinear functions form a basis; x is their argument, not the basis.",
+      "upstream_request_sha256": "a17d3f194764a05d35f6f4c0d92e89efb581982df86cc6b02438edd075eacd52"
+    },
+    {
+      "id": "D03",
+      "source_row_id": 0,
+      "source": "The objective is to ensure that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+      "actual_output": "目标是确保对于所有{v4}，系统的状态{v1}保持与期望轨迹{v3}{v2}“接近”。",
+      "faithful_counterexample": "目标是确保：对于所有{v4}，{v2}中的系统状态{v1}始终“接近”期望轨迹{v3}。",
+      "required_relation": "The equation reference belongs to the system, not the desired trajectory.",
+      "upstream_request_sha256": "698d094890b48ceb304bbd8b24c06158f7a792079c9aef822d58184443defdf9"
+    }
+  ]
+}

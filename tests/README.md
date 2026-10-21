@@ -73,7 +73,8 @@ distinguish live calls, cache hits and deterministic replay in every report.
 
 The public sample, exact source identity, page review, runtime/model versions,
 sanitized run summaries and reproduction commands are in
-[`benchmarks/r1-linux-2026-10-14/REPORT.md`](../benchmarks/r1-linux-2026-10-14/REPORT.md).
+[the historical Linux report](../benchmarks/r1-linux-2026-10-14/REPORT.md); later corrections and current limitations are in
+[the Windows technical report](../references/windows-stability-review.md).
 The fixture tests reproduce complete-JSON row merging, named-slot omissions,
 decimal tails after formula markers, and two-dimensional table glyph loss.
 They do not call a model. `tests/run_source_passthrough.py` uses the real engine
@@ -85,3 +86,26 @@ failures. Its PDFs are deliberately untranslated diagnostics. Opt-in
 for missing Chinese and leaked markup. Page 6 intentionally retains the author
 list and affiliations in English. Passing this screen never replaces visual,
 numeric, equation, figure-label, or reading-order review.
+
+
+## Optional external document evidence
+
+The main public source distribution excludes full PDFs, large real-document geometry
+extracts and raw native-response archives. Related tests report a skip when the
+specific external file is absent; they are not counted as evidence passes.
+`BABELDOC_EXTRA_TEST_DATA` may point to an independently verified evidence root
+with the original `tests/fixtures/` and `benchmarks/` relative paths. This does
+not install credentials or call a model. `BABELDOC_COVERAGE_CORPUS` and
+`BABELDOC_SLOT_PILOT` retain their existing opt-in meanings.
+
+PowerShell example for a caller-supplied local evidence folder:
+
+```powershell
+$env:BABELDOC_EXTRA_TEST_DATA = $EvidenceRoot
+python -m unittest discover -s tests -v
+```
+
+Omit that variable for the public-only suite. Keep the two result counts separate.
+
+This experimental branch retains its original R1 benchmark and geometry fixture.
+Those historical files are not refreshed acceptance evidence for the current runtime.

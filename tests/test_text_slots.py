@@ -86,8 +86,18 @@ class SlotTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 bridge.validate_provider({'type': 'codex', 'reasoning_effort': value}, Path('.'))
 
+    def test_max_effort_is_explicit_codex_configuration_without_a_budget_change(self):
+        provider={'type':'codex','model':'gpt-6-astra','reasoning_effort':'max','max_model_calls':12,'retries':0}
+        validated=bridge.validate_provider(provider,Path('.'))
+        self.assertEqual(validated['reasoning_effort'],'max')
+        self.assertEqual(validated['max_model_calls'],12)
+        self.assertEqual(validated['retries'],0)
+        self.assertNotIn('reasoning_effort',bridge.validate_provider({'type':'codex'},Path('.')))
+        with self.assertRaises(ValueError):
+            bridge.validate_provider({**provider,'type':'dsh'},Path('.'))
+
     def test_real_r1_failure_is_complete_json_but_merges_slots(self):
-        fixture = json.loads((Path(__file__).parent / 'fixtures/r1-slot-failure.json').read_text())
+        fixture = json.loads((Path(__file__).parent / 'fixtures/r1-slot-failure.json').read_text(encoding='utf-8'))
         r = request(fixture['rows'])
         _, plan = bridge.slot_request(r)
         self.assertEqual([row['text_count'] for row in plan], [2, 3])
@@ -110,7 +120,7 @@ class SlotTests(unittest.TestCase):
             bridge.restore_slots(json.dumps(reply), plan)
 
     def test_real_r1_title_continuation_cannot_be_merged_into_previous_row(self):
-        fixture = json.loads((Path(__file__).parent / 'fixtures/r1-batch-failure.json').read_text())
+        fixture = json.loads((Path(__file__).parent / 'fixtures/r1-batch-failure.json').read_text(encoding='utf-8'))
         r = request(fixture['rows'])
         self.assertEqual(len(fixture['rejected_reply']), len(fixture['rows']))
         self.assertEqual(fixture['rejected_reply'][1]['output'], '')
