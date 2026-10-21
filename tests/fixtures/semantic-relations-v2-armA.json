@@ -1,0 +1,409 @@
+{
+  "provenance": {
+    "protocol": "relations-v2",
+    "status": "failed_original_pilot",
+    "original_manifest_sha256": "e9d9971bea00c1af9234af697a046f01205a125365f92e6a0aa14508484bfc56",
+    "pairs_file_sha256": "6bc423a2db15c32307f7a815f8b009100b77718bde591c300ac6ecd10565edc2",
+    "response_file_sha256": "2b70cb6628d2a6e20927dbbd31daad39f6bf4935ccbf32bb2ffe2d74666ece9a",
+    "not_a_new_model_response": true
+  },
+  "pairs": {
+    "pair_718091": {
+      "source": "The sensors beside the pump measure the temperature.",
+      "target": "水泵旁的传感器测量温度。"
+    },
+    "pair_238330": {
+      "source": "For each input, there exists a feasible command.",
+      "target": "对于每个输入，都存在一个可行指令。"
+    },
+    "pair_118320": {
+      "source": "The objective is to ensure that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+      "target": "目标是确保：对于所有{v4}，{v2}中的系统状态{v1}始终“接近”期望轨迹{v3}。"
+    },
+    "pair_846897": {
+      "source": "The components of{v1}, taken together, satisfy the balance condition.",
+      "target": "{v1}是各分量必须满足的平衡条件。"
+    },
+    "pair_759006": {
+      "source": "The update is rejected unless the certificate is valid.",
+      "target": "只要证书有效，就拒绝更新。"
+    },
+    "pair_331776": {
+      "source": "The residual of the estimator decreases when the filter is enabled.",
+      "target": "启用估计器时，滤波器的残差减小。"
+    },
+    "pair_177536": {
+      "source": "quadrotor’s translational dynamics is reflected by",
+      "target": "quadrotor（四旋翼飞行器）的平移动力学可表示为"
+    },
+    "pair_980756": {
+      "source": "The observer in{v1} estimates the disturbance along trajectory{v2}.",
+      "target": "{v1}中的观测器沿轨迹{v2}估计扰动。"
+    },
+    "pair_604809": {
+      "source": "Only messages signed by the coordinator may trigger the update.",
+      "target": "只有协调器可以签署由更新触发的消息。"
+    },
+    "pair_817049": {
+      "source": "Notice that both types of uncertainties, {v1} and{v2}, are modeled as non-parametric uncertainties, i.e., they are not necessarily parameterized with a finite number of parameters {v3}(in the form of {v4} with{v5}being unknown parameters and {v6}being known vector-valued nonlinear functions of {v7}forming a basis). Another importantfeature isthat bothuncertainties are nonlinearly dependent on time and state, which is the case for a broad class of uncertainties in practice.",
+      "target": "请注意，两类不确定性，{v1}和{v2}，均被建模为非参数不确定性，即它们不一定要用有限个参数进行参数化{v3}（形式为{v4}，其中{v5}是未知参数，而{v6}是已知的、以{v7}为基底的向量值非线性函数）。另一个重要特征是，这两类不确定性都非线性地依赖于时间和状态，这也是实践中一大类不确定性的情况。"
+    },
+    "pair_196299": {
+      "source": "The algorithm decreases the error, although the running time may increase.",
+      "target": "该算法降低误差，因此运行时间会增加。"
+    },
+    "pair_145184": {
+      "source": "Comparing the above equation with the ideal form in{v1}, we can use {v2}in{v3}to describethis effect where{v4}{v5}",
+      "target": "将上述方程与{v1}中的理想形式进行比较，我们可以在{v3}中使用{v2}来描述这种效应，其中{v4}{v5}"
+    }
+  },
+  "response": {
+    "pairs": {
+      "pair_718091": {
+        "status": "equivalent",
+        "summary": "The sensors’ location and temperature measurement are preserved.",
+        "alignments": [
+          {
+            "source_quote": "The sensors beside the pump measure the temperature.",
+            "target_quote": "水泵旁的传感器测量温度。",
+            "source_subject": "The sensors beside the pump",
+            "source_predicate": "measure",
+            "source_object": "the temperature",
+            "target_subject": "水泵旁的传感器",
+            "target_predicate": "测量",
+            "target_object": "温度",
+            "explanation": "Both say that sensors beside the pump measure temperature.",
+            "kind": "predicate",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_238330": {
+        "status": "equivalent",
+        "summary": "The per-input existential claim is preserved.",
+        "alignments": [
+          {
+            "source_quote": "For each input, there exists a feasible command.",
+            "target_quote": "对于每个输入，都存在一个可行指令。",
+            "source_subject": "a feasible command",
+            "source_predicate": "exists",
+            "source_object": "",
+            "target_subject": "一个可行指令",
+            "target_predicate": "存在",
+            "target_object": "",
+            "explanation": "For every input, there is a feasible command; the existential claim remains within the scope of each input.",
+            "kind": "quantifier",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_118320": {
+        "status": "equivalent",
+        "summary": "The goal, closeness relation, trajectory, and universal qualification are preserved.",
+        "alignments": [
+          {
+            "source_quote": "The objective is to ensure that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+            "target_quote": "目标是确保：对于所有{v4}，{v2}中的系统状态{v1}始终“接近”期望轨迹{v3}。",
+            "source_subject": "The objective",
+            "source_predicate": "is to ensure",
+            "source_object": "that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+            "target_subject": "目标",
+            "target_predicate": "是确保",
+            "target_object": "对于所有{v4}，{v2}中的系统状态{v1}始终“接近”期望轨迹{v3}",
+            "explanation": "The objective is to ensure that the system state remains close to the desired trajectory for all {v4}; the scope is preserved.",
+            "kind": "quantifier",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_846897": {
+        "status": "different",
+        "summary": "The target changes the collective components satisfying a condition into the components individually satisfying it.",
+        "alignments": [
+          {
+            "source_quote": "The components of{v1}, taken together, satisfy the balance condition.",
+            "target_quote": "{v1}是各分量必须满足的平衡条件。",
+            "source_subject": "The components of{v1}, taken together",
+            "source_predicate": "satisfy",
+            "source_object": "the balance condition",
+            "target_subject": "{v1}",
+            "target_predicate": "是",
+            "target_object": "各分量必须满足的平衡条件",
+            "explanation": "The source says the components collectively satisfy the condition; the target identifies {v1} as the condition that each component must satisfy.",
+            "kind": "predicate",
+            "status": "changed"
+          }
+        ]
+      },
+      "pair_759006": {
+        "status": "different",
+        "summary": "The target reverses the condition for rejection and removes the source’s unless qualification.",
+        "alignments": [
+          {
+            "source_quote": "The update is rejected unless the certificate is valid.",
+            "target_quote": "只要证书有效，就拒绝更新。",
+            "source_subject": "The update",
+            "source_predicate": "is rejected",
+            "source_object": "",
+            "target_subject": "更新",
+            "target_predicate": "拒绝",
+            "target_object": "",
+            "explanation": "The source says rejection applies unless the certificate is valid; the target says validity is sufficient for rejection.",
+            "kind": "condition",
+            "status": "changed"
+          }
+        ]
+      },
+      "pair_331776": {
+        "status": "different",
+        "summary": "The target assigns the residual to the filter and changes the condition from enabling the filter to enabling the estimator.",
+        "alignments": [
+          {
+            "source_quote": "The residual of the estimator decreases",
+            "target_quote": "滤波器的残差减小",
+            "source_subject": "The residual of the estimator",
+            "source_predicate": "decreases",
+            "source_object": "",
+            "target_subject": "滤波器的残差",
+            "target_predicate": "减小",
+            "target_object": "",
+            "explanation": "The source attributes the residual to the estimator; the target attributes it to the filter.",
+            "kind": "reference_scope",
+            "status": "changed"
+          },
+          {
+            "source_quote": "when the filter is enabled.",
+            "target_quote": "启用估计器时",
+            "source_subject": "the filter",
+            "source_predicate": "is enabled",
+            "source_object": "",
+            "target_subject": "估计器",
+            "target_predicate": "启用",
+            "target_object": "",
+            "explanation": "The enabling condition refers to the filter in the source and the estimator in the target.",
+            "kind": "condition",
+            "status": "changed"
+          }
+        ]
+      },
+      "pair_177536": {
+        "status": "equivalent",
+        "summary": "The target preserves the subject and represents the dynamics as the source says they are reflected.",
+        "alignments": [
+          {
+            "source_quote": "quadrotor’s translational dynamics is reflected by",
+            "target_quote": "quadrotor（四旋翼飞行器）的平移动力学可表示为",
+            "source_subject": "quadrotor’s translational dynamics",
+            "source_predicate": "is reflected by",
+            "source_object": "",
+            "target_subject": "quadrotor（四旋翼飞行器）的平移动力学",
+            "target_predicate": "可表示为",
+            "target_object": "",
+            "explanation": "Both describe how the quadrotor’s translational dynamics is represented; the source is a fragment whose following complement is not included.",
+            "kind": "predicate",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_980756": {
+        "status": "equivalent",
+        "summary": "The observer, disturbance estimate, and trajectory qualification are preserved.",
+        "alignments": [
+          {
+            "source_quote": "The observer in{v1} estimates the disturbance along trajectory{v2}.",
+            "target_quote": "{v1}中的观测器沿轨迹{v2}估计扰动。",
+            "source_subject": "The observer in{v1}",
+            "source_predicate": "estimates",
+            "source_object": "the disturbance",
+            "target_subject": "{v1}中的观测器",
+            "target_predicate": "估计",
+            "target_object": "扰动",
+            "explanation": "Both say the observer in {v1} estimates the disturbance along trajectory {v2}.",
+            "kind": "modifier",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_604809": {
+        "status": "different",
+        "summary": "The target changes who signs and what the “only” restriction applies to, and reverses the trigger relation.",
+        "alignments": [
+          {
+            "source_quote": "Only messages signed by the coordinator may trigger the update.",
+            "target_quote": "只有协调器可以签署由更新触发的消息。",
+            "source_subject": "messages signed by the coordinator",
+            "source_predicate": "may trigger",
+            "source_object": "the update",
+            "target_subject": "协调器",
+            "target_predicate": "可以签署",
+            "target_object": "由更新触发的消息",
+            "explanation": "In the source, only coordinator-signed messages may trigger the update. In the target, only the coordinator may sign messages triggered by the update.",
+            "kind": "reference_scope",
+            "status": "changed"
+          }
+        ]
+      },
+      "pair_817049": {
+        "status": "different",
+        "summary": "The main claims are preserved, but the target changes the relation between {v7} and the nonlinear functions.",
+        "alignments": [
+          {
+            "source_quote": "both types of uncertainties, {v1} and{v2}, are modeled as non-parametric uncertainties",
+            "target_quote": "两类不确定性，{v1}和{v2}，均被建模为非参数不确定性",
+            "source_subject": "both types of uncertainties, {v1} and{v2}",
+            "source_predicate": "are modeled as",
+            "source_object": "non-parametric uncertainties",
+            "target_subject": "两类不确定性，{v1}和{v2}",
+            "target_predicate": "被建模为",
+            "target_object": "非参数不确定性",
+            "explanation": "Both types are modeled as non-parametric uncertainties in both paragraphs.",
+            "kind": "predicate",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "they are not necessarily parameterized with a finite number of parameters {v3}",
+            "target_quote": "它们不一定要用有限个参数进行参数化{v3}",
+            "source_subject": "they",
+            "source_predicate": "are not necessarily parameterized",
+            "source_object": "with a finite number of parameters {v3}",
+            "target_subject": "它们",
+            "target_predicate": "不一定要进行参数化",
+            "target_object": "用有限个参数{v3}",
+            "explanation": "The qualification and finite-parameter limit are retained.",
+            "kind": "negation",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "with{v5}being unknown parameters and {v6}being known vector-valued nonlinear functions of {v7}forming a basis",
+            "target_quote": "其中{v5}是未知参数，而{v6}是已知的、以{v7}为基底的向量值非线性函数",
+            "source_subject": "{v5}",
+            "source_predicate": "being",
+            "source_object": "unknown parameters",
+            "target_subject": "{v5}",
+            "target_predicate": "是",
+            "target_object": "未知参数",
+            "explanation": "The unknown-parameter description of {v5} is preserved.",
+            "kind": "predicate",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "{v6}being known vector-valued nonlinear functions of {v7}forming a basis",
+            "target_quote": "{v6}是已知的、以{v7}为基底的向量值非线性函数",
+            "source_subject": "{v6}",
+            "source_predicate": "being",
+            "source_object": "known vector-valued nonlinear functions of {v7}forming a basis",
+            "target_subject": "{v6}",
+            "target_predicate": "是",
+            "target_object": "已知的、以{v7}为基底的向量值非线性函数",
+            "explanation": "The source describes functions of {v7} that form a basis; the target instead makes {v7} the basis for those functions.",
+            "kind": "reference_scope",
+            "status": "changed"
+          },
+          {
+            "source_quote": "bothuncertainties are nonlinearly dependent on time and state",
+            "target_quote": "这两类不确定性都非线性地依赖于时间和状态",
+            "source_subject": "bothuncertainties",
+            "source_predicate": "are nonlinearly dependent on",
+            "source_object": "time and state",
+            "target_subject": "这两类不确定性",
+            "target_predicate": "非线性地依赖于",
+            "target_object": "时间和状态",
+            "explanation": "Both uncertainties are said to depend nonlinearly on time and state.",
+            "kind": "predicate",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "which is the case for a broad class of uncertainties in practice.",
+            "target_quote": "这也是实践中一大类不确定性的情况。",
+            "source_subject": "which",
+            "source_predicate": "is the case for",
+            "source_object": "a broad class of uncertainties in practice",
+            "target_subject": "这",
+            "target_predicate": "是",
+            "target_object": "实践中一大类不确定性的情况",
+            "explanation": "Both say this dependence occurs for a broad class of uncertainties in practice.",
+            "kind": "modifier",
+            "status": "preserved"
+          }
+        ]
+      },
+      "pair_196299": {
+        "status": "different",
+        "summary": "The error reduction is preserved, but a concessive possibility becomes a certain causal claim about running time.",
+        "alignments": [
+          {
+            "source_quote": "The algorithm decreases the error",
+            "target_quote": "该算法降低误差",
+            "source_subject": "The algorithm",
+            "source_predicate": "decreases",
+            "source_object": "the error",
+            "target_subject": "该算法",
+            "target_predicate": "降低",
+            "target_object": "误差",
+            "explanation": "Both say that the algorithm decreases the error.",
+            "kind": "predicate",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "although the running time may increase.",
+            "target_quote": "因此运行时间会增加。",
+            "source_subject": "the running time",
+            "source_predicate": "may increase",
+            "source_object": "",
+            "target_subject": "运行时间",
+            "target_predicate": "会增加",
+            "target_object": "",
+            "explanation": "The source presents a possible increase as a concession; the target asserts an increase as a consequence.",
+            "kind": "causality",
+            "status": "changed"
+          }
+        ]
+      },
+      "pair_145184": {
+        "status": "equivalent",
+        "summary": "The comparison, use of {v2} in {v3}, effect description, and “where” clause are preserved.",
+        "alignments": [
+          {
+            "source_quote": "Comparing the above equation with the ideal form in{v1}",
+            "target_quote": "将上述方程与{v1}中的理想形式进行比较",
+            "source_subject": "the above equation",
+            "source_predicate": "Comparing",
+            "source_object": "the ideal form in{v1}",
+            "target_subject": "上述方程",
+            "target_predicate": "进行比较",
+            "target_object": "{v1}中的理想形式",
+            "explanation": "Both compare the above equation with the ideal form in {v1}.",
+            "kind": "predicate",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "we can use {v2}in{v3}to describethis effect",
+            "target_quote": "我们可以在{v3}中使用{v2}来描述这种效应",
+            "source_subject": "we",
+            "source_predicate": "can use",
+            "source_object": "{v2}",
+            "target_subject": "我们",
+            "target_predicate": "可以使用",
+            "target_object": "{v2}",
+            "explanation": "Both say {v2} can be used in {v3} to describe this effect.",
+            "kind": "modifier",
+            "status": "preserved"
+          },
+          {
+            "source_quote": "where{v4}{v5}",
+            "target_quote": "其中{v4}{v5}",
+            "source_subject": "",
+            "source_predicate": "where",
+            "source_object": "{v4}{v5}",
+            "target_subject": "",
+            "target_predicate": "其中",
+            "target_object": "{v4}{v5}",
+            "explanation": "Both retain the where-clause reference and opaque tokens; their contents are not specified.",
+            "kind": "reference_scope",
+            "status": "preserved"
+          }
+        ]
+      }
+    }
+  }
+}

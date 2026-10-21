@@ -24,7 +24,7 @@ class RepairTests(unittest.TestCase):
             original, fixed = f'value = {i}\n', f'value = {i + 10}\n'
             target = self.root / 'babeldoc' / f'file{i}.py'
             target.parent.mkdir(exist_ok=True)
-            target.write_text(original)
+            target.write_bytes(original.encode())
             patchfile = f'{i}.patch'
             (self.patches / patchfile).write_text(''.join(difflib.unified_diff(original.splitlines(True), fixed.splitlines(True), 'a', 'b')))
             self.manifest['files'].append({'path': f'babeldoc/file{i}.py', 'patch': patchfile,
@@ -101,6 +101,15 @@ class RepairTests(unittest.TestCase):
     def test_incorrect_patch_context_rejected(self):
         with self.assertRaisesRegex(ValueError, 'context mismatch'):
             repair.apply_diff(b'value = 0\n', '--- a\n+++ b\n@@ -1 +1 @@\n-value = 9\n+value = 10\n')
+
+    def test_migration_requires_verified_previous_backup(self):
+        self.run_repair('apply')
+        self.manifest['previous_id'] = 'test'
+        self.manifest['id'] = 'test2'
+        self.save_manifest()
+        self.assertTrue(self.run_repair('apply')['applied'])
+        self.assertTrue((self.root / '.babeldoc-pdf-translate-compat/test2/babeldoc/file0.py').exists())
+        self.assertFalse(self.run_repair('rollback')['applied'])
 
 
 if __name__ == '__main__':

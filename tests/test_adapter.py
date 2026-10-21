@@ -95,6 +95,8 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(result['status'], 'needs-review')
         self.assertTrue(result['output_validation']['valid'])
         self.assertTrue(result['source_unchanged'])
+        self.assertGreaterEqual(result['elapsed_seconds'], 0)
+        self.assertEqual(json.loads((self.base / 'out/run-manifest.json').read_text())['elapsed_seconds'], result['elapsed_seconds'])
         self.assertFalse(configs[0].exists())
         self.assertNotIn(secret, (self.base / 'out/engine.log').read_text())
         self.assertNotIn(secret, (self.base / 'out/run-manifest.json').read_text())
@@ -126,6 +128,7 @@ class AdapterTests(unittest.TestCase):
             result = m.run_job(self.path, 'fake', True)
         self.assertEqual(result['status'], 'failed')
         self.assertFalse(result['output_validation']['valid'])
+        self.assertGreaterEqual(result['elapsed_seconds'], 0)
         self.assertEqual(json.loads((self.base / 'out/run-manifest.json').read_text())['status'], 'failed')
         with patch.object(m, 'run_job', return_value=result), patch.object(m.sys, 'argv', ['pdf_translate.py', 'run', str(self.path), '--execute']), patch('builtins.print'):
             self.assertEqual(m.main(), 1)
@@ -133,7 +136,9 @@ class AdapterTests(unittest.TestCase):
     def test_proxy_normalization_preserves_precedence_and_parent(self):
         values = {'no_proxy': 'localhost,[::1],.internal', 'NO_PROXY': '[2001:db8::1]',
                   'HTTPS_PROXY': 'http://proxy.invalid:8080'}
-        with patch.dict(os.environ, values, clear=True):
+        # A plain mapping is necessary to test POSIX case precedence on Windows,
+        # whose real os.environ always folds these names to uppercase.
+        with patch.object(os, 'environ', values.copy()):
             env, changed = m.engine_environment()
             self.assertEqual(env['no_proxy'], 'localhost,::1,.internal')
             self.assertEqual(env['NO_PROXY'], '2001:db8::1')
@@ -143,12 +148,16 @@ class AdapterTests(unittest.TestCase):
 
     def test_proxy_format_does_not_reinterpret_port_or_url(self):
         value = '*,[::1]:443,http://[::1],invalid[host]'
-        with patch.dict(os.environ, {'no_proxy': value}, clear=True):
+        with patch.object(os, 'environ', {'no_proxy': value}):
             self.assertEqual(m.engine_environment()[0]['no_proxy'], value)
 
     def test_normalized_proxy_initializes_actual_httpx(self):
         import httpx
-        with patch.dict(os.environ, {'no_proxy': 'localhost,127.0.0.1,::1,[::1]'}, clear=True):
+        values = {'no_proxy': 'localhost,127.0.0.1,::1,[::1]'}
+        # Windows OpenSSL needs SystemRoot even for offline context creation.
+        if 'SYSTEMROOT' in os.environ:
+            values['SYSTEMROOT'] = os.environ['SYSTEMROOT']
+        with patch.dict(os.environ, values, clear=True):
             env, _ = m.engine_environment()
             with patch.dict(os.environ, env, clear=True):
                 with httpx.Client(proxy=None):

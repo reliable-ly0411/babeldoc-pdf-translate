@@ -1,0 +1,39 @@
+{
+  "source_url": "https://arxiv.org/abs/2302.07208",
+  "source_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "license": "CC BY 4.0",
+  "physical_page": 5,
+  "rows": [
+    {
+      "id": 0,
+      "input": "The {v1}adaptive controller includes a state predictor, an adaptation law, and a low-pass filter(LPF) as shown in Fig 2. The state predictor is given by",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 1,
+      "input": "where {v1}ˆ{v2}is the prediction error, {v3}is a user-selected diagonal Hurwitz matrix, {v4}({v5}){v6}repre-{v7}sents the estimation of {v8}({v9}({v10})){v11}({v12}<style id='13'>,</style>{v15}({v16})), and {v17}({v18}({v19})) {v20}{v21}({v22}({v23})) {v24}({v25}({v26})){v27}.",
+      "layout_label": "plain text"
+    },
+    {
+      "id": 2,
+      "input": "We use the piecewise-constant adaptation law to compute",
+      "layout_label": "plain text"
+    }
+  ],
+  "responses": [
+    {
+      "rows": {
+        "row_0": "图 2 所示，{pdftranslate_code_9ac4614d29f4af39}自适应控制器（adaptive controller）包括一个状态预测器（state predictor）、一个自适应律（adaptation law）和一个低通滤波器（low-pass filter，LPF）。状态预测器定义为",
+        "row_1": "其中，{pdftranslate_code_19a7cc0c1b7d5c34}ˆ{pdftranslate_code_1b4c91e0c667e38d}是预测误差，{pdftranslate_code_97734e740d7a12fd}是用户选定的对角 Hurwitz 矩阵，{pdftranslate_code_1a8f04ccf01bc175}表示对{pdftranslate_code_55bd50e68fe30efe}{pdftranslate_code_7f46416b339c5644}的估计，并且{pdftranslate_code_cdec13f696798cb1}。",
+        "row_2": "我们使用分段常数自适应律来计算"
+      }
+    },
+    {
+      "rows": {
+        "row_0": "{pdftranslate_code_9ac4614d29f4af39}自适应控制器包括一个状态预测器、一条自适应律和一个低通滤波器（LPF），如图 2 所示。状态预测器表示为",
+        "row_1": "其中，{pdftranslate_code_19a7cc0c1b7d5c34}ˆ{pdftranslate_code_1b4c91e0c667e38d}是预测误差，{pdftranslate_code_97734e740d7a12fd}是用户选定的对角 Hurwitz 矩阵，{pdftranslate_code_1a8f04ccf01bc175}表示对{pdftranslate_code_55bd50e68fe30efe}{pdftranslate_code_7f46416b339c5644}的估计，且{pdftranslate_code_cdec13f696798cb1}。",
+        "row_2": "我们使用分段常值自适应律来计算"
+      }
+    }
+  ]
+}

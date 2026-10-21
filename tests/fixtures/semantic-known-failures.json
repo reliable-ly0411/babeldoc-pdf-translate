@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "source_document_sha256": "94dd7e348e662de63ef01c4cd6c6529b37c464464df989ef3ced35e0f44cb7f3",
+  "provenance": "Known actual failed source/target pairs only; data-driven regression veto, never a production translation rule or blind-model input.",
+  "failures": [
+    {
+      "id": "D01",
+      "source": "quadrotor’s translational dynamics is reflected by",
+      "target": "quadrotor’s translational dynamics is reflected by",
+      "reason": "An ordinary source sentence must be translated for the Chinese target."
+    },
+    {
+      "id": "D02",
+      "source": "Notice that both types of uncertainties, {v1} and{v2}, are modeled as non-parametric uncertainties, i.e., they are not necessarily parameterized with a finite number of parameters {v3}(in the form of {v4} with{v5}being unknown parameters and {v6}being known vector-valued nonlinear functions of {v7}forming a basis). Another importantfeature isthat bothuncertainties are nonlinearly dependent on time and state, which is the case for a broad class of uncertainties in practice.",
+      "target": "请注意，两类不确定性，{v1}和{v2}，均被建模为非参数不确定性，即它们不一定要用有限个参数进行参数化{v3}（形式为{v4}，其中{v5}是未知参数，而{v6}是已知的、以{v7}为基底的向量值非线性函数）。另一个重要特征是，这两类不确定性都非线性地依赖于时间和状态，这也是实践中一大类不确定性的情况。",
+      "reason": "The nonlinear functions form a basis; x is their argument, not the basis."
+    },
+    {
+      "id": "D03",
+      "source": "The objective is to ensure that the state{v1} of the system in{v2} remains ‘close’ to the desired trajectory {v3}, for all{v4}",
+      "target": "目标是确保对于所有{v4}，系统的状态{v1}保持与期望轨迹{v3}{v2}“接近”。",
+      "reason": "The equation reference belongs to the system, not the desired trajectory."
+    },
+    {
+      "id": "D04",
+      "source": "Comparing the above equation with the ideal form in{v1}, we can use {v2}in{v3}to describethis effect where{v4}{v5}",
+      "target": "将上述方程与{v1}中的理想形式进行比较，我们可以使用{v2}{v3}来描述这种效应，其中{v4}{v5}",
+      "reason": "The local equation reference belongs to the use of the original quantity."
+    }
+  ]
+}

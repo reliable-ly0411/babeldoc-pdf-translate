@@ -1,5 +1,4 @@
 # Tested engine baseline; not a complete transitive lockfile.
 babeldoc==0.6.4
-# BabelDOC imports BitStream, removed in bitstring 5; pin the tested API.
 bitstring==4.4.0
 PyMuPDF>=1.25,<2

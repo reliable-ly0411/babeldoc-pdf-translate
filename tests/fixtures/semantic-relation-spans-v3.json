@@ -1,0 +1,3702 @@
+{
+  "protocol": "relations-spans-v3",
+  "contract_version": "3.0.0-draft.1",
+  "provenance": "New offline controls authored after the v2 pilot; no model saw them. These are author-aware, not independent blind validation.",
+  "positive_cases": [
+    {
+      "id": "new-bilingual-reference-gap",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "new-explicit-negation-gap",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The valve does not open.",
+          "target": "阀门并不打开。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 24,
+                    "text": "The valve does not open."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 9,
+                        "text": "The valve"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 10,
+                        "end": 14,
+                        "text": "does"
+                      },
+                      {
+                        "start": 19,
+                        "end": 23,
+                        "text": "open"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": [
+                    {
+                      "kind": "negation",
+                      "head": "predicate",
+                      "span": {
+                        "start": 15,
+                        "end": 18,
+                        "text": "not"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 7,
+                    "text": "阀门并不打开。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 2,
+                        "text": "阀门"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 2,
+                        "end": 3,
+                        "text": "并"
+                      },
+                      {
+                        "start": 4,
+                        "end": 6,
+                        "text": "打开"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": [
+                    {
+                      "kind": "negation",
+                      "head": "predicate",
+                      "span": {
+                        "start": 3,
+                        "end": 4,
+                        "text": "不"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "new-repeated-literal-and-unicode",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "🙂 The relay near the relay starts.",
+          "target": "🙂 继电器旁的继电器启动。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 34,
+                    "text": "🙂 The relay near the relay starts."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 2,
+                        "end": 11,
+                        "text": "The relay"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 27,
+                        "end": 33,
+                        "text": "starts"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 13,
+                    "text": "🙂 继电器旁的继电器启动。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 7,
+                        "end": 10,
+                        "text": "继电器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 10,
+                        "end": 12,
+                        "text": "启动"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "D04-human-multispan-demonstration",
+      "provenance": "Human-authored new-format demonstration based on D04 text; NOT repaired model output or a re-grade of the failed pilot.",
+      "pairs": {
+        "pair_145184": {
+          "source": "Comparing the above equation with the ideal form in{v1}, we can use {v2}in{v3}to describethis effect where{v4}{v5}",
+          "target": "将上述方程与{v1}中的理想形式进行比较，我们可以在{v3}中使用{v2}来描述这种效应，其中{v4}{v5}"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_145184": {
+            "status": "equivalent",
+            "summary": "The comparison, use of {v2} in {v3}, effect description, and “where” clause are preserved.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Both compare the above equation with the ideal form in {v1}.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 55,
+                    "text": "Comparing the above equation with the ideal form in{v1}"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 10,
+                        "end": 28,
+                        "text": "the above equation"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 0,
+                        "end": 9,
+                        "text": "Comparing"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 34,
+                        "end": 55,
+                        "text": "the ideal form in{v1}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 20,
+                    "text": "将上述方程与{v1}中的理想形式进行比较"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 1,
+                        "end": 5,
+                        "text": "上述方程"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 16,
+                        "end": 20,
+                        "text": "进行比较"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 6,
+                        "end": 16,
+                        "text": "{v1}中的理想形式"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                }
+              },
+              {
+                "kind": "modifier",
+                "status": "preserved",
+                "explanation": "Both say {v2} can be used in {v3} to describe this effect.",
+                "source": {
+                  "context": {
+                    "start": 57,
+                    "end": 100,
+                    "text": "we can use {v2}in{v3}to describethis effect"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 57,
+                        "end": 59,
+                        "text": "we"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 60,
+                        "end": 67,
+                        "text": "can use"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 68,
+                        "end": 72,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 21,
+                    "end": 44,
+                    "text": "我们可以在{v3}中使用{v2}来描述这种效应"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 21,
+                        "end": 23,
+                        "text": "我们"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 23,
+                        "end": 25,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 31,
+                        "end": 33,
+                        "text": "使用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 33,
+                        "end": 37,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "reference_scope",
+                      "head": "predicate",
+                      "span": {
+                        "start": 25,
+                        "end": 31,
+                        "text": "在{v3}中"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "reference_scope",
+                "status": "preserved",
+                "explanation": "Both retain the where-clause reference and opaque tokens; their contents are not specified.",
+                "source": {
+                  "context": {
+                    "start": 101,
+                    "end": 114,
+                    "text": "where{v4}{v5}"
+                  },
+                  "roles": {
+                    "subject": [],
+                    "predicate": [
+                      {
+                        "start": 101,
+                        "end": 106,
+                        "text": "where"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 106,
+                        "end": 114,
+                        "text": "{v4}{v5}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 45,
+                    "end": 55,
+                    "text": "其中{v4}{v5}"
+                  },
+                  "roles": {
+                    "subject": [],
+                    "predicate": [
+                      {
+                        "start": 45,
+                        "end": 47,
+                        "text": "其中"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 47,
+                        "end": 55,
+                        "text": "{v4}{v5}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "structural_negatives": [
+    {
+      "id": "non-verbatim-concatenated-predicate",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以启用"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_TEXT_NOT_VERBATIM"
+    },
+    {
+      "id": "reversed-fragment-order",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENTS_NOT_ORDERED_DISJOINT"
+    },
+    {
+      "id": "duplicate-fragment",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENTS_NOT_ORDERED_DISJOINT"
+    },
+    {
+      "id": "overlapping-fragments",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 4,
+                        "end": 5,
+                        "text": "以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENTS_NOT_ORDERED_DISJOINT"
+    },
+    {
+      "id": "wrong-offset",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 4,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_TEXT_NOT_VERBATIM"
+    },
+    {
+      "id": "boolean-offset",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": true,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INVALID_SPAN_OFFSETS"
+    },
+    {
+      "id": "floating-offset",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3.0,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INVALID_SPAN_OFFSETS"
+    },
+    {
+      "id": "outside-context",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 3,
+                    "end": 18,
+                    "text": "可以在{v1}之后启用{v2}"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_OUTSIDE_CONTEXT"
+    },
+    {
+      "id": "unbound-reference-gap",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENT_GAP_UNBOUND"
+    },
+    {
+      "id": "gap-bound-to-wrong-head",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "subject",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENT_GAP_UNBOUND"
+    },
+    {
+      "id": "explanation-cannot-bind-gap",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "在{v1}之后 modifies 可以 and 启用; this commentary is not evidence.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENT_GAP_UNBOUND"
+    },
+    {
+      "id": "generated-explanation-as-span",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "This is the predicate."
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_TEXT_NOT_VERBATIM"
+    },
+    {
+      "id": "uncovered-source-sentence",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}. It must never restart.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INCOMPLETE_SPAN_SOURCE_COVERAGE"
+    },
+    {
+      "id": "uncovered-target-negation",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。但它不能重新启动。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INCOMPLETE_SPAN_TARGET_COVERAGE"
+    },
+    {
+      "id": "split-opaque-marker",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 6,
+                        "end": 9,
+                        "text": "{v1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_SPLITS_OPAQUE_TOKEN"
+    },
+    {
+      "id": "missing-target-context",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": null,
+                  "roles": {
+                    "subject": [],
+                    "predicate": [],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "MISSING_LITERAL_CONTEXT"
+    },
+    {
+      "id": "wrong-contract-version",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "2.0.0",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_CONTRACT_VERSION_MISMATCH"
+    },
+    {
+      "id": "unknown-response-evidence-field",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "explanation_evidence": "invented"
+      },
+      "expected_error": "INVALID_SPAN_RESPONSE"
+    },
+    {
+      "id": "unknown-span-normalization-field",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以",
+                        "normalized": true
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INVALID_LITERAL_SPAN"
+    },
+    {
+      "id": "overlapping-attachment",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ATTACHMENT_SPAN_OVERLAP"
+    },
+    {
+      "id": "attachment-head-absent",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "object",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ATTACHMENT_HEAD_ABSENT"
+    },
+    {
+      "id": "too-many-fragments",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "INVALID_ROLE_FRAGMENTS"
+    },
+    {
+      "id": "inconsistent-conclusion",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The controller can, after {v1}, activate {v2}.",
+          "target": "控制器可以在{v1}之后启用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "different",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 46,
+                    "text": "The controller can, after {v1}, activate {v2}."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 14,
+                        "text": "The controller"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 15,
+                        "end": 18,
+                        "text": "can"
+                      },
+                      {
+                        "start": 32,
+                        "end": 40,
+                        "text": "activate"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 41,
+                        "end": 45,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 20,
+                        "end": 30,
+                        "text": "after {v1}"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 19,
+                    "text": "控制器可以在{v1}之后启用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "控制器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "可以"
+                      },
+                      {
+                        "start": 12,
+                        "end": 14,
+                        "text": "启用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 14,
+                        "end": 18,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": [
+                    {
+                      "kind": "condition",
+                      "head": "predicate",
+                      "span": {
+                        "start": 5,
+                        "end": 12,
+                        "text": "在{v1}之后"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_CONCLUSION_INCONSISTENT"
+    },
+    {
+      "id": "unbound-negation-gap",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "The valve does not open.",
+          "target": "阀门并不打开。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 24,
+                    "text": "The valve does not open."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 9,
+                        "text": "The valve"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 10,
+                        "end": 14,
+                        "text": "does"
+                      },
+                      {
+                        "start": 19,
+                        "end": 23,
+                        "text": "open"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": [
+                    {
+                      "kind": "negation",
+                      "head": "predicate",
+                      "span": {
+                        "start": 15,
+                        "end": 18,
+                        "text": "not"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 7,
+                    "text": "阀门并不打开。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 2,
+                        "text": "阀门"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 2,
+                        "end": 3,
+                        "text": "并"
+                      },
+                      {
+                        "start": 4,
+                        "end": 6,
+                        "text": "打开"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "ROLE_FRAGMENT_GAP_UNBOUND"
+    },
+    {
+      "id": "utf16-offsets-after-emoji",
+      "provenance": "human-authored offline fixture; never a native model response",
+      "pairs": {
+        "pair_0": {
+          "source": "🙂 The relay near the relay starts.",
+          "target": "🙂 继电器旁的继电器启动。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 34,
+                    "text": "🙂 The relay near the relay starts."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 2,
+                        "end": 11,
+                        "text": "The relay"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 27,
+                        "end": 33,
+                        "text": "starts"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 13,
+                    "text": "🙂 继电器旁的继电器启动。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 8,
+                        "end": 11,
+                        "text": "继电器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 10,
+                        "end": 12,
+                        "text": "启动"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected_error": "SPAN_TEXT_NOT_VERBATIM"
+    }
+  ],
+  "semantic_boundaries": [
+    {
+      "id": "literal-valid-semantic-role-error",
+      "provenance": "New human-authored counterexample: literal validity alone cannot establish semantic truth.",
+      "pairs": {
+        "pair_0": {
+          "source": "Only the valve near the pump closes.",
+          "target": "只有阀门旁的泵关闭。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 36,
+                    "text": "Only the valve near the pump closes."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 5,
+                        "end": 14,
+                        "text": "the valve"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 29,
+                        "end": 35,
+                        "text": "closes"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 10,
+                    "text": "只有阀门旁的泵关闭。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 6,
+                        "end": 7,
+                        "text": "泵"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 7,
+                        "end": 9,
+                        "text": "关闭"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_expected": "different",
+      "deliberately_wrong_declared_status": "equivalent"
+    },
+    {
+      "id": "literal-valid-negation-omission",
+      "provenance": "New human-authored counterexample: literal validity alone cannot establish semantic truth.",
+      "pairs": {
+        "pair_0": {
+          "source": "The relay does not open.",
+          "target": "继电器打开。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 24,
+                    "text": "The relay does not open."
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 9,
+                        "text": "The relay"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 10,
+                        "end": 14,
+                        "text": "does"
+                      },
+                      {
+                        "start": 19,
+                        "end": 23,
+                        "text": "open"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": [
+                    {
+                      "kind": "negation",
+                      "head": "predicate",
+                      "span": {
+                        "start": 15,
+                        "end": 18,
+                        "text": "not"
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 6,
+                    "text": "继电器打开。"
+                  },
+                  "roles": {
+                    "subject": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "继电器"
+                      }
+                    ],
+                    "predicate": [
+                      {
+                        "start": 3,
+                        "end": 5,
+                        "text": "打开"
+                      }
+                    ],
+                    "object": []
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_expected": "different",
+      "deliberately_wrong_declared_status": "equivalent"
+    },
+    {
+      "id": "literal-valid-reference-role-swap",
+      "provenance": "New human-authored counterexample: literal validity alone cannot establish semantic truth.",
+      "pairs": {
+        "pair_0": {
+          "source": "Use {v1} only if {v2} is disabled.",
+          "target": "只有{v1}被停用时才使用{v2}。"
+        }
+      },
+      "response": {
+        "protocol": "relations-spans-v3",
+        "contract_version": "3.0.0-draft.1",
+        "pairs": {
+          "pair_0": {
+            "status": "equivalent",
+            "summary": "Author-supplied offline representation example.",
+            "alignments": [
+              {
+                "kind": "predicate",
+                "status": "preserved",
+                "explanation": "Author-supplied literal witness; not a model judgment.",
+                "source": {
+                  "context": {
+                    "start": 0,
+                    "end": 34,
+                    "text": "Use {v1} only if {v2} is disabled."
+                  },
+                  "roles": {
+                    "subject": [],
+                    "predicate": [
+                      {
+                        "start": 0,
+                        "end": 3,
+                        "text": "Use"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 4,
+                        "end": 8,
+                        "text": "{v1}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                },
+                "target": {
+                  "context": {
+                    "start": 0,
+                    "end": 18,
+                    "text": "只有{v1}被停用时才使用{v2}。"
+                  },
+                  "roles": {
+                    "subject": [],
+                    "predicate": [
+                      {
+                        "start": 11,
+                        "end": 13,
+                        "text": "使用"
+                      }
+                    ],
+                    "object": [
+                      {
+                        "start": 13,
+                        "end": 17,
+                        "text": "{v2}"
+                      }
+                    ]
+                  },
+                  "attachments": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "oracle_expected": "different",
+      "deliberately_wrong_declared_status": "equivalent"
+    }
+  ]
+}
