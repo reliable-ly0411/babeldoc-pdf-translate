@@ -95,6 +95,8 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(result['status'], 'needs-review')
         self.assertTrue(result['output_validation']['valid'])
         self.assertTrue(result['source_unchanged'])
+        self.assertGreaterEqual(result['elapsed_seconds'], 0)
+        self.assertEqual(json.loads((self.base / 'out/run-manifest.json').read_text())['elapsed_seconds'], result['elapsed_seconds'])
         self.assertFalse(configs[0].exists())
         self.assertNotIn(secret, (self.base / 'out/engine.log').read_text())
         self.assertNotIn(secret, (self.base / 'out/run-manifest.json').read_text())
@@ -126,6 +128,7 @@ class AdapterTests(unittest.TestCase):
             result = m.run_job(self.path, 'fake', True)
         self.assertEqual(result['status'], 'failed')
         self.assertFalse(result['output_validation']['valid'])
+        self.assertGreaterEqual(result['elapsed_seconds'], 0)
         self.assertEqual(json.loads((self.base / 'out/run-manifest.json').read_text())['status'], 'failed')
         with patch.object(m, 'run_job', return_value=result), patch.object(m.sys, 'argv', ['pdf_translate.py', 'run', str(self.path), '--execute']), patch('builtins.print'):
             self.assertEqual(m.main(), 1)

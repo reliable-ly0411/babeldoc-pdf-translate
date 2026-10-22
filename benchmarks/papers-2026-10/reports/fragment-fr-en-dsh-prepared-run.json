@@ -1,0 +1,96 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "e869cc2136acebb0b04f8231d85cdc5de218845713fc224c88eee005073db9cf",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 23.307,
+  "bridge": {
+    "backend": "dsh",
+    "completed_requests": 3,
+    "live_requests": 3,
+    "cache_hits": 0,
+    "attempts": 3,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 1,
+    "route": "deepseek-official",
+    "token_usage": {
+      "reported_calls": 3,
+      "unreported_calls": 0,
+      "native_counters": {
+        "inputTokens": 1636,
+        "outputTokens": 304,
+        "cacheReadTokens": 384,
+        "cacheWriteTokens": 0,
+        "totalTokens": 2324
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "d2f6e511e9845ec8bbfd77c099d29515fd63055c36a64f7965d44ce02d1e019b",
+        "attempt": 1,
+        "seconds": 1.656,
+        "native_usage": {
+          "inputTokens": 872,
+          "outputTokens": 193,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1065
+        }
+      },
+      {
+        "request_sha256": "1a3a3ac4d300f663b0926f18a777f2089651b8b5d325ad6a8beb1e5c94c9f989",
+        "attempt": 1,
+        "seconds": 1.105,
+        "native_usage": {
+          "inputTokens": 521,
+          "outputTokens": 94,
+          "cacheReadTokens": 256,
+          "cacheWriteTokens": 0,
+          "totalTokens": 871
+        }
+      },
+      {
+        "request_sha256": "2ee74acb1d3eff8a8568184a5484991a711be3f580788096ad85d59730d6c0fe",
+        "attempt": 1,
+        "seconds": 0.853,
+        "native_usage": {
+          "inputTokens": 243,
+          "outputTokens": 17,
+          "cacheReadTokens": 128,
+          "cacheWriteTokens": 0,
+          "totalTokens": 388
+        }
+      }
+    ],
+    "native_version": "0.2.1-alpha.1",
+    "ready": true,
+    "native_item_types": []
+  },
+  "run": "fragment-fr-en-dsh-prepared",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "roundtrip-fr.no_watermark.en.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      },
+      {
+        "file": "roundtrip-fr.no_watermark.en.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 1,
+        "expected_page_count": 1
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}

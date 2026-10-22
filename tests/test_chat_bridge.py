@@ -180,6 +180,29 @@ class BridgeTests(unittest.TestCase):
                 self.post(bridge)
                 self.assertEqual(client.calls, 1)
 
+    def test_token_usage_counts_live_calls_without_rebilling_cache(self):
+        class Metered(FakeClient):
+            def translate(self, request):
+                self.last_usage = {'input_tokens': 100, 'cached_input_tokens': 60,
+                                   'output_tokens': 20, 'prompt': 'never publish', 'invalid': -1}
+                return super().translate(request)
+        with b.ChatBridge(self.provider, Metered()) as bridge:
+            self.post(bridge)
+            self.post(bridge)
+        usage = bridge.stats['token_usage']
+        self.assertEqual(usage['reported_calls'], 1)
+        self.assertEqual(usage['unreported_calls'], 0)
+        self.assertEqual(usage['native_counters'], {'input_tokens': 100, 'cached_input_tokens': 60, 'output_tokens': 20})
+        self.assertEqual(len(bridge.stats['request_metrics']), 1)
+        self.assertNotIn('never publish', str(bridge.stats))
+
+    def test_missing_token_usage_is_unknown_not_zero(self):
+        with b.ChatBridge(self.provider, FakeClient()) as bridge:
+            self.post(bridge)
+        self.assertEqual(bridge.stats['token_usage']['unreported_calls'], 1)
+        self.assertEqual(bridge.stats['token_usage']['native_counters'], {})
+        self.assertIsNone(bridge.stats['request_metrics'][0]['native_usage'])
+
     @unittest.skipUnless(os.name == 'posix', 'POSIX permission bits')
     def test_public_cache_is_rejected(self):
         path = self.base / 'public'
@@ -244,6 +267,36 @@ class BridgeTests(unittest.TestCase):
                      [{'id': 1, 'output': '电压'}, {'id': 3, 'output': '增益'}], [{'id': 1, 'output': '电压'}, {'id': 2, 'output': ''}]]:
             with self.subTest(rows=rows), self.assertRaisesRegex(b.BridgeError, 'INCOMPLETE_TRANSLATION_BATCH'):
                 b.checked_content(json.dumps(rows), request)
+
+    def test_split_word_placeholder_contract_and_bounded_repair(self):
+        request = {'messages': [{'role': 'user', 'content': '## Here is the input:\n' + json.dumps([
+            {'id': 7, 'input': 'advan- {v1}tage stream with {v2} and {v2}'}])}], 'response_format': None}
+        masked, protected = b.mask_code(request)
+        self.assertEqual(protected, {})
+        _, plan = b.slot_request(masked)
+        restored = b.restore_slots(json.dumps({'rows': {'row_0': {'slot_0': '优势', 'slot_1': '流', 'slot_2': '和'}}}), plan)
+        self.assertEqual(json.loads(restored)[0]['output'].count('{v1}'), 1)
+        self.assertEqual(json.loads(restored)[0]['output'].count('{v2}'), 2)
+        self.assertEqual(len(request['messages']), 1)
+        invalid = json.dumps([{'id': 7, 'output': '优势流 {v2} {v2}'}])
+        valid = json.dumps([{'id': 7, 'output': '优势流 {v1} {v2} {v2}'}], ensure_ascii=False)
+        class CheckingClient(FakeClient):
+            def translate(self, value):
+                if self.calls:
+                    self_outer.assertIn('previous reply was rejected', value['messages'][-1]['content'])
+                return super().translate(value)
+        self_outer = self
+        client = CheckingClient([invalid, valid])
+        with b.ChatBridge({**self.provider, 'retries': 1}, client) as bridge:
+            self.assertEqual(self.post(bridge, request)[0], 200)
+            self.assertEqual(bridge.stats['attempts'], 2)
+            self.assertEqual(bridge.stats['live_requests'], 1)
+        with b.ChatBridge({**self.provider, 'retries': 1}, FakeClient([invalid, invalid])) as bridge:
+            self.assertEqual(self.post(bridge, request)[0], 400)
+            self.assertEqual(self.post(bridge, request)[0], 400)
+            self.assertEqual(bridge.client.calls, 2)
+        with self.assertRaisesRegex(b.BridgeError, 'PROTECTED_TEXT_CHANGED'):
+            b.checked_content(valid.replace('优势流', '{v999}优势流'), request)
 
     def test_babeldoc_split_identifiers_remain_one_protected_code_fragment(self):
         source = 'Configuration example: gain{v1}.5; sample{v2}rate{v3}; mode{v4}TEST'

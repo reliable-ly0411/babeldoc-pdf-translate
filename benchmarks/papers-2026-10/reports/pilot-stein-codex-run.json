@@ -1,0 +1,197 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "a1f3c297cf7c85389efd3a962c5643771dd3dca510edaa00ebf240c759ffeb11",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 253.733,
+  "bridge": {
+    "backend": "codex",
+    "completed_requests": 10,
+    "live_requests": 10,
+    "cache_hits": 0,
+    "attempts": 10,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 2,
+    "token_usage": {
+      "reported_calls": 10,
+      "unreported_calls": 0,
+      "native_counters": {
+        "input_tokens": 111423,
+        "cached_input_tokens": 49920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2788,
+        "reasoning_output_tokens": 17
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "009bf0adcc30ecd7484b2238cf0e8bbbbd22524955c212d0ad9a61c757a3a495",
+        "attempt": 1,
+        "seconds": 22.902,
+        "native_usage": {
+          "input_tokens": 11291,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 400,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "addc413e469d34e65d680bcf39d2e18dde7b2cbc175d671db8f7cab2e3f4796f",
+        "attempt": 1,
+        "seconds": 22.352,
+        "native_usage": {
+          "input_tokens": 11266,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 385,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "557fa64fe8872b696bddb7c57000edfcea4d56796de59766c6eb937005b11afd",
+        "attempt": 1,
+        "seconds": 17.755,
+        "native_usage": {
+          "input_tokens": 11150,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 343,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "2785bbf4442dc9f4cc477a6a2156e38e8f7b62b306e9d1246c0f75cbd7420f32",
+        "attempt": 1,
+        "seconds": 20.554,
+        "native_usage": {
+          "input_tokens": 11317,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 350,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "0bb90096b8115b8cf4789a64f9ee163c0522d01f489c5b71860550f08bb19fe0",
+        "attempt": 1,
+        "seconds": 22.132,
+        "native_usage": {
+          "input_tokens": 11303,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 430,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "84f5bad7b5b4f753789cfe4dc011c77125804bad55bb8188cd3daa5597083672",
+        "attempt": 1,
+        "seconds": 29.703,
+        "native_usage": {
+          "input_tokens": 10996,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 196,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "70c00a2670feba2977078158f92ab76c315f90c5681ed5194652592973ed07ce",
+        "attempt": 1,
+        "seconds": 30.543,
+        "native_usage": {
+          "input_tokens": 11078,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 169,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "1b99644e31b454edb7720319779fb725ea143599903809a46953dcc01ceebca3",
+        "attempt": 1,
+        "seconds": 17.345,
+        "native_usage": {
+          "input_tokens": 11124,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 222,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "0473037aa0f03c7c702d4b597f666f1861936ef28225a240912d46051535de07",
+        "attempt": 1,
+        "seconds": 16.248,
+        "native_usage": {
+          "input_tokens": 11009,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 193,
+          "reasoning_output_tokens": 0
+        }
+      },
+      {
+        "request_sha256": "ea5655bad423a9ea4d82ee7e3996e88c8ab6104bb56aa51f0ad58d2366039917",
+        "attempt": 1,
+        "seconds": 20.215,
+        "native_usage": {
+          "input_tokens": 10889,
+          "cached_input_tokens": 8320,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 100,
+          "reasoning_output_tokens": 17
+        }
+      }
+    ],
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_item_types": [
+      "agent_message"
+    ]
+  },
+  "run": "pilot-stein-codex",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "stein2003.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "watermarked",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "watermarked",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.no_watermark.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      },
+      {
+        "file": "stein2003.no_watermark.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 2,
+        "expected_page_count": 2
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}

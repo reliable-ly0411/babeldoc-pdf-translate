@@ -1,0 +1,32 @@
+[
+  {
+    "case": "full-swift-dsh",
+    "path": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.glossary.csv",
+    "rows": 706,
+    "columns": [
+      "source",
+      "target",
+      "tgt_lng"
+    ],
+    "review": "Model-generated candidates; no claim of authoritative terminology.",
+    "adapter_glossary_import_valid": true,
+    "archive_normalization": "Removed UTF-8 BOM and normalized CRLF to LF; CSV cells unchanged.",
+    "engine_file_sha256": "8e4b420520a6e8c5834dcb31aa645e0764483cbac8ef100d2e27d71d501aff23",
+    "archive_file_sha256": "bc1ad369df3ce19742b1e22d93d42e1ab829510d99200db5335689e8071f50af"
+  },
+  {
+    "case": "pilot-swift-dsh",
+    "path": "references/pilot-swift-dsh/swift2023.no_watermark.zh-CN.glossary.csv",
+    "rows": 146,
+    "columns": [
+      "source",
+      "target",
+      "tgt_lng"
+    ],
+    "review": "Model-generated candidates; no claim of authoritative terminology.",
+    "adapter_glossary_import_valid": true,
+    "archive_normalization": "Removed UTF-8 BOM and normalized CRLF to LF; CSV cells unchanged.",
+    "engine_file_sha256": "1d83069fbab894f1e172d81da5b0721e48a4b1c79664d56ac18881e5211cf678",
+    "archive_file_sha256": "3da7527bc94476231a204757fbb2bb8f143a4255542eb5b7358ee28eb2a28ad7"
+  }
+]

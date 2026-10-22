@@ -55,3 +55,7 @@ log is retained and is not counted as a passed run.
 
 At rc.25, an independent all-page review found one remaining PDF release blocker on page 3:
 translated prose overlaps the end of an inline formula. This historical blocker was corrected in rc.26; see the current status above.
+
+## 历史复杂论文扩展验收
+
+新一轮公开航空航天与 AI 论文的原文、作业、提示词、参考输出和原生用量见 [实验报告](benchmarks/papers-2026-10/REPORT.md)。本轮发现旧式公式排版、CID 标点、残留字符和特定 DSH 占位符失败，不能据先前合成件与主机接入验收宣称所有真实 PDF 均正常。上述是 1.3.0 开发阶段的历史记录，扩展验收未全部通过；不能替代当前版本的离线测试或真实质量验收。

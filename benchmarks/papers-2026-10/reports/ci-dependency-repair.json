@@ -1,0 +1,13 @@
+{
+  "initial_commit": "8ada0d91bfa1a98ab2519514596883e6665a6f94",
+  "failed_run": "https://github.com/reliable-ly0411/babeldoc-pdf-translate/actions/runs/38150388890",
+  "resolved_dependency": "bitstring 5.0.0",
+  "upstream_requirement": "babeldoc 0.6.4 requires bitstring>=4.3.0 with no upper bound",
+  "error": "ImportError: cannot import name 'BitStream' from 'bitstring'",
+  "observed_ci_tests": 60,
+  "observed_ci_errors": 3,
+  "fix": "Pin bitstring==4.4.0, matching the local runtime used for all reported translations. Do not disable parser/runtime tests.",
+  "upstream_api_change": "https://github.com/scott-griffiths/bitstring/blob/main/release_notes.md",
+  "local_api_check": "from bitstring import BitStream succeeded with version 4.4.0",
+  "final_ci": "See draft PR #11 checks and Issue #10 for the resulting commit validation."
+}

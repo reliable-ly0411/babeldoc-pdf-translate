@@ -1,0 +1,28 @@
+{
+  "input": "../sources/swift2023.pdf",
+  "output": "../../../output/paper-benchmark/full-swift-dsh",
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "outputs": "both",
+  "watermark": "no_watermark",
+  "translate_tables": true,
+  "scan_mode": "off",
+  "prompt_file": "../prompts/technical.txt",
+  "glossaries": [
+    "../prompts/en-zh-glossary.csv"
+  ],
+  "timeout_seconds": 14400,
+  "auto_terms": true,
+  "save_terms": true,
+  "max_pages_per_part": 5,
+  "provider": {
+    "type": "dsh",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "../../../.translation-cache/papers/dsh/swift2023",
+    "dsh_package": "/path/to/deepseek-harness/apps/cli/package.json",
+    "node_bin": "node",
+    "model": "deepseek-flash",
+    "route": "deepseek-official"
+  }
+}

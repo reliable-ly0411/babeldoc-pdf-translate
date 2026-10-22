@@ -1,0 +1,23 @@
+{
+  "input": "../sources/fragment-en.pdf",
+  "output": "../../../output/paper-benchmark/fragment-en-fr-dsh",
+  "source_language": "en",
+  "target_language": "fr",
+  "outputs": "both",
+  "watermark": "no_watermark",
+  "auto_terms": false,
+  "translate_tables": true,
+  "scan_mode": "off",
+  "prompt_file": "../prompts/technical.txt",
+  "timeout_seconds": 1800,
+  "provider": {
+    "type": "dsh",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "../../../.translation-cache/papers/dsh/fragment-en",
+    "dsh_package": "/path/to/deepseek-harness/apps/cli/package.json",
+    "node_bin": "node",
+    "model": "deepseek-flash",
+    "route": "deepseek-official"
+  }
+}

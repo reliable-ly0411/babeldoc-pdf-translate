@@ -1,0 +1,147 @@
+{
+  "status": "failed",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "a7fc5ec03df43475818876983803437411ba38bdad96ca4613c93c996ebb7e32",
+  "source_unchanged": true,
+  "error": "PROTECTED_TEXT_CHANGED",
+  "returncode": null,
+  "elapsed_seconds": 33.428,
+  "bridge": {
+    "backend": "dsh",
+    "completed_requests": 8,
+    "live_requests": 8,
+    "cache_hits": 0,
+    "attempts": 9,
+    "failed_requests": 1,
+    "errors": [
+      "PROTECTED_TEXT_CHANGED"
+    ],
+    "protected_code_requests": 3,
+    "route": "deepseek-official",
+    "token_usage": {
+      "reported_calls": 9,
+      "unreported_calls": 0,
+      "native_counters": {
+        "inputTokens": 5270,
+        "outputTokens": 2680,
+        "cacheReadTokens": 3712,
+        "cacheWriteTokens": 0,
+        "totalTokens": 11662
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "d9e8786971109c76818f18092733bc33293860612276d98b4a416055918eb513",
+        "attempt": 1,
+        "seconds": 1.355,
+        "native_usage": {
+          "inputTokens": 403,
+          "outputTokens": 154,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 941
+        }
+      },
+      {
+        "request_sha256": "1d03c92febba990c21bae59362c7049f511ebbda7d2b63ea7da1bec407da3077",
+        "attempt": 1,
+        "seconds": 1.856,
+        "native_usage": {
+          "inputTokens": 663,
+          "outputTokens": 291,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1338
+        }
+      },
+      {
+        "request_sha256": "c8487a5f9f129aed60fc6ea652a52b636ef50ae37993d8e5489d4d495b99a4db",
+        "attempt": 1,
+        "seconds": 1.556,
+        "native_usage": {
+          "inputTokens": 579,
+          "outputTokens": 277,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1240
+        }
+      },
+      {
+        "request_sha256": "279303b95898acc21d29c19712beb943a418dad1c71045f108aa30718dfc58ca",
+        "attempt": 1,
+        "seconds": 1.856,
+        "native_usage": {
+          "inputTokens": 663,
+          "outputTokens": 319,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1366
+        }
+      },
+      {
+        "request_sha256": "6e7c08dcfdb550c1265a92daa0baa26f22b2cac75411cb5da7f9eabe1f388134",
+        "attempt": 1,
+        "seconds": 2.307,
+        "native_usage": {
+          "inputTokens": 785,
+          "outputTokens": 462,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1631
+        }
+      },
+      {
+        "request_sha256": "40205d2a81e9950389f3e7133a36c09e7c568e6974476cd9d713f1c17cc970c6",
+        "attempt": 1,
+        "seconds": 2.107,
+        "native_usage": {
+          "inputTokens": 625,
+          "outputTokens": 449,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1586
+        }
+      },
+      {
+        "request_sha256": "aba895a58d5e86e2704583e1c7e4920edbc2dda686851eeaaa3e6110eec05155",
+        "attempt": 1,
+        "seconds": 2.057,
+        "native_usage": {
+          "inputTokens": 606,
+          "outputTokens": 237,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1227
+        }
+      },
+      {
+        "request_sha256": "27bac322b4e5a033c6acbda8facbe783714295185a7594f380ac4af7776db712",
+        "attempt": 1,
+        "seconds": 2.014,
+        "native_usage": {
+          "inputTokens": 489,
+          "outputTokens": 267,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1268
+        }
+      },
+      {
+        "request_sha256": "7dfcd8645941b6b2b8122c2f4291b5adbc2a7cf5029a3fe7149653476eb0bfe5",
+        "attempt": 1,
+        "seconds": 1.764,
+        "native_usage": {
+          "inputTokens": 457,
+          "outputTokens": 224,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1065
+        }
+      }
+    ],
+    "native_version": "0.2.1-alpha.1",
+    "ready": true,
+    "native_item_types": []
+  },
+  "run": "pilot-dueling-dsh"
+}
