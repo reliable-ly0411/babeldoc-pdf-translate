@@ -1,0 +1,7 @@
+Short flight-control translation fixture
+The controller tracks a reference trajectory using feedback.
+A positive stability margin does not guarantee safety under every disturbance.
+The sampling rate is 100 Hz and the measured delay is 0.02 s.
+Keep the identifier CTRL-2026-A and the signed value -0.25 unchanged.
+The reinforcement learning policy minimizes tracking error.
+J = 0.25 * e^2 + 0.02 * u^2

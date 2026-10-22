@@ -1,0 +1,547 @@
+{
+  "method": "All-page contact sheets for four full papers and Swift roundtrip; selected high-risk zooms and one-page controls. Not expert verification of every word/formula.",
+  "cases": [
+    {
+      "case": "full-stein-codex",
+      "actual_run": "full-stein-codex",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "全文缩略图 1–14 页；放大 3、7 页。积分、根号与行内公式错位；首字下沉/图形标题残留。",
+      "source": "sources/stein2003.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "codex",
+      "seconds": 2061.439,
+      "live_requests": 78,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 78,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 866369,
+          "cached_input_tokens": 499200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19276,
+          "reasoning_output_tokens": 278
+        }
+      }
+    },
+    {
+      "case": "full-dueling-codex",
+      "actual_run": "full-dueling-codex",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "全文缩略图 1–9 页；放大 4、8 页。首标题呈 Due…ling 混排，部分行内英文片段/重音帽残留或错位；主要独立方程可见，不能据此通过全部公式。",
+      "source": "sources/dueling2016.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "codex",
+      "seconds": 2325.126,
+      "live_requests": 105,
+      "cache_hits": 2,
+      "token_usage": {
+        "reported_calls": 105,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 1156649,
+          "cached_input_tokens": 690560,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19148,
+          "reasoning_output_tokens": 1019
+        }
+      }
+    },
+    {
+      "case": "full-swift-dsh",
+      "actual_run": "full-swift-dsh-repair",
+      "structure_valid": true,
+      "quality": "LIMITED",
+      "review": "全文缩略图 1–14 页；同参数代表页 2、7、14 放大。照片、轨迹、主要动力学矩阵可见；第 14 页像素表格仍为英文，未做逐句校译。",
+      "source": "sources/swift2023.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 278.493,
+      "live_requests": 51,
+      "cache_hits": 97,
+      "token_usage": {
+        "reported_calls": 51,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 50901,
+          "outputTokens": 20220,
+          "cacheReadTokens": 9728,
+          "cacheWriteTokens": 0,
+          "totalTokens": 80849
+        }
+      }
+    },
+    {
+      "case": "full-r1-dsh",
+      "actual_run": "full-r1-dsh",
+      "structure_valid": true,
+      "quality": "LIMITED",
+      "review": "全文缩略图 1–11 页；放大 7 页 GRPO 公式。主要独立方程可见；第 10、11 页图像内英文未译，未做逐句校译。",
+      "source": "sources/deepseekr1.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 165.373,
+      "live_requests": 68,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 68,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 51457,
+          "outputTokens": 19891,
+          "cacheReadTokens": 16128,
+          "cacheWriteTokens": 0,
+          "totalTokens": 87476
+        }
+      }
+    },
+    {
+      "case": "pilot-stein-codex",
+      "actual_run": "pilot-stein-codex",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "原文 3、7 页均放大检查；积分/根号错位。两次兼容性修复未改善。",
+      "source": "sources/stein2003.pdf",
+      "pages": "3,7",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "codex",
+      "seconds": 253.733,
+      "live_requests": 10,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 10,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 111423,
+          "cached_input_tokens": 49920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2788,
+          "reasoning_output_tokens": 17
+        }
+      }
+    },
+    {
+      "case": "pilot-dueling-dsh",
+      "actual_run": "pilot-dueling-dsh",
+      "structure_valid": false,
+      "quality": "FAIL",
+      "review": "原文 4、8 页；DSH 丢失 split-word 内的 {v1}。保护校验终止，未生成可验收 PDF。",
+      "source": "sources/dueling2016.pdf",
+      "pages": "4,8",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 33.428,
+      "live_requests": 8,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 9,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 5270,
+          "outputTokens": 2680,
+          "cacheReadTokens": 3712,
+          "cacheWriteTokens": 0,
+          "totalTokens": 11662
+        }
+      }
+    },
+    {
+      "case": "pilot-swift-dsh",
+      "actual_run": "pilot-swift-dsh",
+      "structure_valid": true,
+      "quality": "LIMITED",
+      "review": "原文 2、7、14 页全部放大；照片、独立矩阵保留，像素表格保持英文。",
+      "source": "sources/swift2023.pdf",
+      "pages": "2,7,14",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 56.393,
+      "live_requests": 17,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 17,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 10563,
+          "outputTokens": 5852,
+          "cacheReadTokens": 7168,
+          "cacheWriteTokens": 0,
+          "totalTokens": 23583
+        }
+      }
+    },
+    {
+      "case": "pilot-r1-codex",
+      "actual_run": "pilot-r1-codex",
+      "structure_valid": true,
+      "quality": "LIMITED",
+      "review": "原文 2、7 页全部放大；主要图形和独立方程可见。只通过此范围的有限抽查。",
+      "source": "sources/deepseekr1.pdf",
+      "pages": "2,7",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "codex",
+      "seconds": 288.97,
+      "live_requests": 11,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 11,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 123147,
+          "cached_input_tokens": 33280,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3717,
+          "reasoning_output_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "roundtrip-swift-dsh",
+      "actual_run": "roundtrip-swift-dsh-prepared",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "14 页缩略图和第 7 页放大；图像和主要矩阵可见，但多页仍有中文段落/图注/短标题，覆盖不完整。",
+      "source": "sources/roundtrip-swift-zh.pdf",
+      "pages": "all",
+      "languages": [
+        "zh-CN",
+        "en"
+      ],
+      "backend": "dsh",
+      "seconds": 484.986,
+      "live_requests": 94,
+      "cache_hits": 7,
+      "token_usage": {
+        "reported_calls": 94,
+        "unreported_calls": 1,
+        "native_counters": {
+          "inputTokens": 58208,
+          "outputTokens": 21732,
+          "cacheReadTokens": 18944,
+          "cacheWriteTokens": 0,
+          "totalTokens": 98884
+        }
+      }
+    },
+    {
+      "case": "roundtrip-r1-codex",
+      "actual_run": "roundtrip-r1-codex-prepared",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "只选固定中文输入第 2 页（原论文第 7 页）；方法标题未译、英文单词断裂，式 (5) 下标串移到末尾。",
+      "source": "sources/roundtrip-r1-zh.pdf",
+      "pages": "2",
+      "languages": [
+        "zh-CN",
+        "en"
+      ],
+      "backend": "codex",
+      "seconds": 218.271,
+      "live_requests": 8,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 8,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 88671,
+          "cached_input_tokens": 66560,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1852,
+          "reasoning_output_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "fragment-en-fr-dsh",
+      "actual_run": "fragment-en-fr-dsh",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "单页放大；KConservez 和末尾 d 残留。数值/否定意义在抽查中存在，但字符与排版不合格。",
+      "source": "sources/fragment-en.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "backend": "dsh",
+      "seconds": 23.129,
+      "live_requests": 3,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 3,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 1599,
+          "outputTokens": 337,
+          "cacheReadTokens": 256,
+          "cacheWriteTokens": 0,
+          "totalTokens": 2192
+        }
+      }
+    },
+    {
+      "case": "fragment-fr-en-dsh",
+      "actual_run": "fragment-fr-en-dsh-prepared",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "单页放大；继承 KConservez/d，缺字及不完整词语。回译不能消除首轮损伤。",
+      "source": "sources/roundtrip-fr.pdf",
+      "pages": "all",
+      "languages": [
+        "fr",
+        "en"
+      ],
+      "backend": "dsh",
+      "seconds": 23.307,
+      "live_requests": 3,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 3,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 1636,
+          "outputTokens": 304,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 2324
+        }
+      }
+    },
+    {
+      "case": "fragment-zh-ja-codex",
+      "actual_run": "fragment-zh-ja-codex",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "单页放大；未嵌入 CID 字体的部分中文句号视觉上变成 b，而 Unicode 提取为正确句号。",
+      "source": "sources/fragment-zh.pdf",
+      "pages": "all",
+      "languages": [
+        "zh-CN",
+        "ja"
+      ],
+      "backend": "codex",
+      "seconds": 79.197,
+      "live_requests": 3,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 3,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 32477,
+          "cached_input_tokens": 16640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 327,
+          "reasoning_output_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "fragment-ja-zh-codex",
+      "actual_run": "fragment-ja-zh-codex-prepared",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "单页放大；b/C 残留、鬼影和标识符连字符变化，不能仅凭文本抽取判定保真。",
+      "source": "sources/roundtrip-ja.pdf",
+      "pages": "all",
+      "languages": [
+        "ja",
+        "zh-CN"
+      ],
+      "backend": "codex",
+      "seconds": 87.775,
+      "live_requests": 3,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 3,
+        "unreported_calls": 0,
+        "native_counters": {
+          "input_tokens": 32607,
+          "cached_input_tokens": 24960,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 350,
+          "reasoning_output_tokens": 33
+        }
+      }
+    },
+    {
+      "case": "installed-zh-en-dsh",
+      "actual_run": "installed-zh-en-dsh",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "DSH 安装目录脚本真实运行；单页放大见 CID 标点变成 b，另有异常断词。",
+      "source": "sources/fragment-zh.pdf",
+      "pages": "all",
+      "languages": [
+        "zh-CN",
+        "en"
+      ],
+      "backend": "dsh",
+      "seconds": 23.92,
+      "live_requests": 4,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 4,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 1068,
+          "outputTokens": 293,
+          "cacheReadTokens": 1152,
+          "cacheWriteTokens": 0,
+          "totalTokens": 2513
+        }
+      }
+    },
+    {
+      "case": "fragment-en-fr-dsh-text",
+      "actual_run": "fragment-en-fr-dsh-text",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "关闭表格翻译、min_text_length=1、sans-serif 后重试；K/d 残留仍在。",
+      "source": "sources/fragment-en.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "fr"
+      ],
+      "backend": "dsh",
+      "seconds": 20.967,
+      "live_requests": 2,
+      "cache_hits": 1,
+      "token_usage": {
+        "reported_calls": 2,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 1013,
+          "outputTokens": 358,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1883
+        }
+      }
+    },
+    {
+      "case": "installed-zh-en-dsh-text",
+      "actual_run": "installed-zh-en-dsh-text",
+      "structure_valid": true,
+      "quality": "FAIL",
+      "review": "关闭表格翻译、min_text_length=1、sans-serif 后重试；字母 b 消失，但句号位置游离/重复，仍不合格。",
+      "source": "sources/fragment-zh.pdf",
+      "pages": "all",
+      "languages": [
+        "zh-CN",
+        "en"
+      ],
+      "backend": "dsh",
+      "seconds": 20.057,
+      "live_requests": 2,
+      "cache_hits": 2,
+      "token_usage": {
+        "reported_calls": 2,
+        "unreported_calls": 0,
+        "native_counters": {
+          "inputTokens": 1169,
+          "outputTokens": 279,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1832
+        }
+      }
+    },
+    {
+      "case": "scan-off-dsh",
+      "actual_run": "scan-off-dsh",
+      "structure_valid": false,
+      "quality": "FAIL",
+      "review": "整页栅格输入，无可提取段落；引擎未输出 PDF，适配器正确标记 failed。",
+      "source": "sources/fragment-scan.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 10.754,
+      "live_requests": 0,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 0,
+        "unreported_calls": 0,
+        "native_counters": {}
+      }
+    },
+    {
+      "case": "scan-auto-dsh",
+      "actual_run": "scan-auto-dsh",
+      "structure_valid": false,
+      "quality": "FAIL",
+      "review": "自动扫描处理未完成整页 OCR；无可提取段落、无模型调用、无输出 PDF。",
+      "source": "sources/fragment-scan.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 10.653,
+      "live_requests": 0,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 0,
+        "unreported_calls": 0,
+        "native_counters": {}
+      }
+    },
+    {
+      "case": "scan-force-dsh",
+      "actual_run": "scan-force-dsh",
+      "structure_valid": false,
+      "quality": "FAIL",
+      "review": "强制扫描处理未完成整页 OCR；无可提取段落、无模型调用、无输出 PDF。",
+      "source": "sources/fragment-scan.pdf",
+      "pages": "all",
+      "languages": [
+        "en",
+        "zh-CN"
+      ],
+      "backend": "dsh",
+      "seconds": 9.695,
+      "live_requests": 0,
+      "cache_hits": 0,
+      "token_usage": {
+        "reported_calls": 0,
+        "unreported_calls": 0,
+        "native_counters": {}
+      }
+    }
+  ]
+}

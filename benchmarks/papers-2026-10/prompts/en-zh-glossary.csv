@@ -1,0 +1,10 @@
+source,target,tgt_lng
+reinforcement learning,强化学习,zh-CN
+robust control,鲁棒控制,zh-CN
+feedback,反馈,zh-CN
+unstable,不稳定,zh-CN
+policy,策略,zh-CN
+value function,价值函数,zh-CN
+advantage function,优势函数,zh-CN
+state estimation,状态估计,zh-CN
+sim-to-real,仿真到现实,zh-CN

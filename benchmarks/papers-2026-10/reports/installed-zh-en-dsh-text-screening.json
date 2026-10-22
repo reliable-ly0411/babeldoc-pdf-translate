@@ -1,0 +1,48 @@
+{
+  "source": "fragment-zh.pdf",
+  "source_sha256": "7d9ab1a72d103866b5869d2a25b067e9b7b79908254268d9b7fbf29ae7299014",
+  "output": "fragment-zh.no_watermark.en.mono.pdf",
+  "output_sha256": "6100262ab655ee0b1b5b34c94087e2aa7b1be2ee61b1c00b438b28683401b9d7",
+  "pages": [
+    {
+      "source_page": 1,
+      "output_page": 1,
+      "source": {
+        "characters": 227,
+        "cjk_characters": 82,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 0,
+        "numeric_tokens": {
+          "100": 1,
+          "0.02": 2,
+          "2026": 1,
+          "-0.25": 1,
+          "0.25": 1,
+          "2": 2
+        }
+      },
+      "output": {
+        "characters": 510,
+        "cjk_characters": 0,
+        "replacement_characters": 0,
+        "image_instances": 0,
+        "image_digests": {},
+        "vector_paths": 0,
+        "numeric_tokens": {
+          "100": 1,
+          "0.02": 2,
+          "2026": 1,
+          "-0.25": 1,
+          "0.25": 1,
+          "2": 2
+        }
+      },
+      "missing_decoded_image_instances": 0,
+      "dimensions_match": true
+    }
+  ],
+  "repaired": false,
+  "note": "Screening only. Image digests describe decoded raster resources, not vectors or text in images. Numeric extraction is not a formula correctness test. Visual and semantic review remain separate."
+}

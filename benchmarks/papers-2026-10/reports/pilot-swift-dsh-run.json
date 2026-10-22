@@ -1,0 +1,264 @@
+{
+  "status": "needs-review",
+  "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+  "input_sha256": "c9bcbd98ddbf2b0a18b4cbdbc4e62e429c6a659e1b1054b5d1c2e0219b8da40f",
+  "source_unchanged": true,
+  "error": null,
+  "returncode": 0,
+  "elapsed_seconds": 56.393,
+  "bridge": {
+    "backend": "dsh",
+    "completed_requests": 17,
+    "live_requests": 17,
+    "cache_hits": 0,
+    "attempts": 17,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "route": "deepseek-official",
+    "token_usage": {
+      "reported_calls": 17,
+      "unreported_calls": 0,
+      "native_counters": {
+        "inputTokens": 10563,
+        "outputTokens": 5852,
+        "cacheReadTokens": 7168,
+        "cacheWriteTokens": 0,
+        "totalTokens": 23583
+      }
+    },
+    "request_metrics": [
+      {
+        "request_sha256": "a3f35d3207e067915505e7ea2fa4f136babeebdacf08c9675ceacd641f6d5ac3",
+        "attempt": 1,
+        "seconds": 3.466,
+        "native_usage": {
+          "inputTokens": 1019,
+          "outputTokens": 603,
+          "cacheReadTokens": 128,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1750
+        }
+      },
+      {
+        "request_sha256": "6b3411794fc389db6329d7d919724bdfa2f17ced81d9b7a4d4362310db5b3feb",
+        "attempt": 1,
+        "seconds": 2.565,
+        "native_usage": {
+          "inputTokens": 692,
+          "outputTokens": 691,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1767
+        }
+      },
+      {
+        "request_sha256": "a32aaa5eee57b6446c4cde0e2faf514a0460d5cb490b439ee0b76264244e35f8",
+        "attempt": 1,
+        "seconds": 2.106,
+        "native_usage": {
+          "inputTokens": 478,
+          "outputTokens": 492,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1354
+        }
+      },
+      {
+        "request_sha256": "bdbd2f071963de0a31639727522a17fe24a1632180101332b4c92aae1b7b3f0a",
+        "attempt": 1,
+        "seconds": 2.005,
+        "native_usage": {
+          "inputTokens": 248,
+          "outputTokens": 442,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1074
+        }
+      },
+      {
+        "request_sha256": "b8aaace7ae58bdb2420abe7bc11c0af68ca1ad5c5d662535e311c5621e985dd8",
+        "attempt": 1,
+        "seconds": 2.114,
+        "native_usage": {
+          "inputTokens": 195,
+          "outputTokens": 414,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 993
+        }
+      },
+      {
+        "request_sha256": "717f1f9add3367e6978eaa411622671f4c27a51e1315721ca7fc27f51a902217",
+        "attempt": 1,
+        "seconds": 1.463,
+        "native_usage": {
+          "inputTokens": 995,
+          "outputTokens": 229,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1224
+        }
+      },
+      {
+        "request_sha256": "0cbf01d9c5bd21c00309d082ae47b8c7b757affb817221bb23a60754f1f8fd7a",
+        "attempt": 1,
+        "seconds": 2.415,
+        "native_usage": {
+          "inputTokens": 1003,
+          "outputTokens": 443,
+          "cacheReadTokens": 384,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1830
+        }
+      },
+      {
+        "request_sha256": "7834272e5cde35de460bede9ccd5e87d6dcba1413ddadff80e5446791fa88d52",
+        "attempt": 1,
+        "seconds": 2.114,
+        "native_usage": {
+          "inputTokens": 796,
+          "outputTokens": 420,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1728
+        }
+      },
+      {
+        "request_sha256": "a82d4340287628c0324538d09c9065d16e226648741fd5d4681aa33629ee8689",
+        "attempt": 1,
+        "seconds": 2.115,
+        "native_usage": {
+          "inputTokens": 687,
+          "outputTokens": 303,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1502
+        }
+      },
+      {
+        "request_sha256": "daa1492ee0fbdbeb2552ca522d62604956136d44bd2757897ea8d09769a42f43",
+        "attempt": 1,
+        "seconds": 2.106,
+        "native_usage": {
+          "inputTokens": 656,
+          "outputTokens": 287,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1455
+        }
+      },
+      {
+        "request_sha256": "f098fde00b44b9d649ba4740319c4fe240186a211f693b2d897f0c994c15a22d",
+        "attempt": 1,
+        "seconds": 1.713,
+        "native_usage": {
+          "inputTokens": 776,
+          "outputTokens": 329,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1617
+        }
+      },
+      {
+        "request_sha256": "eb6c1fe004f150c5fe74a3b5542dff1c3bd4d05f90a2a840b78388cd93a573fd",
+        "attempt": 1,
+        "seconds": 2.107,
+        "native_usage": {
+          "inputTokens": 630,
+          "outputTokens": 281,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1423
+        }
+      },
+      {
+        "request_sha256": "2b3d0754618de7d81b99037ddd1f1c6bfa4ba1b50b31442b0615f4957d60294d",
+        "attempt": 1,
+        "seconds": 1.713,
+        "native_usage": {
+          "inputTokens": 643,
+          "outputTokens": 264,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1419
+        }
+      },
+      {
+        "request_sha256": "4c7ca059fff814c6ec8892f1d0641e12992c09edda1893b2d0c1a64a8b063900",
+        "attempt": 1,
+        "seconds": 1.756,
+        "native_usage": {
+          "inputTokens": 730,
+          "outputTokens": 312,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1554
+        }
+      },
+      {
+        "request_sha256": "11fb87193d86d94e72bee7b1a095b6fe2d9e6216c0395da9da0ae74cf5e7e2a9",
+        "attempt": 1,
+        "seconds": 1.463,
+        "native_usage": {
+          "inputTokens": 512,
+          "outputTokens": 207,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 1231
+        }
+      },
+      {
+        "request_sha256": "59603b5cbb3065257d147182fdc96795e70bb92855efd28d7552836d51cf3cca",
+        "attempt": 1,
+        "seconds": 1.363,
+        "native_usage": {
+          "inputTokens": 292,
+          "outputTokens": 97,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 901
+        }
+      },
+      {
+        "request_sha256": "17d3f072503592074b234bab668aa00280d132d8392252c1c86f4ff309464b44",
+        "attempt": 1,
+        "seconds": 0.853,
+        "native_usage": {
+          "inputTokens": 211,
+          "outputTokens": 38,
+          "cacheReadTokens": 512,
+          "cacheWriteTokens": 0,
+          "totalTokens": 761
+        }
+      }
+    ],
+    "native_version": "0.2.1-alpha.1",
+    "ready": true,
+    "native_item_types": []
+  },
+  "run": "pilot-swift-dsh",
+  "output_validation": {
+    "valid": true,
+    "files": [
+      {
+        "file": "swift2023.no_watermark.zh-CN.mono.pdf",
+        "kind": "mono",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 3,
+        "expected_page_count": 3
+      },
+      {
+        "file": "swift2023.no_watermark.zh-CN.dual.pdf",
+        "kind": "dual",
+        "watermark": "no_watermark",
+        "valid": true,
+        "page_count": 3,
+        "expected_page_count": 3
+      }
+    ],
+    "errors": [],
+    "note": "Checks structure, requested variants, page counts and dimensions; visual/content QA is still required."
+  }
+}

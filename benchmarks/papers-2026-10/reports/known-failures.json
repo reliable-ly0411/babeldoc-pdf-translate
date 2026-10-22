@@ -1,0 +1,112 @@
+[
+  {
+    "id": "STEIN-FORMULA",
+    "source": "sources/stein2003.pdf",
+    "pages": [
+      3,
+      7
+    ],
+    "severity": "high",
+    "status": "unresolved",
+    "observed": "Independent Bode integrals on page 3 have overlapping/reordered glyphs; an inline square root separates from its operand. Page 7 inline broomstick formula is also malformed.",
+    "attempts": [
+      "default rich text",
+      "skip-formula-offset-calculation (no improvement)",
+      "disable-rich-text-translate (no improvement; drop cap becomes worse)"
+    ],
+    "reference": "references/pilot-stein-codex/stein2003.no_watermark.zh-CN.mono.pdf",
+    "decision": "Keep default output only as an explicitly defective benchmark reference; do not approve mathematical fidelity."
+  },
+  {
+    "id": "DSH-DUELING-TOKEN",
+    "source": "sources/dueling2016.pdf",
+    "pages": [
+      4,
+      8
+    ],
+    "severity": "high",
+    "status": "unresolved",
+    "observed": "Model omits {v1} inside the source sequence advan- {v1}tage. Bridge rejects PROTECTED_TEXT_CHANGED and stops the engine rather than accepting lost formula content.",
+    "attempts": [
+      "baseline plus two bounded diagnostic reproductions",
+      "explicit per-row token-count contract and one correction retry",
+      "disable-rich-text-translate"
+    ],
+    "decision": "This live case remains a failed counterexample. Synthetic fail-closed tests pass; that does not make translation succeed."
+  },
+  {
+    "id": "SWIFT-BATCH",
+    "source": "sources/swift2023.pdf",
+    "severity": "medium",
+    "status": "recovered",
+    "observed": "Initial full-document run returned INCOMPLETE_TRANSLATION_BATCH after 78 successful live requests.",
+    "decision": "New run reused 97 cached requests, completed 51 new live requests and produced all 14 mono/dual pages. Initial failed attempt and unknown usage remain in costs."
+  },
+  {
+    "id": "ROUNDTRIP-GUARD",
+    "severity": "info",
+    "status": "expected restriction; explicit fixture preparation",
+    "observed": "BabelDOC rejects its own AI-translation Producer metadata before model calls.",
+    "decision": "Prepare a separate attributed input copy changing only Producer metadata and verify all-page rendering equality; never remove the guard implicitly in the adapter."
+  },
+  {
+    "id": "RASTER-TEXT",
+    "severity": "limitation",
+    "status": "documented",
+    "pages": {
+      "swift2023": [
+        14
+      ],
+      "deepseekr1": [
+        10,
+        11
+      ]
+    },
+    "observed": "English embedded inside raster images, including the Swift table and R1 prompt/table, remains unchanged. Vector/extractable labels can be translated.",
+    "decision": "No claim of full OCR or pixel-table translation."
+  },
+  {
+    "id": "DUELING-TITLE",
+    "severity": "medium",
+    "status": "unresolved",
+    "source": "sources/dueling2016.pdf",
+    "pages": [
+      1,
+      4,
+      8
+    ],
+    "observed": "Codex completes the document, but the first title has Due...ling remnants and some inline fragments/accents remain or move.",
+    "decision": "No whole-document quality approval despite valid output structure."
+  },
+  {
+    "id": "CID-PUNCTUATION",
+    "severity": "high",
+    "status": "unresolved",
+    "source": "sources/fragment-zh.pdf",
+    "observed": "Unembedded STSong-Light CID punctuation extracts as the expected Unicode character but renders as b/C in translations. A text-focused profile removes b in one direction but leaves misplaced/duplicate periods.",
+    "decision": "Visual output fails; do not confuse ActualText extraction with correct glyph rendering."
+  },
+  {
+    "id": "FRAGMENT-RESIDUE",
+    "severity": "medium",
+    "status": "unresolved",
+    "source": "sources/fragment-en.pdf",
+    "observed": "English-French output retains KConservez...d; French-English inherits defects and has incomplete words. Text-focused profile does not repair it.",
+    "decision": "Keep the defective PDF and paired original as regression evidence."
+  },
+  {
+    "id": "ROUNDTRIP-COVERAGE",
+    "severity": "high",
+    "status": "unresolved",
+    "observed": "Swift Chinese-English retains Chinese paragraphs/captions/headings. R1 roundtrip retains 方法 and relocates equation (5) subscripts.",
+    "decision": "Reverse-direction integration succeeded, translation quality/coverage did not. Min-text filtering can affect short labels but does not establish the cause of all retained paragraphs."
+  },
+  {
+    "id": "IMAGE-ONLY-SCAN",
+    "severity": "limitation",
+    "status": "unsupported in tested setup",
+    "source": "sources/fragment-scan.pdf",
+    "observed": "off/auto/force all end with no paragraphs and no PDF; zero model calls. Engine returns zero but adapter output validation marks failed.",
+    "decision": "No general OCR claim; never count the empty result as translated."
+  }
+]

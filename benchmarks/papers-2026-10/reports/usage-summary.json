@@ -1,0 +1,234 @@
+{
+  "scope": "29 recorded run manifests plus interrupted/resumed stages of two recovery experiments; excludes outer agent conversation and any calls not represented here. Unknown usage is not zero. No cross-provider billing total.",
+  "run_manifests": 29,
+  "totals": {
+    "dsh": {
+      "recorded_attempts": 361,
+      "live_requests": 351,
+      "cache_hits": 153,
+      "reported_calls": 359,
+      "unreported_calls": 2,
+      "native_counters": {
+        "inputTokens": 239474,
+        "outputTokens": 96460,
+        "cacheReadTokens": 97920,
+        "cacheWriteTokens": 0,
+        "totalTokens": 433854
+      }
+    },
+    "codex": {
+      "recorded_attempts": 229,
+      "live_requests": 228,
+      "cache_hits": 17,
+      "reported_calls": 228,
+      "unreported_calls": 1,
+      "native_counters": {
+        "input_tokens": 2522285,
+        "cached_input_tokens": 1431040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 49868,
+        "reasoning_output_tokens": 1357
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "fragment-en-fr-dsh",
+      "record": "fragment-en-fr-dsh-run.json",
+      "seconds": 23.129,
+      "status": "needs-review"
+    },
+    {
+      "id": "fragment-en-fr-dsh-text",
+      "record": "fragment-en-fr-dsh-text-run.json",
+      "seconds": 20.967,
+      "status": "needs-review"
+    },
+    {
+      "id": "fragment-fr-en-dsh-prepared",
+      "record": "fragment-fr-en-dsh-prepared-run.json",
+      "seconds": 23.307,
+      "status": "needs-review"
+    },
+    {
+      "id": "fragment-fr-en-dsh",
+      "record": "fragment-fr-en-dsh-run.json",
+      "seconds": 9.911,
+      "status": "failed"
+    },
+    {
+      "id": "fragment-ja-zh-codex-prepared",
+      "record": "fragment-ja-zh-codex-prepared-run.json",
+      "seconds": 87.775,
+      "status": "needs-review"
+    },
+    {
+      "id": "fragment-zh-ja-codex",
+      "record": "fragment-zh-ja-codex-run.json",
+      "seconds": 79.197,
+      "status": "needs-review"
+    },
+    {
+      "id": "full-dueling-codex",
+      "record": "full-dueling-codex-run.json",
+      "seconds": 2325.126,
+      "status": "needs-review"
+    },
+    {
+      "id": "full-r1-dsh",
+      "record": "full-r1-dsh-run.json",
+      "seconds": 165.373,
+      "status": "needs-review"
+    },
+    {
+      "id": "full-stein-codex",
+      "record": "full-stein-codex-run.json",
+      "seconds": 2061.439,
+      "status": "needs-review"
+    },
+    {
+      "id": "full-swift-dsh-repair",
+      "record": "full-swift-dsh-repair-run.json",
+      "seconds": 278.493,
+      "status": "needs-review"
+    },
+    {
+      "id": "full-swift-dsh",
+      "record": "full-swift-dsh-run.json",
+      "seconds": 397.654,
+      "status": "failed"
+    },
+    {
+      "id": "installed-zh-en-dsh",
+      "record": "installed-zh-en-dsh-run.json",
+      "seconds": 23.92,
+      "status": "needs-review"
+    },
+    {
+      "id": "installed-zh-en-dsh-text",
+      "record": "installed-zh-en-dsh-text-run.json",
+      "seconds": 20.057,
+      "status": "needs-review"
+    },
+    {
+      "id": "pilot-dueling-dsh-diagnostic",
+      "record": "pilot-dueling-dsh-diagnostic-run.json",
+      "seconds": 24.087,
+      "status": "failed"
+    },
+    {
+      "id": "pilot-dueling-dsh-diagnostic2",
+      "record": "pilot-dueling-dsh-diagnostic2-run.json",
+      "seconds": 26.488,
+      "status": "failed"
+    },
+    {
+      "id": "pilot-dueling-dsh-plain",
+      "record": "pilot-dueling-dsh-plain-run.json",
+      "seconds": 33.44,
+      "status": "failed"
+    },
+    {
+      "id": "pilot-dueling-dsh-repair",
+      "record": "pilot-dueling-dsh-repair-run.json",
+      "seconds": 28.037,
+      "status": "failed"
+    },
+    {
+      "id": "pilot-dueling-dsh",
+      "record": "pilot-dueling-dsh-run.json",
+      "seconds": 33.428,
+      "status": "failed"
+    },
+    {
+      "id": "pilot-r1-codex",
+      "record": "pilot-r1-codex-run.json",
+      "seconds": 288.97,
+      "status": "needs-review"
+    },
+    {
+      "id": "pilot-stein-codex-offset",
+      "record": "pilot-stein-codex-offset-run.json",
+      "seconds": 38.359,
+      "status": "needs-review"
+    },
+    {
+      "id": "pilot-stein-codex-plain",
+      "record": "pilot-stein-codex-plain-run.json",
+      "seconds": 221.44,
+      "status": "needs-review"
+    },
+    {
+      "id": "pilot-stein-codex",
+      "record": "pilot-stein-codex-run.json",
+      "seconds": 253.733,
+      "status": "needs-review"
+    },
+    {
+      "id": "pilot-swift-dsh",
+      "record": "pilot-swift-dsh-run.json",
+      "seconds": 56.393,
+      "status": "needs-review"
+    },
+    {
+      "id": "roundtrip-r1-codex-prepared",
+      "record": "roundtrip-r1-codex-prepared-run.json",
+      "seconds": 218.271,
+      "status": "needs-review"
+    },
+    {
+      "id": "roundtrip-swift-dsh-prepared",
+      "record": "roundtrip-swift-dsh-prepared-run.json",
+      "seconds": 484.986,
+      "status": "needs-review"
+    },
+    {
+      "id": "roundtrip-swift-dsh",
+      "record": "roundtrip-swift-dsh-run.json",
+      "seconds": 9.554,
+      "status": "failed"
+    },
+    {
+      "id": "scan-auto-dsh",
+      "record": "scan-auto-dsh-run.json",
+      "seconds": 10.653,
+      "status": "failed"
+    },
+    {
+      "id": "scan-force-dsh",
+      "record": "scan-force-dsh-run.json",
+      "seconds": 9.695,
+      "status": "failed"
+    },
+    {
+      "id": "scan-off-dsh",
+      "record": "scan-off-dsh-run.json",
+      "seconds": 10.754,
+      "status": "failed"
+    },
+    {
+      "id": "recovery-codex-interrupted",
+      "record": "recovery-codex.json",
+      "seconds": null,
+      "status": "interrupted"
+    },
+    {
+      "id": "recovery-codex-resumed",
+      "record": "recovery-codex.json",
+      "seconds": null,
+      "status": "resumed"
+    },
+    {
+      "id": "recovery-dsh-interrupted",
+      "record": "recovery-dsh.json",
+      "seconds": null,
+      "status": "interrupted"
+    },
+    {
+      "id": "recovery-dsh-resumed",
+      "record": "recovery-dsh.json",
+      "seconds": null,
+      "status": "resumed"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "input": "../sources/roundtrip-swift-zh.pdf",
+  "output": "../../../output/paper-benchmark/roundtrip-swift-dsh",
+  "source_language": "zh-CN",
+  "target_language": "en",
+  "outputs": "both",
+  "watermark": "no_watermark",
+  "auto_terms": false,
+  "translate_tables": true,
+  "scan_mode": "off",
+  "prompt_file": "../prompts/technical.txt",
+  "timeout_seconds": 14400,
+  "provider": {
+    "type": "dsh",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "../../../.translation-cache/papers/dsh/roundtrip-swift-zh",
+    "dsh_package": "/path/to/deepseek-harness/apps/cli/package.json",
+    "node_bin": "node",
+    "model": "deepseek-flash",
+    "route": "deepseek-official"
+  },
+  "max_pages_per_part": 5,
+  "dual_layout": "alternating",
+  "translated_first": true
+}

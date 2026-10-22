@@ -1,0 +1,62 @@
+[
+  {
+    "id": "roundtrip-swift-zh",
+    "source": "references/full-swift-dsh/swift2023.no_watermark.zh-CN.mono.pdf",
+    "source_sha256": "70374f19c299182b80e747bfd0962b0c8ebbdb9cde03cd5887d3c69e3eb357dc",
+    "derived": "sources/roundtrip-swift-zh.pdf",
+    "derived_sha256": "ab784c194a6a4f19c591a96841adf33617c9daa510a86702e8ef7eaac927b476",
+    "changed_fields": [
+      "Producer"
+    ],
+    "old_producer": "BabelDOCv0.6.4_1791703105.0983162_Translation_generated_by_AI,please_carefully_discern",
+    "new_producer": "Explicit round-trip benchmark input; AI translation originally produced by BabelDOC",
+    "pages": 14,
+    "render_identical": true,
+    "render_scale": 0.5
+  },
+  {
+    "id": "roundtrip-r1-zh",
+    "source": "references/pilot-r1-codex/deepseekr1.no_watermark.zh-CN.mono.pdf",
+    "source_sha256": "4ee11e208ad84b1aa4ac97bc0fe3913ce378399e737094505930a177966f6dca",
+    "derived": "sources/roundtrip-r1-zh.pdf",
+    "derived_sha256": "4035f850cb7b24de71415309d39830a20a9e2caf0a0f911a6929129d5d27cb5c",
+    "changed_fields": [
+      "Producer"
+    ],
+    "old_producer": "BabelDOCv0.6.4_1791702945.1699772_Translation_generated_by_AI,please_carefully_discern",
+    "new_producer": "Explicit round-trip benchmark input; AI translation originally produced by BabelDOC",
+    "pages": 2,
+    "render_identical": true,
+    "render_scale": 0.5
+  },
+  {
+    "id": "roundtrip-fr",
+    "source": "references/fragment-en-fr-dsh/fragment-en.no_watermark.fr.mono.pdf",
+    "source_sha256": "408f3403056c284e3eea88e88bec10bee246639cd8f280c161e149b6ab3ac923",
+    "derived": "sources/roundtrip-fr.pdf",
+    "derived_sha256": "e869cc2136acebb0b04f8231d85cdc5de218845713fc224c88eee005073db9cf",
+    "changed_fields": [
+      "Producer"
+    ],
+    "old_producer": "BabelDOCv0.6.4_1791702884.0853772_Translation_generated_by_AI,please_carefully_discern",
+    "new_producer": "Explicit round-trip benchmark input; AI translation originally produced by BabelDOC",
+    "pages": 1,
+    "render_identical": true,
+    "render_scale": 0.5
+  },
+  {
+    "id": "roundtrip-ja",
+    "source": "references/fragment-zh-ja-codex/fragment-zh.no_watermark.ja.mono.pdf",
+    "source_sha256": "8f1686c95747f6b5952414551c6cbf10aeb12a81fa8582c580d38fce05090290",
+    "derived": "sources/roundtrip-ja.pdf",
+    "derived_sha256": "83648fc4ae4eb472cb8bdc37fcd2279743708681decf75618d05d062559aca71",
+    "changed_fields": [
+      "Producer"
+    ],
+    "old_producer": "BabelDOCv0.6.4_1791703007.841512_Translation_generated_by_AI,please_carefully_discern",
+    "new_producer": "Explicit round-trip benchmark input; AI translation originally produced by BabelDOC",
+    "pages": 1,
+    "render_identical": true,
+    "render_scale": 0.5
+  }
+]
