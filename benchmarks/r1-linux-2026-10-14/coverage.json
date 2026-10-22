@@ -1,0 +1,86 @@
+{
+  "source_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "output_sha256": "1867fcc33e029ecc5b6c8a5dfe0e862f24cf9f387cc21fe8bfda672bd1b5874e",
+  "coverage_passed": true,
+  "pages": [
+    {
+      "page": 1,
+      "cjk_chars": 1318,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 2,
+      "requires_visual_review": true
+    },
+    {
+      "page": 2,
+      "cjk_chars": 1419,
+      "minimum_cjk_font_pt": 6.000199794769287,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 3,
+      "cjk_chars": 1210,
+      "minimum_cjk_font_pt": 4.199999809265137,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 4,
+      "cjk_chars": 951,
+      "minimum_cjk_font_pt": 5.25,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 5,
+      "cjk_chars": 1568,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 6,
+      "cjk_chars": 91,
+      "minimum_cjk_font_pt": 5.400000095367432,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 7,
+      "cjk_chars": 1502,
+      "minimum_cjk_font_pt": 8.25,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 8,
+      "cjk_chars": 1248,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 0,
+      "requires_visual_review": true
+    },
+    {
+      "page": 9,
+      "cjk_chars": 408,
+      "minimum_cjk_font_pt": 6.800000190734863,
+      "image_objects": 2,
+      "requires_visual_review": true
+    },
+    {
+      "page": 10,
+      "cjk_chars": 275,
+      "minimum_cjk_font_pt": 6.900000095367432,
+      "image_objects": 2,
+      "requires_visual_review": true
+    },
+    {
+      "page": 11,
+      "cjk_chars": 313,
+      "minimum_cjk_font_pt": 6.0,
+      "image_objects": 2,
+      "requires_visual_review": true
+    }
+  ],
+  "issues": [],
+  "scope": "Coverage and leaked-markup screen only; all output pages still require visual/semantic review."
+}

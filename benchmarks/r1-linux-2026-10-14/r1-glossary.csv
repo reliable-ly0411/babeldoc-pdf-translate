@@ -1,0 +1,16 @@
+source,target,tgt_lng
+reinforcement learning,强化学习,zh-CN
+large language models,大语言模型,zh-CN
+chain-of-thought,思维链,zh-CN
+Group Relative Policy Optimization,组相对策略优化,zh-CN
+supervised fine-tuning,监督微调,zh-CN
+rejection sampling,拒绝采样,zh-CN
+rule-based reward,基于规则的奖励,zh-CN
+reward model,奖励模型,zh-CN
+reasoning,推理,zh-CN
+self-consistency,自一致性,zh-CN
+cold-start data,冷启动数据,zh-CN
+distillation,蒸馏,zh-CN
+language mixing,语言混用,zh-CN
+reward hacking,奖励投机,zh-CN
+accuracy,准确率,zh-CN

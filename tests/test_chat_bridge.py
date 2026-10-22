@@ -358,10 +358,15 @@ class BridgeTests(unittest.TestCase):
         proc = Path(f'/proc/{pid}/stat')
         # Orphaned descendants may briefly be zombies waiting for init; they are dead.
         deadline = time.monotonic() + 1
-        while proc.exists() and proc.read_text().split()[2] != 'Z' and time.monotonic() < deadline:
-            time.sleep(0.01)
-        if proc.exists():
-            self.assertEqual(proc.read_text().split()[2], 'Z')
+        try:
+            while proc.exists() and proc.read_text().split()[2] != 'Z' and time.monotonic() < deadline:
+                time.sleep(0.01)
+            if proc.exists():
+                self.assertEqual(proc.read_text().split()[2], 'Z')
+        except FileNotFoundError:
+            # Reaping can remove /proc/<pid>/stat after exists(): the process
+            # has exited. Other read errors and live-process assertions stand.
+            pass
 
     def test_native_dsh_errors_redact_raw_stderr_and_do_not_fallback(self):
         client = b.NativeClient({'type': 'dsh', 'dsh_package': '/fixture/package.json', 'model': 'deepseek-flash', 'timeout_seconds': 5}, threading.Event())

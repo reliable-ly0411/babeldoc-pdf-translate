@@ -35,8 +35,8 @@ not a paper-specific detection or translation rule. Source attribution and
 license are embedded in the fixture.
 
 
-The large `r1-math-geometry.json` and `l1quad-inline-math.json` source-geometry
-extracts are not bundled in this public draft. They remain optional external
+This experimental branch retains the historical `r1-math-geometry.json` fixture.
+The large `l1quad-inline-math.json` source-geometry extract is not bundled. They remain optional external
 validation data under `BABELDOC_EXTRA_TEST_DATA`; their test outcomes are reported
 separately. Other `l1quad-*` and semantic regression excerpts retain the same
 L1Quad v2 source attribution above. No complete source paper or native-event

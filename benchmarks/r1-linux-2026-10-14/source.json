@@ -1,0 +1,71 @@
+{
+  "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning",
+  "authors": "Guo et al. (full author and affiliation list retained in the sample)",
+  "journal": "Nature 645, 633–638 (2025)",
+  "doi": "10.1038/s41586-025-09422-z",
+  "url": "https://www.nature.com/articles/s41586-025-09422-z.pdf",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "copyright": "© The Author(s) 2025",
+  "page_count": 11,
+  "bytes": 2735576,
+  "sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+  "credit_review": [
+    {
+      "page": 1,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 2,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 3,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 4,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 5,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 6,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 7,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 8,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 9,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 10,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    },
+    {
+      "page": 11,
+      "review": "Source page rendered and visually inspected; no separately excluded third-party credit line found."
+    }
+  ],
+  "credit_locations": {
+    "5": "Original copyright, open-access license and publisher note retained in English.",
+    "8": "Reprints/permissions note retained in the original English half."
+  },
+  "adaptations": [
+    "Unofficial Simplified Chinese translation by gpt-6-luna low.",
+    "Two-dimensional table math preservation and two source-equation row reflows.",
+    "Reviewed coordinate-based figure label replacement.",
+    "Raster table English retained; full Chinese transcription added beneath it. Base-13 subscript spelled out to avoid a missing font glyph.",
+    "References, affiliation and license/copyright regions reused from the source."
+  ],
+  "endorsement": "None; not an official author or publisher translation."
+}

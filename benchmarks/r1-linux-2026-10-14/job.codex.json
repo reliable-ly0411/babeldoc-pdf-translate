@@ -1,0 +1,29 @@
+{
+  "input": "work/deepseekr1.pdf",
+  "output": "work/full-01",
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "outputs": "both",
+  "dual_layout": "side-by-side",
+  "translated_first": false,
+  "watermark": "no_watermark",
+  "translate_tables": true,
+  "min_text_length": 4,
+  "auto_terms": false,
+  "save_terms": false,
+  "scan_mode": "off",
+  "timeout_seconds": 7200,
+  "provider": {
+    "type": "codex",
+    "model": "gpt-6-luna",
+    "codex_bin": "codex",
+    "timeout_seconds": 240,
+    "retries": 1,
+    "cache_dir": "work/native-cache",
+    "reasoning_effort": "low"
+  },
+  "prompt_file": "r1-prompt.txt",
+  "glossaries": [
+    "r1-glossary.csv"
+  ]
+}

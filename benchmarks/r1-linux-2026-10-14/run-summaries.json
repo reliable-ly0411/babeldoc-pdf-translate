@@ -1,0 +1,611 @@
+{
+  "runs": [
+    {
+      "status": "failed",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "source_unchanged": true,
+      "error": "INCOMPLETE_TRANSLATION_BATCH",
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 12,
+        "live_requests": 12,
+        "cache_hits": 0,
+        "attempts": 13,
+        "failed_requests": 1,
+        "errors": [
+          "INCOMPLETE_TRANSLATION_BATCH"
+        ],
+        "protected_code_requests": 1,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_item_types": [
+          "agent_message"
+        ]
+      },
+      "run": "baseline-pilot"
+    },
+    {
+      "status": "running",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "run": "fixed-full-03",
+      "finalization_note": "Host transport disconnected; adapter disappeared; stale running manifest is not a completed run. Last-call usage unrecorded."
+    },
+    {
+      "status": "running",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "run": "fixed-full-math-04",
+      "finalization_note": "Host transport disconnected; adapter disappeared; stale running manifest is not a completed run. Last-call usage unrecorded."
+    },
+    {
+      "status": "needs-review",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "returncode": 0,
+      "source_unchanged": true,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 65,
+        "live_requests": 15,
+        "cache_hits": 50,
+        "attempts": 15,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1",
+        "native_item_types": [
+          "agent_message"
+        ],
+        "native_inference_calls": 15,
+        "native_call_records": [
+          {
+            "request_sha256": "95e9fa1b103bb2bf3692d375afc117fe8c67b57318e855e14cc0a38b96b6a4b1",
+            "seconds": 33.577,
+            "usage": {
+              "input_tokens": 12169,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 110,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "98b2e06b596dd2a53349d3b0c46e8e043e941494ce772a36c33c0369490d1dd9",
+            "seconds": 33.324,
+            "usage": {
+              "input_tokens": 12162,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 106,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "259b81187a0fd6f138c4ded4dc36272dd64bef4cf2e711a6131a4776f266b878",
+            "seconds": 43.54,
+            "usage": {
+              "input_tokens": 12259,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 110,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "e92095372c20fb8fa903828cedfa161c6f583308609d398d96d5a4a8dbe0a80b",
+            "seconds": 38.336,
+            "usage": {
+              "input_tokens": 12149,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 101,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "6e23a9ea35cc6809cdcc7790cc0231350e356fb45cb75bb764572a540d70170a",
+            "seconds": 40.096,
+            "usage": {
+              "input_tokens": 12151,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 102,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "5a66e3afcb2506eb5bb6a8ccd890629660abd15134ef46d327fe69cf659507ae",
+            "seconds": 29.215,
+            "usage": {
+              "input_tokens": 12060,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "564cf4ecacb878ea08a9f108e43753f7d793ed1804809879d42fe588c4c92f66",
+            "seconds": 45.199,
+            "usage": {
+              "input_tokens": 12235,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 92,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "9a3575ef6d4f479d08a9bf6a9f5af54d28cc7ad7a7c498364f09520b43cdd452",
+            "seconds": 36.529,
+            "usage": {
+              "input_tokens": 11206,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 57,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "4584412f9abd66912162fa4213cc50a64f11d88d35b200771cce97efaea7acbd",
+            "seconds": 42.091,
+            "usage": {
+              "input_tokens": 12246,
+              "cached_input_tokens": 8960,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 101,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "6bcabe5a8845f7a7962f740b966e7d3a3ff65b00d65259795715ad3eac244f31",
+            "seconds": 30.91,
+            "usage": {
+              "input_tokens": 11334,
+              "cached_input_tokens": 6912,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 91,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "2851b0bf733db238861aa357aabeb4e5798692573d73f20ad445d84e79173799",
+            "seconds": 38.481,
+            "usage": {
+              "input_tokens": 12230,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 93,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "35ebe171cf71dba0600e7b6514bf889820a7d9a5c443b3a87721bfb2915f38e0",
+            "seconds": 34.325,
+            "usage": {
+              "input_tokens": 11444,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 90,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "0706516cb62d028b23fcc6a099790e10cd975bd03ac659c862ca9fed8b28ca36",
+            "seconds": 37.88,
+            "usage": {
+              "input_tokens": 11436,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 87,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "a813bff1f10eb6951b2d2aaa0813304afadadb99e26a9bd4e563178a544e73d4",
+            "seconds": 31.98,
+            "usage": {
+              "input_tokens": 11346,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 89,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "8d451c48c2801bdd9a736d47609df07f5f0bc0655cc79d495c7db75790400d78",
+            "seconds": 33.119,
+            "usage": {
+              "input_tokens": 11118,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 28,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ]
+      },
+      "run": "fixed-full-math-05"
+    },
+    {
+      "status": "needs-review",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "returncode": 0,
+      "source_unchanged": true,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 65,
+        "live_requests": 0,
+        "cache_hits": 65,
+        "attempts": 0,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1",
+        "native_item_types": [],
+        "native_inference_calls": 0,
+        "native_call_records": []
+      },
+      "run": "fixed-full-math-repeat-06"
+    },
+    {
+      "run": "fixed-full-math-numbers-07",
+      "status": "needs-review",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "returncode": 0,
+      "source_unchanged": true,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 65,
+        "live_requests": 8,
+        "cache_hits": 57,
+        "attempts": 8,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1",
+        "native_item_types": [
+          "agent_message"
+        ],
+        "native_inference_calls": 8,
+        "native_call_records": [
+          {
+            "request_sha256": "3657881a27ec528829b495f64349e425ef2b27e5dd06c4ad84ffdcad95e91aec",
+            "seconds": 37.221,
+            "usage": {
+              "input_tokens": 12755,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 369,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "0c2bb01786be2a0834d3b0aebeef1377d2838ccfc784d2f1e70b2dff011ae3bf",
+            "seconds": 28.518,
+            "usage": {
+              "input_tokens": 11741,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 287,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "2f6805cb5a0ccc1589baa142756bdb3279255c7ddee44b1f50549eabdee31e17",
+            "seconds": 27.468,
+            "usage": {
+              "input_tokens": 11752,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 266,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "9d173ed50fdb1f2ac7065b525f7217896dc403da4757d03df2f56a5cbfbc35e6",
+            "seconds": 33.325,
+            "usage": {
+              "input_tokens": 11776,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 250,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "887b363f07ffd8c34a8cf32fc6ce808aca50fd6797a864624ec4aa7461432a82",
+            "seconds": 28.599,
+            "usage": {
+              "input_tokens": 11880,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 252,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "cf3f5e67f85e5f8d472e76da4000db86c816a87605c7ea5fffe87c38e1680842",
+            "seconds": 26.866,
+            "usage": {
+              "input_tokens": 11305,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 75,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "b3b6e60630bd60d6ee13a7590a47729e608694619bf9425735bf950efb3cdc2e",
+            "seconds": 36.886,
+            "usage": {
+              "input_tokens": 11276,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 63,
+              "reasoning_output_tokens": 0
+            }
+          },
+          {
+            "request_sha256": "5be4adb5a148033d8c23d469135fe99afe5922bbf91a858c85459d66cb754391",
+            "seconds": 36.23,
+            "usage": {
+              "input_tokens": 11254,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 71,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "fixed-full-math-final-repeat-08",
+      "status": "needs-review",
+      "engine_version": "babeldoc 0.6.4+pdftranslate.linux-r1.1",
+      "input_sha256": "916fdaafc3b44143a9744481d079744f773d73d06372f82b1dba1076525927f2",
+      "returncode": 0,
+      "source_unchanged": true,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 65,
+        "live_requests": 0,
+        "cache_hits": 65,
+        "attempts": 0,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1",
+        "native_item_types": [],
+        "native_inference_calls": 0,
+        "native_call_records": []
+      }
+    }
+  ],
+  "cold_minimal": {
+    "seconds": 31.605,
+    "bridge": {
+      "backend": "codex",
+      "completed_requests": 1,
+      "live_requests": 1,
+      "cache_hits": 0,
+      "attempts": 1,
+      "failed_requests": 0,
+      "errors": [],
+      "protected_code_requests": 0,
+      "native_version": "codex-cli 0.162.0-alpha.17.2",
+      "ready": true,
+      "native_output_contract": "named-text-slots-schema-1"
+    },
+    "inference_calls": 1,
+    "call_records": [
+      {
+        "request_sha256": "58a9e74a43d24f68e49e650577a289356e00c3eaf1360df1c9a86a1988669524",
+        "seconds": 31.48,
+        "usage": {
+          "input_tokens": 12045,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 431,
+          "reasoning_output_tokens": 0
+        }
+      }
+    ],
+    "response_sha256": "aee34b414c9fca4294b67ee13cb06a525bd1ccce3bfd63ec90ab95fdf9f30dbb"
+  },
+  "minimal_cached_repeat": [
+    {
+      "run": 1,
+      "seconds": 38.158,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 1,
+        "live_requests": 1,
+        "cache_hits": 0,
+        "attempts": 1,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1"
+      },
+      "inference_calls": 1,
+      "call_records": [
+        {
+          "request_sha256": "58a9e74a43d24f68e49e650577a289356e00c3eaf1360df1c9a86a1988669524",
+          "seconds": 38.045,
+          "usage": {
+            "input_tokens": 12037,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 428,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "response_sha256": "eec15582707a5413c62e9581d2fba100d75ecac69892ca754e815be9c01bfbc6"
+    },
+    {
+      "run": 2,
+      "seconds": 0.104,
+      "bridge": {
+        "backend": "codex",
+        "completed_requests": 1,
+        "live_requests": 0,
+        "cache_hits": 1,
+        "attempts": 0,
+        "failed_requests": 0,
+        "errors": [],
+        "protected_code_requests": 0,
+        "native_version": "codex-cli 0.162.0-alpha.17.2",
+        "ready": true,
+        "native_output_contract": "named-text-slots-schema-1"
+      },
+      "inference_calls": 0,
+      "call_records": [],
+      "response_sha256": "eec15582707a5413c62e9581d2fba100d75ecac69892ca754e815be9c01bfbc6"
+    }
+  ],
+  "controlled_SIGTERM_recovery": {
+    "backend": "codex",
+    "route": null,
+    "seconds": 230.44,
+    "checkpoints_before_SIGTERM": 2,
+    "interrupted_returncode": 130,
+    "interrupted_status": "interrupted-or-failed",
+    "interrupted_bridge": {
+      "backend": "codex",
+      "completed_requests": 2,
+      "live_requests": 2,
+      "cache_hits": 0,
+      "attempts": 2,
+      "failed_requests": 0,
+      "errors": [],
+      "protected_code_requests": 0,
+      "native_version": "codex-cli 0.162.0-alpha.17.2",
+      "ready": true,
+      "native_output_contract": "named-text-slots-schema-1",
+      "native_item_types": [
+        "agent_message"
+      ],
+      "native_inference_calls": 2,
+      "native_call_records": [
+        {
+          "request_sha256": "6544091304257026598f49c0d7d2f6a46545f090df59076bf52e0335df475a49",
+          "seconds": 30.175,
+          "usage": {
+            "input_tokens": 11903,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "request_sha256": "da7442e8a6bdd8736df70e2b3e0bc25582e5d1a011eac4922cf9cf12a5dfbdbf",
+          "seconds": 31.772,
+          "usage": {
+            "input_tokens": 12277,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    "resumed_bridge": {
+      "backend": "codex",
+      "completed_requests": 7,
+      "live_requests": 5,
+      "cache_hits": 2,
+      "attempts": 5,
+      "failed_requests": 0,
+      "errors": [],
+      "protected_code_requests": 1,
+      "native_version": "codex-cli 0.162.0-alpha.17.2",
+      "ready": true,
+      "native_output_contract": "named-text-slots-schema-1",
+      "native_item_types": [
+        "agent_message"
+      ],
+      "native_inference_calls": 5,
+      "native_call_records": [
+        {
+          "request_sha256": "f8537287d243816441eef3998ef8ba874538917839550deb58e786438f90cb91",
+          "seconds": 32.259,
+          "usage": {
+            "input_tokens": 11380,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 138,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "request_sha256": "1b555d25ab77f2db50d0f1bee9a1c9a7e52cf7e10f32938c2ccb68e44f32f622",
+          "seconds": 25.001,
+          "usage": {
+            "input_tokens": 11208,
+            "cached_input_tokens": 6912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 84,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "request_sha256": "639d05fc3effb4530776421bd552d111b2e88ae3522c243ec064f3c413d89067",
+          "seconds": 25.354,
+          "usage": {
+            "input_tokens": 11134,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 64,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "request_sha256": "f8f9a289097a9ef242e78691ebbd5ccc6aa55c102aadd28b278ae24653c954ce",
+          "seconds": 25.909,
+          "usage": {
+            "input_tokens": 11235,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 0
+          }
+        },
+        {
+          "request_sha256": "7594823941bacf84b9dd30116b39778b1c60184bde043f47812b4762b326498e",
+          "seconds": 26.215,
+          "usage": {
+            "input_tokens": 11113,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 36,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ]
+    },
+    "resumed_returncode": 0,
+    "source_unchanged": true,
+    "passed": true
+  },
+  "privacy": "Native account events, prompts, credentials, private diagnostics, caches and host paths excluded.",
+  "final_reviewed_sample": "Source/equation/figure regions applied after the numeric-fix full run; all eleven pages visually reviewed."
+}

@@ -1,0 +1,191 @@
+{
+  "fixed_input_cache_repeat": [
+    {
+      "kind": "mono",
+      "first_sha256": "7c781ed586e9e9ef2d9fd7bc2fce1217b22e93b68446dd49bdd561513fb61454",
+      "repeat_sha256": "cf92a746141c99c359a903be0c4e6a41e02938393636fc930b7953b9524a5967",
+      "byte_equal": false,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "2bd2b99a47b4b90b0b837953ba971f6494ad37180ca9e494f7e0fcadb57ea2f5",
+          "pixels_sha256_72dpi": "ab46764eb750b6f8c2d90321983f32ad33b812f663b7aa5c7f19783c88170db8"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "1569c514768aefdf971a325656e25078a9998db02ceb6cf936b07ac6b04702cd",
+          "pixels_sha256_72dpi": "91f0ce14d651fb8bf5c4a0f9856108b220e45244277ddec6feb0766543a815c4"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "50432963752849cba1f7e83e53928f7fbe825dce2992dc455cbb0e731e024d45",
+          "pixels_sha256_72dpi": "1a91648a63d147f550e51c233ed553fa00500457f58da5302e01497ea9054d7b"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "73cece3db959a2734779f6f4bb7d386f596d22cc90dbde51660c11c18e9558a0",
+          "pixels_sha256_72dpi": "d5e1cb1bbea83213cce241e37edce83ccd9d6d2609f19ebefafcb0f44fa5fe77"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "83cbbae9ae625670b4d4a67430410db970a92ba4ac644b05ec7f141ae85e9d6a",
+          "pixels_sha256_72dpi": "b0e1a9d401dd918dcb784ae73215a24bedcc2e2a1dc7885d8ffb941c37d81a66"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "2061f63f7a81294f58b7158f8586f5af4da8004df5d966610f08a657260d1844",
+          "pixels_sha256_72dpi": "b9b9db40fc575637fadd3f43e5916efc786a0649be67df510e1d99d3dc905dec"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "59a80568eebee7b00e89ce9672cb161a0267cd6c408bc6e15342c0914261fb7a",
+          "pixels_sha256_72dpi": "2df5cce4b7ff05463f2b384b1d8517e12134744197c926b79eb782061a91a49b"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "3f7f61dc23284c7c6f3caa4385556d1fbd723e51560881e694d00474e903a777",
+          "pixels_sha256_72dpi": "62bad8a8e9d6b129cf05ac11d31757618e4483f163a703492301f60c6cd98c07"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "d3f2270cf259285397b635c8b23a9eac04612e289202d9c52f8b501b357121d3",
+          "pixels_sha256_72dpi": "a9b5b20c1cd6cb46a14045721a6773d8f575932afdd18a3e7488f280fe86c0ef"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "b49c7213921311d8380d2ee62db4c85f5351d4ca08274205164818b183933017",
+          "pixels_sha256_72dpi": "331b5e246b641775c0be0598e1b6aded55bf16db4624f3d4a3c4f2b885e38f40"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "7cf72a460b25cf6c8f2f67317ac396076375f9af73f7abbac125487f5a68e3e8",
+          "pixels_sha256_72dpi": "3367befb2fe84bff5b9e40b2e022aa7c5a6a869b3fd998b61746d9c494e4831b"
+        }
+      ]
+    },
+    {
+      "kind": "dual",
+      "first_sha256": "f5d9e534587d28db0909377f392dceca0b09289a0f94d7d5944d125dd5f47a67",
+      "repeat_sha256": "659deb3601ffc25b68be3ae4d125ebaf534a278a59e82582cbbe80afc50efcae",
+      "byte_equal": false,
+      "pages": [
+        {
+          "page": 1,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "73f39420e7cd924a0bb144b722e5494d183ad9bc358cd0662885323c4d20ac59",
+          "pixels_sha256_72dpi": "f903732ab24aca00114760d94e383dc7536ef6450bb7da0045b67335317b5016"
+        },
+        {
+          "page": 2,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "b4c80cdd75c827233ece513e6eead25c9142b0c2288480a48d1bc309a17b9ab7",
+          "pixels_sha256_72dpi": "ee2f1e399502b97baf63fdff4e924b9d6e526e40ba8aa68d5a307b81666f7dee"
+        },
+        {
+          "page": 3,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "280a37bb5f4f0eedc15c5ebb5e1ed5ed861e2b7f41d66d0dd2e4297235ae5d9f",
+          "pixels_sha256_72dpi": "c15287cbda94ffcf2cd70ba4cb3a11383e4a28cf4f6b9a6f06ec14966e68679b"
+        },
+        {
+          "page": 4,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "5e73bb4864bd50e8d9c057670270cf1a46ed29ac59ae8962b9a99f34eb02d8a6",
+          "pixels_sha256_72dpi": "fe81359e22dc9996fce7c6f7dda8253b930fb1a683148507d3dc28a18aad3278"
+        },
+        {
+          "page": 5,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "0a1ff05654a137d71c974093c96bc00a79fac1588c7c657e9dc2a64f70cc3027",
+          "pixels_sha256_72dpi": "7ee1e4649fa811a9e2aae68ce53076f50c2736eae9200590ecc43a96b11bfaa8"
+        },
+        {
+          "page": 6,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "c51e4dc8fc6afa3bf049c013b2c53a586c750635e90acdb9bd4bafbd39a2bcae",
+          "pixels_sha256_72dpi": "3fd5601a8bfeea9390e703b5e510b0e9367a56e5711ae931d94eeaae4f92c8e0"
+        },
+        {
+          "page": 7,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "9b9efd4f694a6eba2796ef57e793a9e637a34b027654100d2976d69fd3661c30",
+          "pixels_sha256_72dpi": "de4862a6b4df4e0abef379fcb485f1d4dce43ac5cf12ef28c34dd37f7d2de59c"
+        },
+        {
+          "page": 8,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "7228b51355840692f20f607afd65a379652a7ecbe62ea39e4164e155ab4d5932",
+          "pixels_sha256_72dpi": "32d870f44fdd11c4eaa423aa566e11827fead3542add46c3d0079638d6c1f78d"
+        },
+        {
+          "page": 9,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "f4a10b4c58a1674f8f3c53cd84c58cd883741072f36d7433afb3eb197f47b923",
+          "pixels_sha256_72dpi": "c943dd73de2f8c570061e1658f0539bf0b047b97ffa99624355f9b522fa5b400"
+        },
+        {
+          "page": 10,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "8979490d662cdf9959211a35c7f9e4ea814a6ff25aad85d1a3b388370d57ca66",
+          "pixels_sha256_72dpi": "95848648ae54cb8de237224f7a3322e91db07238691377407295626463bddc95"
+        },
+        {
+          "page": 11,
+          "text_equal": true,
+          "pixels_equal_72dpi": true,
+          "text_sha256": "ea65bf996d2b68612e5bbc6abeaf7b525d3cb4c87724ef1f7fdbd7b20ccf01a3",
+          "pixels_sha256_72dpi": "c359b02d386169bb610cca519b3b1638e697fe852b4a3b4da55dde43ee4e2ff5"
+        }
+      ]
+    }
+  ],
+  "repeat_bridge": {
+    "backend": "codex",
+    "completed_requests": 65,
+    "live_requests": 0,
+    "cache_hits": 65,
+    "attempts": 0,
+    "failed_requests": 0,
+    "errors": [],
+    "protected_code_requests": 0,
+    "native_version": "codex-cli 0.162.0-alpha.17.2",
+    "ready": true,
+    "native_output_contract": "named-text-slots-schema-1",
+    "native_item_types": [],
+    "native_inference_calls": 0,
+    "native_call_records": []
+  },
+  "scope": "Only fixed input/configuration/runtime and completed private checkpoints; live cold replies can vary."
+}
