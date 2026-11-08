@@ -1,0 +1,4 @@
+# Register only the packaged skill; the host supplies its existing skills service.
+- insert:
+    - id: dsh-babeldoc-pdf-translate
+      name: dsh-babeldoc-pdf-translate
